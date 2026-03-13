@@ -6,8 +6,8 @@
     Reads two CSV sources and produces controls/registry.json — the canonical registry
     mapping every CIS check to all its framework memberships including SOC 2.
 
-    Source 1: Common/framework-mappings.csv  (CIS controls + framework cross-references)
-    Source 2: controls/check-id-mapping.csv  (check IDs, collectors, areas)
+    Source 1: data/framework-mappings.csv  (CIS controls + framework cross-references)
+    Source 2: data/check-id-mapping.csv  (check IDs, collectors, areas)
 
     The script also derives SOC 2 Trust Services Criteria (CC) mappings from the
     NIST 800-53 control families present on each check.
@@ -21,7 +21,7 @@
     Author:   M365-Assess contributors
 
 .EXAMPLE
-    .\controls\Build-Registry.ps1
+    .\scripts\Build-Registry.ps1
     Generates controls/registry.json from the default CSV sources.
 #>
 [CmdletBinding()]
@@ -34,11 +34,11 @@ param(
 $repoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 
 if (-not $OutputPath) {
-    $OutputPath = Join-Path $repoRoot 'controls' 'registry.json'
+    $OutputPath = Join-Path $repoRoot 'data' 'registry.json'
 }
 
-$frameworkCsvPath = Join-Path $repoRoot 'Common' 'framework-mappings.csv'
-$checkIdCsvPath   = Join-Path $repoRoot 'controls' 'check-id-mapping.csv'
+$frameworkCsvPath = Join-Path $repoRoot 'data' 'framework-mappings.csv'
+$checkIdCsvPath   = Join-Path $repoRoot 'data' 'check-id-mapping.csv'
 
 # --- Load CSVs ---
 $frameworkRows = Import-Csv -Path $frameworkCsvPath
@@ -200,7 +200,7 @@ $checks = $checks | Sort-Object {
 # Build final registry object
 $registry = [ordered]@{
     version       = '1.0.0'
-    generatedFrom = 'Common/framework-mappings.csv + controls/check-id-mapping.csv'
+    generatedFrom = 'data/framework-mappings.csv + data/check-id-mapping.csv'
     checks        = @($checks)
 }
 
