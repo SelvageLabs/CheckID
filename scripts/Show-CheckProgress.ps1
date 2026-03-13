@@ -17,6 +17,12 @@
     Author:  Daren9m
 #>
 
+# Configurable activity name for Write-Progress — consumers set $script:ProgressActivityName
+# before calling Initialize-CheckProgress. Defaults to 'Security Assessment'.
+if (-not $script:ProgressActivityName) {
+    $script:ProgressActivityName = 'Security Assessment'
+}
+
 # ── Map registry collector names to section names and display labels ──
 $script:CollectorSectionMap = @{
     'Entra'          = 'Identity'
@@ -125,7 +131,7 @@ function Initialize-CheckProgress {
     Write-Host ''
 
     # Start the Write-Progress bar
-    Write-Progress -Activity 'M365 Security Assessment' -Status "0 / $totalChecks checks complete" -PercentComplete 0 -Id 1
+    Write-Progress -Activity $script:ProgressActivityName -Status "0 / $totalChecks checks complete" -PercentComplete 0 -Id 1
 }
 
 
@@ -204,7 +210,7 @@ function global:Update-CheckProgress {
     # Update Write-Progress bar (cap at 100%)
     $pct = [math]::Min(100, [math]::Round(($state.Completed / $state.Total) * 100))
     $statusText = "$($state.Completed) / $($state.Total) checks complete"
-    Write-Progress -Activity 'M365 Security Assessment' -Status $statusText -PercentComplete $pct -Id 1
+    Write-Progress -Activity $script:ProgressActivityName -Status $statusText -PercentComplete $pct -Id 1
 }
 
 
@@ -219,7 +225,7 @@ function global:Update-ProgressStatus {
     if (-not $state -or $state.Total -eq 0) { return }
 
     $pct = if ($state.Total -gt 0) { [math]::Round(($state.Completed / $state.Total) * 100) } else { 0 }
-    Write-Progress -Activity 'M365 Security Assessment' -Status $Message -PercentComplete $pct -Id 1 -CurrentOperation "$($state.Completed) / $($state.Total) checks"
+    Write-Progress -Activity $script:ProgressActivityName -Status $Message -PercentComplete $pct -Id 1 -CurrentOperation "$($state.Completed) / $($state.Total) checks"
 }
 
 
@@ -233,7 +239,7 @@ function Complete-CheckProgress {
 
     $state = $global:CheckProgressState
     if ($state -and $state.Total -gt 0) {
-        Write-Progress -Activity 'M365 Security Assessment' -Completed -Id 1
+        Write-Progress -Activity $script:ProgressActivityName -Completed -Id 1
         Write-Host ''
         Write-Host "  $([char]0x2713) All $($state.Total) security checks complete" -ForegroundColor Green
         Write-Host ''
