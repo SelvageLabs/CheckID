@@ -52,7 +52,7 @@ if (-not (Test-Path -Path $AssessmentFolder -PathType Container)) {
 # ------------------------------------------------------------------
 $projectRoot = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
 . (Join-Path -Path $PSScriptRoot -ChildPath 'Import-ControlRegistry.ps1')
-$controlsPath = Join-Path -Path $projectRoot -ChildPath 'controls'
+$controlsPath = Join-Path -Path $projectRoot -ChildPath 'data'
 $controlRegistry = Import-ControlRegistry -ControlsPath $controlsPath
 
 if ($controlRegistry.Count -eq 0) {
