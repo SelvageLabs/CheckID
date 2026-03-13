@@ -147,8 +147,9 @@ registry lookup will silently return empty.
 **Show-CheckProgress.ps1** — dot-sources `Import-ControlRegistry.ps1` from same
 directory (no change needed). However, the hardcoded `'M365 Security Assessment'`
 string in `Write-Progress -Activity` should be parameterized so both M365-Assess
-and Stitch can pass their own branding. Add an optional `-ActivityName` parameter
-defaulting to `'Security Assessment'`.
+and Stitch can pass their own branding. Add a `$script:ProgressActivityName` variable
+(not a parameter, since this file is dot-sourced) defaulting to `'Security Assessment'`.
+Consumers set `$script:ProgressActivityName` before calling `Initialize-CheckProgress`.
 
 **registry-integrity.Tests.ps1** (from Stitch — 3 levels deep):
 ```powershell
