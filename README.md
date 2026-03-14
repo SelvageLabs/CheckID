@@ -1,19 +1,19 @@
 # CheckID
 
-Universal identifier system for M365 security checks with multi-framework compliance mapping.
+Stable, unique identifiers for security configuration checks — mapped across compliance frameworks.
 
 ## What Is CheckID?
 
-CheckID provides a stable, unique identifier for every security check in an M365 assessment.
-Each CheckID maps to controls across 10 compliance frameworks simultaneously, enabling
-framework-agnostic compliance reporting.
+CheckID gives every security check a permanent ID and maps it to controls across multiple compliance frameworks simultaneously. Instead of tracking "CIS 1.1.3" in one report and "AC-6(5)" in another, you reference `ENTRA-ADMIN-001` and get both — plus ISO 27001, HIPAA, SOC 2, and more.
 
-**Format:** `{COLLECTOR}-{AREA}-{NNN}` (e.g., `ENTRA-ADMIN-001`, `DEFENDER-SAFELINKS-001`)
+**Format:** `{SERVICE}-{AREA}-{NNN}` (e.g., `ENTRA-ADMIN-001`, `DEFENDER-SAFELINKS-001`)
 
-**Coverage:**
-- 233 total checks (138 automated, 81 superseded, 14 manual/tracked)
-- 9 collectors: Entra, CAEvaluator, ExchangeOnline, DNS, Defender, Compliance, Intune, SharePoint, Teams
-- 10 frameworks: CIS M365 v6, NIST 800-53, NIST CSF, ISO 27001, STIG, PCI DSS, CMMC, HIPAA, CISA SCuBA, SOC 2, and more
+**Current coverage:**
+- 233 checks across Microsoft 365 (Entra ID, Exchange Online, Defender, SharePoint, Teams, Intune, Compliance)
+- 10 compliance frameworks mapped per check
+- Automated + manual checks with supersession tracking
+
+CheckID starts with M365 but is designed to expand. The identifier format, registry schema, and framework mapping approach are platform-agnostic — new services and platforms can be added without breaking existing consumers.
 
 ## Quick Start
 
@@ -34,8 +34,22 @@ $registry = Import-ControlRegistry -ControlsPath ./lib/CheckID/data
 
 # Look up a specific check
 $check = $registry['ENTRA-ADMIN-001']
-$check.name          # "Ensure that between two and four global admins are designated"
-$check.frameworks    # Hashtable of all 13 framework mappings
+$check.name          # "Ensure Administrative accounts are cloud-only"
+$check.frameworks    # Hashtable of all framework mappings
+```
+
+### Use the registry data directly
+
+`data/registry.json` is a standalone JSON file — consume it from any language:
+
+```python
+import json
+with open('lib/CheckID/data/registry.json') as f:
+    registry = json.load(f)
+
+for check in registry['checks']:
+    if 'hipaa' in check['frameworks']:
+        print(f"{check['checkId']}: {check['frameworks']['hipaa']['controlId']}")
 ```
 
 ### Generate a compliance matrix (XLSX)
@@ -44,57 +58,102 @@ $check.frameworks    # Hashtable of all 13 framework mappings
 ./lib/CheckID/scripts/Export-ComplianceMatrix.ps1 -AssessmentFolder ./output
 ```
 
+## Supported Frameworks
+
+| Framework | Key | Coverage |
+|-----------|-----|----------|
+| CIS Microsoft 365 v6.0.1 | `cis-m365-v6` | 221 checks |
+| NIST SP 800-53 Rev 5 | `nist-800-53` | 233 checks |
+| NIST Cybersecurity Framework 2.0 | `nist-csf` | 229 checks |
+| ISO/IEC 27001:2022 | `iso-27001` | 233 checks |
+| DISA STIG | `stig` | 22 checks |
+| PCI DSS v4.0.1 | `pci-dss` | 223 checks |
+| CMMC 2.0 | `cmmc` | 223 checks |
+| HIPAA Security Rule | `hipaa` | 226 checks |
+| CISA SCuBA | `cisa-scuba` | 71 checks |
+| SOC 2 Trust Services Criteria | `soc2` | 232 checks |
+
+Additional frameworks (FedRAMP, GDPR, Essential Eight, CIS Controls v8, MITRE ATT&CK) are planned.
+
 ## Repository Structure
 
 ```
 CheckID/
 ├── data/                          Registry data
 │   ├── registry.json              Master registry (233 checks, 10 frameworks)
-│   ├── check-id-mapping.csv       CheckID to collector/area assignments
-│   ├── framework-mappings.csv     CIS to multi-framework cross-references
+│   ├── check-id-mapping.csv       CheckID → service/area assignments
+│   ├── framework-mappings.csv     CIS → multi-framework cross-references
+│   ├── standalone-checks.json     Non-CIS automated checks with framework data
 │   └── frameworks/                Framework definitions
 │       ├── cis-m365-v6.json       CIS M365 v6.0.1 profiles and sections
 │       └── soc2-tsc.json          SOC 2 Trust Services Criteria
-├── scripts/                       PowerShell scripts
+├── scripts/                       PowerShell 7.x scripts
 │   ├── Build-Registry.ps1         Generates registry.json from CSVs
 │   ├── Import-ControlRegistry.ps1 Loads registry into memory
-│   ├── Show-CheckProgress.ps1     Real-time progress display
-│   └── Export-ComplianceMatrix.ps1 XLSX multi-framework report
-├── tests/                         Pester 5.x tests
+│   ├── Export-ComplianceMatrix.ps1 XLSX multi-framework compliance report
+│   ├── Test-RegistryData.ps1      Data quality validation (14 checks)
+│   └── Show-CheckProgress.ps1     Real-time progress display
+├── tests/                         Pester 5.x tests (20 tests)
 │   └── registry-integrity.Tests.ps1
 └── docs/
     └── CheckId-Guide.md           Detailed system documentation
 ```
 
-## Supported Frameworks
+## Registry Schema
 
-| Framework | Key |
-|-----------|-----|
-| CIS Microsoft 365 v6.0.1 | `cis-m365-v6` |
-| NIST SP 800-53 Rev 5 | `nist-800-53` |
-| NIST Cybersecurity Framework 2.0 | `nist-csf` |
-| ISO/IEC 27001:2022 | `iso-27001` |
-| DISA STIG | `stig` |
-| PCI DSS v4.0.1 | `pci-dss` |
-| CMMC 2.0 | `cmmc` |
-| HIPAA Security Rule | `hipaa` |
-| CISA SCuBA | `cisa-scuba` |
-| SOC 2 Trust Services Criteria | `soc2` |
+Each check in `registry.json` contains:
+
+```json
+{
+  "checkId": "ENTRA-ADMIN-001",
+  "name": "Ensure Administrative accounts are cloud-only",
+  "category": "ADMIN",
+  "collector": "Entra",
+  "hasAutomatedCheck": true,
+  "licensing": { "minimum": "E3" },
+  "frameworks": {
+    "cis-m365-v6": { "controlId": "1.1.1", "title": "...", "profiles": ["E3-L1", "E5-L1"] },
+    "nist-800-53": { "controlId": "AC-6(5);AC-2" },
+    "iso-27001": { "controlId": "A.5.15;A.5.18;A.8.2" },
+    "hipaa": { "controlId": "§164.312(a)(1);§164.308(a)(4)(i)" },
+    "soc2": { "controlId": "CC6.1;CC6.2;CC6.3", "evidenceType": "config-export" }
+  }
+}
+```
+
+Top-level fields: `schemaVersion` (semver), `dataVersion` (date), `generatedFrom`, `checks[]`.
 
 ## Rebuilding the Registry
 
 After editing the CSV files, regenerate `registry.json`:
 
 ```powershell
-./scripts/Build-Registry.ps1 -Verbose
+./scripts/Build-Registry.ps1
 ```
 
-Then run the integrity tests:
+Then validate:
 
 ```powershell
-Invoke-Pester ./tests/ -Output Detailed
+./scripts/Test-RegistryData.ps1          # 14 data quality checks
+Invoke-Pester ./tests/ -Output Detailed  # 20 integrity tests
 ```
+
+## Contributing
+
+Contributions are welcome — especially new framework mappings, additional service coverage, and tooling improvements.
+
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/add-fedramp`)
+3. Edit the CSVs in `data/` and run `./scripts/Build-Registry.ps1`
+4. Run tests: `Invoke-Pester ./tests/` and `./scripts/Test-RegistryData.ps1`
+5. Open a PR
+
+**Areas we'd love help with:**
+- Framework mappings for platforms beyond M365 (AWS, GCP, Azure IaaS)
+- New compliance frameworks (FedRAMP, GDPR, Essential Eight, MITRE ATT&CK)
+- Language-specific client libraries (Python, Go, TypeScript)
+- Documentation and guides
 
 ## License
 
-MIT
+[MIT](LICENSE)
