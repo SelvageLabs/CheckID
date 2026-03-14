@@ -10,7 +10,7 @@ CheckID gives every security check a permanent ID and maps it to controls across
 
 **Current coverage:**
 - 233 checks across Microsoft 365 (Entra ID, Exchange Online, Defender, SharePoint, Teams, Intune, Compliance)
-- 10 compliance frameworks mapped per check
+- 14 compliance frameworks mapped per check
 - Automated + manual checks with supersession tracking
 
 CheckID starts with M365 but is designed to expand. The identifier format, registry schema, and framework mapping approach are platform-agnostic — new services and platforms can be added without breaking existing consumers.
@@ -72,15 +72,19 @@ for check in registry['checks']:
 | HIPAA Security Rule | `hipaa` | 226 checks |
 | CISA SCuBA | `cisa-scuba` | 71 checks |
 | SOC 2 Trust Services Criteria | `soc2` | 232 checks |
+| FedRAMP Rev 5 | `fedramp` | 223 checks |
+| CIS Controls v8.1 | `cis-controls-v8` | 190 checks |
+| Essential Eight | `essential-eight` | 77 checks |
+| MITRE ATT&CK v10 | `mitre-attack` | 217 checks |
 
-Additional frameworks (FedRAMP, GDPR, Essential Eight, CIS Controls v8, MITRE ATT&CK) are planned.
+Additional frameworks (GDPR, FedRAMP baselines) are planned.
 
 ## Repository Structure
 
 ```
 CheckID/
 ├── data/                          Registry data
-│   ├── registry.json              Master registry (233 checks, 10 frameworks)
+│   ├── registry.json              Master registry (233 checks, 14 frameworks)
 │   ├── check-id-mapping.csv       CheckID → service/area assignments
 │   ├── framework-mappings.csv     CIS → multi-framework cross-references
 │   ├── standalone-checks.json     Non-CIS automated checks with framework data

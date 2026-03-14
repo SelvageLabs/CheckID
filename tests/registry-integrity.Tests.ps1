@@ -118,8 +118,8 @@ Describe 'Control Registry Integrity' {
 
     # --- Framework coverage ---
 
-    It 'All 10 frameworks are represented across checks' {
-        $expectedFrameworks = @('cis-m365-v6', 'nist-800-53', 'nist-csf', 'iso-27001', 'stig', 'pci-dss', 'cmmc', 'hipaa', 'cisa-scuba', 'soc2')
+    It 'All 14 frameworks are represented across checks' {
+        $expectedFrameworks = @('cis-m365-v6', 'nist-800-53', 'nist-csf', 'iso-27001', 'stig', 'pci-dss', 'cmmc', 'hipaa', 'cisa-scuba', 'soc2', 'fedramp', 'cis-controls-v8', 'essential-eight', 'mitre-attack')
         $allFrameworks = [System.Collections.Generic.HashSet[string]]::new()
         foreach ($check in $checks) {
             foreach ($prop in $check.frameworks.PSObject.Properties) {
