@@ -147,6 +147,9 @@ foreach ($fwRow in $frameworkRows) {
     $category  = if ([string]::IsNullOrWhiteSpace($cidRow.Area)) { '' } else { $cidRow.Area }
     $collector = if ([string]::IsNullOrWhiteSpace($cidRow.Collector)) { '' } else { $cidRow.Collector }
 
+    # SupersededBy
+    $supersededBy = if ([string]::IsNullOrWhiteSpace($cidRow.SupersededBy)) { $null } else { $cidRow.SupersededBy.Trim() }
+
     # Build frameworks object — start with CIS
     $frameworks = [ordered]@{
         'cis-m365-v6' = [ordered]@{
@@ -185,6 +188,10 @@ foreach ($fwRow in $frameworkRows) {
         hasAutomatedCheck = $hasAutomated
         licensing         = [ordered]@{ minimum = $minimumLicense }
         frameworks        = $frameworks
+    }
+
+    if ($supersededBy) {
+        $checkObj['supersededBy'] = $supersededBy
     }
 
     $checks.Add($checkObj)

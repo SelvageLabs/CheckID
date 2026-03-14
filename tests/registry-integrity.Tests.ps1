@@ -59,6 +59,15 @@ Describe 'Control Registry Integrity' {
         }
     }
 
+    It 'supersededBy references valid CheckIds when present' {
+        $superseded = $checks | Where-Object { $_.supersededBy }
+        $allIds = $checks | ForEach-Object { $_.checkId }
+        foreach ($check in $superseded) {
+            $check.supersededBy | Should -BeIn $allIds `
+                -Because "$($check.checkId) supersededBy '$($check.supersededBy)' must reference an existing CheckId"
+        }
+    }
+
     It 'SOC 2 mappings exist for checks that have NIST 800-53 AC/AU/IA/SC/SI families' {
         $nistFamilies = @('AC-', 'AU-', 'IA-', 'SC-', 'SI-')
         $automated = $checks | Where-Object { $_.hasAutomatedCheck -eq $true }
