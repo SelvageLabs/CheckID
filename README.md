@@ -17,13 +17,33 @@ CheckID starts with M365 but is designed to expand. The identifier format, regis
 
 ## Quick Start
 
-### Add as a git submodule
+### Install from PSGallery (recommended)
+
+```powershell
+Install-Module -Name CheckID -Scope CurrentUser
+```
+
+```powershell
+# Load all checks
+$checks = Get-CheckRegistry
+
+# Look up a specific check
+$check = Get-CheckById 'ENTRA-ADMIN-001'
+$check.name          # "Ensure that between two and four global admins are designated"
+$check.frameworks    # All framework mappings with titles
+
+# Search by framework, control ID, or keyword
+Search-Check -Framework 'hipaa' -Keyword 'password'
+Search-Check -ControlId 'AC-6'
+```
+
+### Add as a git submodule (legacy)
+
+> The submodule approach still works and will continue to be supported during the transition period. New projects should prefer `Install-Module`.
 
 ```bash
 git submodule add https://github.com/SelvageLabs/CheckID.git lib/CheckID
 ```
-
-### Load the registry in PowerShell
 
 ```powershell
 # Dot-source the loader
@@ -34,7 +54,7 @@ $registry = Import-ControlRegistry -ControlsPath ./lib/CheckID/data
 
 # Look up a specific check
 $check = $registry['ENTRA-ADMIN-001']
-$check.name          # "Ensure Administrative accounts are cloud-only"
+$check.name          # "Ensure that between two and four global admins are designated"
 $check.frameworks    # Hashtable of all framework mappings
 ```
 
