@@ -95,6 +95,7 @@
 "6.5.2","Ensure MailTips are enabled for end users","6.5.2","","6.5.2","","PR.AT-01","AT-2b","A.6.3","","","","§164.308(a)(5)(i)",""
 "6.5.3","Ensure additional storage providers are restricted in Outlook on the web","","6.5.3","","6.5.3","PR.DS-01","CM-7;SC-7(10)","A.8.19;A.8.26","","2.2.x","3.4.6;3.13.1","§164.312(a)(1)",""
 "6.5.4","Ensure SMTP AUTH is disabled","6.5.4","","6.5.4","","PR.AA-03","CM-7","A.8.5;A.8.20","","2.2.x;8.2.x","3.4.6;3.5.2","§164.312(d);§164.312(a)(1)","MS.EXO.5.1v1"
+"6.5.5","Ensure Direct Send is not allowed for unauthorized relay","","","","","PR.AC-03","SC-7;AC-17","A.8.20;A.8.23","","","","",""
 "7.2.1","Ensure modern authentication for SharePoint applications is required","7.2.1","","7.2.1","","PR.AA-03","CM-7;IA-8","A.8.5;A.8.20","","2.2.x;8.2.x","3.4.6;3.5.2","§164.312(d);§164.312(a)(1)",""
 "7.2.2","Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled","7.2.2","","7.2.2","","PR.AA-03;PR.AA-05","AC-2;IA-8","A.5.16;A.8.5","","7.2.x;8.2.x","3.1.1;3.5.1","§164.312(a)(1);§164.312(d)",""
 "7.2.3","Ensure external content sharing is restricted","7.2.3","","7.2.3","","PR.AA-05;PR.DS-01","AC-2;AC-3;IA-8","A.5.15;A.5.18;A.8.3","","7.2.x;2.2.x","3.1.2;3.1.22","§164.312(a)(1)",""

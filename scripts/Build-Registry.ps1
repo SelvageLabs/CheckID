@@ -37,12 +37,19 @@ if (-not $OutputPath) {
     $OutputPath = Join-Path $repoRoot 'data' 'registry.json'
 }
 
-$frameworkCsvPath = Join-Path $repoRoot 'data' 'framework-mappings.csv'
-$checkIdCsvPath   = Join-Path $repoRoot 'data' 'check-id-mapping.csv'
+$frameworkCsvPath    = Join-Path $repoRoot 'data' 'framework-mappings.csv'
+$checkIdCsvPath      = Join-Path $repoRoot 'data' 'check-id-mapping.csv'
+$standaloneJsonPath  = Join-Path $repoRoot 'data' 'standalone-checks.json'
 
 # --- Load CSVs ---
 $frameworkRows = Import-Csv -Path $frameworkCsvPath
 $checkIdRows   = Import-Csv -Path $checkIdCsvPath
+
+# --- Load standalone checks (non-CIS automated checks with framework data) ---
+$standaloneChecks = @()
+if (Test-Path $standaloneJsonPath) {
+    $standaloneChecks = Get-Content -Path $standaloneJsonPath -Raw | ConvertFrom-Json
+}
 
 # Index check-ID rows by CisControl
 $checkIdMap = @{}
@@ -56,6 +63,7 @@ foreach ($row in $checkIdRows) {
 $soc2MappingRules = [ordered]@{
     '^AC-2'      = 'CC6.1;CC6.2;CC6.3'
     '^AC-3'      = 'CC6.1;CC6.2;CC6.3'
+    '^AC-4'      = 'CC6.1;CC6.7'
     '^AC-6'      = 'CC6.1;CC6.3'
     '^AC-11'     = 'CC6.1'
     '^AC-12'     = 'CC6.1'
@@ -113,6 +121,19 @@ $frameworkColumnMap = [ordered]@{
     'Cmmc'      = 'cmmc'
     'Hipaa'     = 'hipaa'
     'CisaScuba' = 'cisa-scuba'
+}
+
+# --- CheckId prefix to collector name mapping ---
+$collectorPrefixMap = @{
+    'ENTRA'      = 'Entra'
+    'EXO'        = 'ExchangeOnline'
+    'SPO'        = 'SharePoint'
+    'TEAMS'      = 'Teams'
+    'DEFENDER'   = 'Defender'
+    'COMPLIANCE' = 'Compliance'
+    'INTUNE'     = 'Intune'
+    'DNS'        = 'DNS'
+    'CA'         = 'CAEvaluator'
 }
 
 # --- Build checks array ---
@@ -192,15 +213,51 @@ foreach ($fwRow in $frameworkRows) {
 
     if ($supersededBy) {
         $checkObj['supersededBy'] = $supersededBy
+
+        # Emit a second check entry for the automated superseder
+        if ($supersededBy -match '^([A-Z]+)-(.+)-\d{3}$') {
+            $ssCollectorPrefix = $Matches[1]
+            $ssArea = $Matches[2]
+            $ssCollector = if ($collectorPrefixMap.ContainsKey($ssCollectorPrefix)) {
+                $collectorPrefixMap[$ssCollectorPrefix]
+            } else { $ssCollectorPrefix }
+
+            $ssCheckObj = [ordered]@{
+                checkId           = $supersededBy
+                name              = $fwRow.CisTitle
+                category          = $ssArea
+                collector         = $ssCollector
+                hasAutomatedCheck = $true
+                licensing         = [ordered]@{ minimum = $minimumLicense }
+                frameworks        = $frameworks
+            }
+            $checks.Add($ssCheckObj)
+        }
     }
 
     $checks.Add($checkObj)
 }
 
+# --- Emit standalone checks from standalone-checks.json ---
+foreach ($sc in $standaloneChecks) {
+    $checkObj = [ordered]@{
+        checkId           = $sc.checkId
+        name              = $sc.name
+        category          = $sc.category
+        collector         = $sc.collector
+        hasAutomatedCheck = $true
+        licensing         = [ordered]@{ minimum = 'E3' }
+        frameworks        = $sc.frameworks
+    }
+    $checks.Add($checkObj)
+}
+
 # Sort by CIS control ID (numerical sort on each dotted segment)
+# Checks without CIS control sort to the end
 $checks = $checks | Sort-Object {
-    $parts = $_.frameworks['cis-m365-v6'].controlId -split '\.'
-    # Zero-pad each segment to 4 digits for proper lexicographic sort
+    $cisId = $_.frameworks['cis-m365-v6'].controlId
+    if ([string]::IsNullOrWhiteSpace($cisId)) { return 'zzzz' }
+    $parts = $cisId -split '\.'
     ($parts | ForEach-Object { $_.PadLeft(4, '0') }) -join '.'
 }
 
@@ -220,4 +277,7 @@ Write-Host "Registry written to: $OutputPath"
 Write-Host "Total checks:     $($checks.Count)"
 Write-Host "Automated checks: $(($checks | Where-Object { $_.hasAutomatedCheck }).Count)"
 Write-Host "Manual checks:    $(($checks | Where-Object { -not $_.hasAutomatedCheck }).Count)"
-Write-Host "SOC 2 mappings:   $(($checks | Where-Object { $_.frameworks.Contains('soc2') }).Count)"
+Write-Host "SOC 2 mappings:   $(($checks | Where-Object {
+    ($_.frameworks -is [System.Collections.IDictionary] -and $_.frameworks.Contains('soc2')) -or
+    ($_.frameworks -isnot [System.Collections.IDictionary] -and $_.frameworks.PSObject.Properties.Name -contains 'soc2')
+}).Count)"
