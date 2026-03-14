@@ -163,6 +163,16 @@ jobs:
             Write-Host "Registry is consistent with CSVs"
           }
 
+  data-quality:
+    name: Data Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Test-RegistryData
+        shell: pwsh
+        run: ./scripts/Test-RegistryData.ps1
+
   test:
     name: Pester Tests
     runs-on: ubuntu-latest
