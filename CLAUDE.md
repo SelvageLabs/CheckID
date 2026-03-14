@@ -6,7 +6,7 @@
 ## Overview
 
 CheckID is a **shared library** providing a universal identifier system for M365 security checks.
-It maps 233 checks across 13 compliance frameworks. Changes here affect all downstream consumers.
+It maps 233 checks across 10 compliance frameworks. Changes here affect all downstream consumers.
 
 - **Testing**: Pester 5.x -- on demand only
 - **License**: MIT (public repository)

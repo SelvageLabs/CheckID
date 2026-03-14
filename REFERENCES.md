@@ -2,7 +2,7 @@
 
 ## Upstream: SecFrame
 
-[SecFrame](https://github.com/SelvageLabs/SecFrame) (`C:\git\SecFrame`) is the authoritative source
+[SecFrame](https://github.com/SelvageLabs/SecFrame) is the authoritative source
 for security framework reference data. CheckID's framework mappings are derived from:
 
 | SecFrame File | What It Provides |
