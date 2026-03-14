@@ -1,6 +1,7 @@
 {
-  "version": "1.0.0",
-  "generatedFrom": "data/framework-mappings.csv + data/check-id-mapping.csv",
+  "schemaVersion": "1.0.0",
+  "dataVersion": "2026-03-14",
+  "generatedFrom": "data/framework-mappings.csv + data/check-id-mapping.csv + data/standalone-checks.json",
   "checks": [
     {
       "checkId": "ENTRA-CLOUDADMIN-001",
