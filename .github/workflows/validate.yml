@@ -169,6 +169,8 @@ jobs:
           $config.Run.Path = './tests/'
           $config.Output.Verbosity = 'Detailed'
           $config.Run.Exit = $false
+          $config.Run.Throw = $false
+          $config.Run.PassThru = $true
           $result = Invoke-Pester -Configuration $config
 
           # Summary
