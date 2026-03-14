@@ -1,6 +1,6 @@
 # CheckId System Guide
 
-The CheckId system is the backbone of M365-Assess's multi-framework compliance reporting. Each security check gets a framework-agnostic identifier that maps to controls across 13 compliance frameworks simultaneously.
+The CheckId system is the backbone of M365-Assess's multi-framework compliance reporting. Each security check gets a framework-agnostic identifier that maps to controls across 10 compliance frameworks simultaneously.
 
 ## What Is a CheckId?
 

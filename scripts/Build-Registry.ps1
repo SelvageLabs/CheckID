@@ -3,7 +3,7 @@
     Builds the master control registry (registry.json) from framework mappings and check-ID mappings.
 
 .DESCRIPTION
-    Reads two CSV sources and produces controls/registry.json — the canonical registry
+    Reads two CSV sources and produces data/registry.json — the canonical registry
     mapping every CIS check to all its framework memberships including SOC 2.
 
     Source 1: data/framework-mappings.csv  (CIS controls + framework cross-references)
@@ -13,7 +13,7 @@
     NIST 800-53 control families present on each check.
 
 .PARAMETER OutputPath
-    Path to write the JSON registry. Defaults to controls/registry.json relative to
+    Path to write the JSON registry. Defaults to data/registry.json relative to
     the repository root.
 
 .NOTES
@@ -22,7 +22,7 @@
 
 .EXAMPLE
     .\scripts\Build-Registry.ps1
-    Generates controls/registry.json from the default CSV sources.
+    Generates data/registry.json from the default CSV sources.
 #>
 [CmdletBinding()]
 param(
@@ -37,12 +37,19 @@ if (-not $OutputPath) {
     $OutputPath = Join-Path $repoRoot 'data' 'registry.json'
 }
 
-$frameworkCsvPath = Join-Path $repoRoot 'data' 'framework-mappings.csv'
-$checkIdCsvPath   = Join-Path $repoRoot 'data' 'check-id-mapping.csv'
+$frameworkCsvPath    = Join-Path $repoRoot 'data' 'framework-mappings.csv'
+$checkIdCsvPath      = Join-Path $repoRoot 'data' 'check-id-mapping.csv'
+$standaloneJsonPath  = Join-Path $repoRoot 'data' 'standalone-checks.json'
 
 # --- Load CSVs ---
 $frameworkRows = Import-Csv -Path $frameworkCsvPath
 $checkIdRows   = Import-Csv -Path $checkIdCsvPath
+
+# --- Load standalone checks (non-CIS automated checks with framework data) ---
+$standaloneChecks = @()
+if (Test-Path $standaloneJsonPath) {
+    $standaloneChecks = Get-Content -Path $standaloneJsonPath -Raw | ConvertFrom-Json
+}
 
 # Index check-ID rows by CisControl
 $checkIdMap = @{}
@@ -56,9 +63,11 @@ foreach ($row in $checkIdRows) {
 $soc2MappingRules = [ordered]@{
     '^AC-2'      = 'CC6.1;CC6.2;CC6.3'
     '^AC-3'      = 'CC6.1;CC6.2;CC6.3'
+    '^AC-4'      = 'CC6.1;CC6.7'
     '^AC-6'      = 'CC6.1;CC6.3'
     '^AC-11'     = 'CC6.1'
     '^AC-12'     = 'CC6.1'
+    '^AC-17'     = 'CC6.1;CC6.7'
     '^AU-'       = 'CC7.1;CC7.2'
     '^IA-'       = 'CC6.1'
     '^CM-'       = 'CC5;CC8.1'
@@ -115,6 +124,19 @@ $frameworkColumnMap = [ordered]@{
     'CisaScuba' = 'cisa-scuba'
 }
 
+# --- CheckId prefix to collector name mapping ---
+$collectorPrefixMap = @{
+    'ENTRA'      = 'Entra'
+    'EXO'        = 'ExchangeOnline'
+    'SPO'        = 'SharePoint'
+    'TEAMS'      = 'Teams'
+    'DEFENDER'   = 'Defender'
+    'COMPLIANCE' = 'Compliance'
+    'INTUNE'     = 'Intune'
+    'DNS'        = 'DNS'
+    'CA'         = 'CAEvaluator'
+}
+
 # --- Build checks array ---
 $checks = [System.Collections.Generic.List[object]]::new()
 
@@ -146,6 +168,9 @@ foreach ($fwRow in $frameworkRows) {
     # Category and collector
     $category  = if ([string]::IsNullOrWhiteSpace($cidRow.Area)) { '' } else { $cidRow.Area }
     $collector = if ([string]::IsNullOrWhiteSpace($cidRow.Collector)) { '' } else { $cidRow.Collector }
+
+    # SupersededBy
+    $supersededBy = if ([string]::IsNullOrWhiteSpace($cidRow.SupersededBy)) { $null } else { $cidRow.SupersededBy.Trim() }
 
     # Build frameworks object — start with CIS
     $frameworks = [ordered]@{
@@ -187,13 +212,57 @@ foreach ($fwRow in $frameworkRows) {
         frameworks        = $frameworks
     }
 
+    if ($supersededBy) {
+        $checkObj['supersededBy'] = $supersededBy
+
+        # Emit a second check entry for the automated superseder
+        if ($supersededBy -match '^([A-Z]+)-(.+)-\d{3}$') {
+            $ssCollectorPrefix = $Matches[1]
+            $ssArea = $Matches[2]
+            $ssCollector = if ($collectorPrefixMap.ContainsKey($ssCollectorPrefix)) {
+                $collectorPrefixMap[$ssCollectorPrefix]
+            } else { $ssCollectorPrefix }
+
+            $ssCheckObj = [ordered]@{
+                checkId           = $supersededBy
+                name              = $fwRow.CisTitle
+                category          = $ssArea
+                collector         = $ssCollector
+                hasAutomatedCheck = $true
+                licensing         = [ordered]@{ minimum = $minimumLicense }
+                frameworks        = $frameworks
+            }
+            $checks.Add($ssCheckObj)
+        }
+    }
+
+    $checks.Add($checkObj)
+}
+
+# --- Emit standalone checks from standalone-checks.json ---
+foreach ($sc in $standaloneChecks) {
+    $checkObj = [ordered]@{
+        checkId           = $sc.checkId
+        name              = $sc.name
+        category          = $sc.category
+        collector         = $sc.collector
+        hasAutomatedCheck = $true
+        licensing         = [ordered]@{ minimum = 'E3' }
+        frameworks        = $sc.frameworks
+    }
     $checks.Add($checkObj)
 }
 
 # Sort by CIS control ID (numerical sort on each dotted segment)
+# Checks without CIS control sort to the end
 $checks = $checks | Sort-Object {
-    $parts = $_.frameworks['cis-m365-v6'].controlId -split '\.'
-    # Zero-pad each segment to 4 digits for proper lexicographic sort
+    $fw = $_.frameworks
+    $cis = if ($fw -is [System.Collections.IDictionary]) { $fw['cis-m365-v6'] }
+           elseif ($fw.PSObject.Properties.Name -contains 'cis-m365-v6') { $fw.'cis-m365-v6' }
+           else { $null }
+    $cisId = if ($cis) { $cis.controlId } else { $null }
+    if ([string]::IsNullOrWhiteSpace($cisId)) { return 'zzzz' }
+    $parts = $cisId -split '\.'
     ($parts | ForEach-Object { $_.PadLeft(4, '0') }) -join '.'
 }
 
@@ -213,4 +282,7 @@ Write-Host "Registry written to: $OutputPath"
 Write-Host "Total checks:     $($checks.Count)"
 Write-Host "Automated checks: $(($checks | Where-Object { $_.hasAutomatedCheck }).Count)"
 Write-Host "Manual checks:    $(($checks | Where-Object { -not $_.hasAutomatedCheck }).Count)"
-Write-Host "SOC 2 mappings:   $(($checks | Where-Object { $_.frameworks.Contains('soc2') }).Count)"
+Write-Host "SOC 2 mappings:   $(($checks | Where-Object {
+    ($_.frameworks -is [System.Collections.IDictionary] -and $_.frameworks.Contains('soc2')) -or
+    ($_.frameworks -isnot [System.Collections.IDictionary] -and $_.frameworks.PSObject.Properties.Name -contains 'soc2')
+}).Count)"
