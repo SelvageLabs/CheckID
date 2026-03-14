@@ -20,7 +20,7 @@ framework-agnostic compliance reporting.
 ### Add as a git submodule
 
 ```bash
-git submodule add https://github.com/Daren9m/CheckID.git lib/CheckID
+git submodule add https://github.com/SelvageLabs/CheckID.git lib/CheckID
 ```
 
 ### Load the registry in PowerShell
