@@ -2,7 +2,7 @@
 
 ## Upstream: SecFrame
 
-[SecFrame](https://github.com/Daren9m/SecFrame) (`C:\git\SecFrame`) is the authoritative source
+[SecFrame](https://github.com/SelvageLabs/SecFrame) (`C:\git\SecFrame`) is the authoritative source
 for security framework reference data. CheckID's framework mappings are derived from:
 
 | SecFrame File | What It Provides |
@@ -26,6 +26,6 @@ These projects consume CheckID as a git submodule:
 
 | Project | Repository | Submodule Path | What They Use |
 |---------|-----------|---------------|--------------|
-| **M365-Assess** | [github.com/Daren9m/M365-Assess](https://github.com/Daren9m/M365-Assess) | `lib/CheckID/` | Full library (scripts + data) |
+| **M365-Assess** | [github.com/SelvageLabs/M365-Assess](https://github.com/SelvageLabs/M365-Assess) | `lib/CheckID/` | Full library (scripts + data) |
 | **Stitch-M365** | Private | `Engine/lib/CheckID/` | Full library (scripts + data) |
-| **Darn** | [github.com/Daren9m/Darn](https://github.com/Daren9m/Darn) | `lib/CheckID/` | Data only (`data/registry.json`) |
+| **Darn** | [github.com/SelvageLabs/Darn](https://github.com/SelvageLabs/Darn) | `lib/CheckID/` | Data only (`data/registry.json`) |

@@ -431,7 +431,7 @@ git commit -m "docs: add CLAUDE.md project conventions"
 
 Contents should include:
 
-**Upstream — SecFrame** (`C:\git\SecFrame`, github.com/Daren9m/SecFrame):
+**Upstream — SecFrame** (`C:\git\SecFrame`, github.com/SelvageLabs/SecFrame):
 - `CIS/CIS_M365_to_NIST_to_FedRAMP_Crosswalk.csv` — CIS M365 → NIST → FedRAMP
 - `SOC/tsc_to_nist_800-53.xlsx` — SOC 2 TSC → NIST 800-53
 - `SCF/secure-controls-framework-scf-2025-4.csv` — Master cross-framework mapping (80+ frameworks)
@@ -465,7 +465,7 @@ Public-facing overview covering:
 - Repository structure (data/, scripts/, tests/, docs/)
 - Quick start: how to use as a git submodule
   ```bash
-  git submodule add https://github.com/Daren9m/CheckID.git lib/CheckID
+  git submodule add https://github.com/SelvageLabs/CheckID.git lib/CheckID
   ```
 - How to load the registry in PowerShell:
   ```powershell
