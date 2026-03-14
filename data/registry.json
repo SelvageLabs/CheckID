@@ -27,7 +27,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);AC-2",
-          "title": "Account Management"
+          "title": "Privileged Accounts; Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18;A.8.2",
@@ -80,7 +80,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);AC-2",
-          "title": "Account Management"
+          "title": "Privileged Accounts; Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18;A.8.2",
@@ -134,7 +134,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-2;AC-2(2)",
-          "title": "Account Management"
+          "title": "Account Management; Automated Temporary and Emergency Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.16;A.5.18;A.8.2",
@@ -184,7 +184,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-2;AC-2(2)",
-          "title": "Account Management"
+          "title": "Account Management; Automated Temporary and Emergency Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.16;A.5.18;A.8.2",
@@ -234,7 +234,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-6(5)"
+          "controlId": "AC-6(5)",
+          "title": "Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -287,7 +288,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6;AC-6(5)",
-          "title": "Least Privilege"
+          "title": "Least Privilege; Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -334,7 +335,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6;AC-6(5)",
-          "title": "Least Privilege"
+          "title": "Least Privilege; Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -382,7 +383,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -429,7 +430,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -571,7 +572,8 @@
           "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
         },
         "nist-800-53": {
-          "controlId": "IA-5(1)"
+          "controlId": "IA-5(1)",
+          "title": "Password-based Authentication"
         },
         "iso-27001": {
           "controlId": "A.5.17",
@@ -668,7 +670,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;SC-7(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.3",
@@ -951,7 +953,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.26",
@@ -998,7 +1000,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.26",
@@ -1046,7 +1048,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;SC-7(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.3",
@@ -1287,7 +1289,7 @@
         },
         "nist-800-53": {
           "controlId": "SI-3a;SI-4(5)",
-          "title": "Malicious Code Protection"
+          "title": "Malicious Code Protection; System-generated Alerts"
         },
         "iso-27001": {
           "controlId": "A.8.7;A.8.16",
@@ -1774,7 +1776,7 @@
         },
         "nist-800-53": {
           "controlId": "SI-8;SI-4(5)",
-          "title": "Spam Protection"
+          "title": "Spam Protection; System-generated Alerts"
         },
         "iso-27001": {
           "controlId": "A.8.23;A.8.16",
@@ -1824,7 +1826,7 @@
         },
         "nist-800-53": {
           "controlId": "SI-8;SI-4(5)",
-          "title": "Spam Protection"
+          "title": "Spam Protection; System-generated Alerts"
         },
         "iso-27001": {
           "controlId": "A.8.23;A.8.16",
@@ -2486,7 +2488,8 @@
           "title": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events; Potentially adverse events are analyzed to better understand associated activities"
         },
         "nist-800-53": {
-          "controlId": "SI-4(5)"
+          "controlId": "SI-4(5)",
+          "title": "System-generated Alerts"
         },
         "iso-27001": {
           "controlId": "A.8.16",
@@ -2726,7 +2729,8 @@
           "title": "The confidentiality, integrity, and availability of data-at-rest are protected; The confidentiality, integrity, and availability of data-in-transit are protected"
         },
         "nist-800-53": {
-          "controlId": "SC-7(10)"
+          "controlId": "SC-7(10)",
+          "title": "Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.8.12",
@@ -2776,7 +2780,8 @@
           "title": "The confidentiality, integrity, and availability of data-at-rest are protected; The confidentiality, integrity, and availability of data-in-transit are protected"
         },
         "nist-800-53": {
-          "controlId": "SC-7(10)"
+          "controlId": "SC-7(10)",
+          "title": "Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.8.12",
@@ -2824,7 +2829,8 @@
           "title": "The confidentiality, integrity, and availability of data-at-rest are protected; The confidentiality, integrity, and availability of data-in-transit are protected"
         },
         "nist-800-53": {
-          "controlId": "SC-7(10)"
+          "controlId": "SC-7(10)",
+          "title": "Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.8.12",
@@ -2869,7 +2875,8 @@
           "title": "The confidentiality, integrity, and availability of data-at-rest are protected; The confidentiality, integrity, and availability of data-in-transit are protected"
         },
         "nist-800-53": {
-          "controlId": "SC-7(10)"
+          "controlId": "SC-7(10)",
+          "title": "Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.8.12",
@@ -2917,7 +2924,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;SC-7(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.5.13;A.8.12",
@@ -2964,7 +2971,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;SC-7(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.5.13;A.8.12",
@@ -3202,7 +3209,7 @@
         },
         "nist-800-53": {
           "controlId": "IA-2(1);IA-2(2);CM-6",
-          "title": "Configuration Settings"
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts; Configuration Settings"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -3249,7 +3256,7 @@
         },
         "nist-800-53": {
           "controlId": "IA-2(1);IA-2(2);CM-6",
-          "title": "Configuration Settings"
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts; Configuration Settings"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -3297,7 +3304,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.26",
@@ -3347,7 +3354,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.26",
@@ -3398,7 +3405,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -3445,7 +3452,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);AC-3",
-          "title": "Access Enforcement"
+          "title": "Privileged Accounts; Access Enforcement"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -3493,7 +3500,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);AC-3",
-          "title": "Access Enforcement"
+          "title": "Privileged Accounts; Access Enforcement"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -3777,7 +3784,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -4014,7 +4021,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);CM-6",
-          "title": "Configuration Settings"
+          "title": "Privileged Accounts; Configuration Settings"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -4061,7 +4068,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);CM-6",
-          "title": "Configuration Settings"
+          "title": "Privileged Accounts; Configuration Settings"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -4109,7 +4116,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);CM-6",
-          "title": "Configuration Settings"
+          "title": "Privileged Accounts; Configuration Settings"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -4157,7 +4164,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(5);CM-6",
-          "title": "Configuration Settings"
+          "title": "Privileged Accounts; Configuration Settings"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -4394,7 +4401,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-6(10);CM-5",
-          "title": "Access Restrictions for Change"
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions; Access Restrictions for Change"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.26",
@@ -4444,7 +4451,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-4;AC-6(10)",
-          "title": "Impact Analyses"
+          "title": "Impact Analyses; Prohibit Non-privileged Users from Executing Privileged Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.9",
@@ -4647,7 +4654,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-6(10)"
+          "controlId": "AC-6(10)",
+          "title": "Prohibit Non-privileged Users from Executing Privileged Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18",
@@ -4791,7 +4799,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -4844,7 +4853,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -4896,7 +4906,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -4948,7 +4959,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -5210,7 +5222,7 @@
         },
         "nist-800-53": {
           "controlId": "IA-2(1);IA-5c;IA-5g;IA-2(8)",
-          "title": "Authenticator Management"
+          "title": "Multi-factor Authentication to Privileged Accounts; Authenticator Management; Access to Accounts — Replay Resistant"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -5263,7 +5275,7 @@
         },
         "nist-800-53": {
           "controlId": "IA-2(1);IA-5c;IA-5g;IA-2(8)",
-          "title": "Authenticator Management"
+          "title": "Multi-factor Authentication to Privileged Accounts; Authenticator Management; Access to Accounts — Replay Resistant"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -5315,7 +5327,8 @@
           "title": "Networks and network services are monitored to find potentially adverse events; Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "AC-2(12);AC-2(13)"
+          "controlId": "AC-2(12);AC-2(13)",
+          "title": "Account Monitoring for Atypical Usage; Disable Accounts for High-risk Individuals"
         },
         "iso-27001": {
           "controlId": "A.8.5;A.8.16",
@@ -5366,7 +5379,8 @@
           "title": "Networks and network services are monitored to find potentially adverse events; Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "AC-2(12);AC-2(13)"
+          "controlId": "AC-2(12);AC-2(13)",
+          "title": "Account Monitoring for Atypical Usage; Disable Accounts for High-risk Individuals"
         },
         "iso-27001": {
           "controlId": "A.8.5;A.8.16",
@@ -5418,7 +5432,8 @@
           "title": "Networks and network services are monitored to find potentially adverse events; Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "AC-2(12);AC-2(13)"
+          "controlId": "AC-2(12);AC-2(13)",
+          "title": "Account Monitoring for Atypical Usage; Disable Accounts for High-risk Individuals"
         },
         "iso-27001": {
           "controlId": "A.8.5;A.8.16",
@@ -5469,7 +5484,8 @@
           "title": "Networks and network services are monitored to find potentially adverse events; Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "AC-2(12);AC-2(13)"
+          "controlId": "AC-2(12);AC-2(13)",
+          "title": "Account Monitoring for Atypical Usage; Disable Accounts for High-risk Individuals"
         },
         "iso-27001": {
           "controlId": "A.8.5;A.8.16",
@@ -5521,7 +5537,8 @@
           "title": "Networks and network services are monitored to find potentially adverse events; Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "AC-2(12);AC-2(13)"
+          "controlId": "AC-2(12);AC-2(13)",
+          "title": "Account Monitoring for Atypical Usage; Disable Accounts for High-risk Individuals"
         },
         "iso-27001": {
           "controlId": "A.8.5;A.8.16",
@@ -5572,7 +5589,8 @@
           "title": "Networks and network services are monitored to find potentially adverse events; Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "AC-2(12);AC-2(13)"
+          "controlId": "AC-2(12);AC-2(13)",
+          "title": "Account Monitoring for Atypical Usage; Disable Accounts for High-risk Individuals"
         },
         "iso-27001": {
           "controlId": "A.8.5;A.8.16",
@@ -5828,7 +5846,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-11;IA-2(1)",
-          "title": "Device Lock"
+          "title": "Device Lock; Multi-factor Authentication to Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.1;A.8.5",
@@ -5878,7 +5896,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-11;IA-2(1)",
-          "title": "Device Lock"
+          "title": "Device Lock; Multi-factor Authentication to Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.1;A.8.5",
@@ -6024,7 +6042,7 @@
         },
         "nist-800-53": {
           "controlId": "IA-2(1);IA-2(2);IA-5c;IA-5g;IA-2(8);IA-2(13)",
-          "title": "Authenticator Management"
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts; Authenticator Management; Access to Accounts — Replay Resistant; Out-of-band Authentication"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -6074,7 +6092,7 @@
         },
         "nist-800-53": {
           "controlId": "IA-2(1);IA-2(2);IA-5c;IA-5g;IA-2(8);IA-2(13)",
-          "title": "Authenticator Management"
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts; Authenticator Management; Access to Accounts — Replay Resistant; Out-of-band Authentication"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -6124,7 +6142,8 @@
           "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
         },
         "nist-800-53": {
-          "controlId": "IA-5(1)"
+          "controlId": "IA-5(1)",
+          "title": "Password-based Authentication"
         },
         "iso-27001": {
           "controlId": "A.5.17",
@@ -6170,7 +6189,8 @@
           "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
         },
         "nist-800-53": {
-          "controlId": "IA-5(1)"
+          "controlId": "IA-5(1)",
+          "title": "Password-based Authentication"
         },
         "iso-27001": {
           "controlId": "A.5.17",
@@ -6216,7 +6236,8 @@
           "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
         },
         "nist-800-53": {
-          "controlId": "IA-5(1)"
+          "controlId": "IA-5(1)",
+          "title": "Password-based Authentication"
         },
         "iso-27001": {
           "controlId": "A.5.17",
@@ -6263,7 +6284,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -6410,7 +6432,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -6456,7 +6479,8 @@
           "title": "Users, services, and hardware are authenticated"
         },
         "nist-800-53": {
-          "controlId": "IA-2(1);IA-2(2)"
+          "controlId": "IA-2(1);IA-2(2)",
+          "title": "Multi-factor Authentication to Privileged Accounts; Multi-factor Authentication to Non-privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.8.5",
@@ -6598,7 +6622,8 @@
           "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
         },
         "nist-800-53": {
-          "controlId": "IA-5(1)"
+          "controlId": "IA-5(1)",
+          "title": "Password-based Authentication"
         },
         "iso-27001": {
           "controlId": "A.5.17",
@@ -6644,7 +6669,8 @@
           "title": "Identities and credentials for authorized users, services, and hardware are managed by the organization"
         },
         "nist-800-53": {
-          "controlId": "IA-5(1)"
+          "controlId": "IA-5(1)",
+          "title": "Password-based Authentication"
         },
         "iso-27001": {
           "controlId": "A.5.17",
@@ -6691,7 +6717,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-2;AC-6(1)",
-          "title": "Account Management"
+          "title": "Account Management; Authorize Access to Security Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18;A.8.2",
@@ -6743,7 +6769,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-2;AC-6(1)",
-          "title": "Account Management"
+          "title": "Account Management; Authorize Access to Security Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18;A.8.2",
@@ -6795,7 +6821,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-2(3);AC-2(1)"
+          "controlId": "AC-2(3);AC-2(1)",
+          "title": "Disable Accounts; Automated System Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18",
@@ -6843,7 +6870,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-2(3);AC-2(1)"
+          "controlId": "AC-2(3);AC-2(1)",
+          "title": "Disable Accounts; Automated System Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18",
@@ -6892,7 +6920,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-2(3);AC-2(1)"
+          "controlId": "AC-2(3);AC-2(1)",
+          "title": "Disable Accounts; Automated System Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18;A.8.2",
@@ -6940,7 +6969,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-2(3);AC-2(1)"
+          "controlId": "AC-2(3);AC-2(1)",
+          "title": "Disable Accounts; Automated System Account Management"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.18;A.8.2",
@@ -6989,7 +7019,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-6(1)"
+          "controlId": "AC-6(1)",
+          "title": "Authorize Access to Security Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -7038,7 +7069,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-6(1)"
+          "controlId": "AC-6(1)",
+          "title": "Authorize Access to Security Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -7086,7 +7118,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-6(1)"
+          "controlId": "AC-6(1)",
+          "title": "Authorize Access to Security Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -7134,7 +7167,8 @@
           "title": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
         },
         "nist-800-53": {
-          "controlId": "AC-6(1)"
+          "controlId": "AC-6(1)",
+          "title": "Authorize Access to Security Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.2",
@@ -7711,7 +7745,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.26",
@@ -8174,7 +8208,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;AC-6(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prohibit Non-privileged Users from Executing Privileged Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.3",
@@ -8221,7 +8255,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;AC-6(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prohibit Non-privileged Users from Executing Privileged Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.5.19",
@@ -8315,7 +8349,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;AC-6(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prohibit Non-privileged Users from Executing Privileged Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.3",
@@ -8362,7 +8396,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;AC-6(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prohibit Non-privileged Users from Executing Privileged Functions"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.3",
@@ -8869,7 +8903,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.26",
@@ -8916,7 +8950,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.26",
@@ -8964,7 +8998,7 @@
         },
         "nist-800-53": {
           "controlId": "SI-8;SC-7(10);AC-4",
-          "title": "Spam Protection; Information Flow Enforcement"
+          "title": "Spam Protection; Prevent Exfiltration; Information Flow Enforcement"
         },
         "iso-27001": {
           "controlId": "A.8.20;A.8.23",
@@ -9012,7 +9046,7 @@
         },
         "nist-800-53": {
           "controlId": "SI-8;SC-7(10);AC-4",
-          "title": "Spam Protection; Information Flow Enforcement"
+          "title": "Spam Protection; Prevent Exfiltration; Information Flow Enforcement"
         },
         "iso-27001": {
           "controlId": "A.8.20;A.8.23",
@@ -9154,7 +9188,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.20",
@@ -9863,7 +9897,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.20",
@@ -9910,7 +9944,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.20",
@@ -10052,7 +10086,8 @@
           "title": "Internal and external stakeholders are notified of incidents"
         },
         "nist-800-53": {
-          "controlId": "SI-4(5);SI-4(12)"
+          "controlId": "SI-4(5);SI-4(12)",
+          "title": "System-generated Alerts; Automated Organization-generated Alerts"
         },
         "iso-27001": {
           "controlId": "A.6.8;A.8.16",
@@ -10092,7 +10127,8 @@
           "title": "Internal and external stakeholders are notified of incidents"
         },
         "nist-800-53": {
-          "controlId": "SI-4(5);SI-4(12)"
+          "controlId": "SI-4(5);SI-4(12)",
+          "title": "System-generated Alerts; Automated Organization-generated Alerts"
         },
         "iso-27001": {
           "controlId": "A.6.8;A.8.16",
@@ -10275,7 +10311,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.8.19;A.8.12",
@@ -10369,7 +10405,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-3;SC-7(10)",
-          "title": "Access Enforcement"
+          "title": "Access Enforcement; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.12;A.5.13",
@@ -10416,7 +10452,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-21b;SC-7(10)",
-          "title": "Information Sharing"
+          "title": "Information Sharing; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.12",
@@ -10463,7 +10499,7 @@
         },
         "nist-800-53": {
           "controlId": "CM-7;SC-7(10)",
-          "title": "Least Functionality"
+          "title": "Least Functionality; Prevent Exfiltration"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.12",
@@ -10557,7 +10593,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-4;AC-6(5)",
-          "title": "Information Flow Enforcement"
+          "title": "Information Flow Enforcement; Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.20",
@@ -10604,7 +10640,7 @@
         },
         "nist-800-53": {
           "controlId": "AC-4;AC-6(5)",
-          "title": "Information Flow Enforcement"
+          "title": "Information Flow Enforcement; Privileged Accounts"
         },
         "iso-27001": {
           "controlId": "A.5.15;A.8.20",

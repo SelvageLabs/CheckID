@@ -160,13 +160,22 @@ function Resolve-FrameworkTitle {
         elseif ($lookup.ContainsKey($cid.ToUpper())) {
             $title = $lookup[$cid.ToUpper()]
         }
-        # For NIST-style IDs, try base without trailing lowercase letter
         else {
-            $base = $cid -replace '[a-z]$', ''
-            if ($lookup.ContainsKey($base)) {
-                $title = $lookup[$base]
-            } elseif ($lookup.ContainsKey($base.ToUpper())) {
-                $title = $lookup[$base.ToUpper()]
+            # Try NIST enhancement notation: AC-6(5) -> AC-6.5
+            $dotForm = $cid -replace '\((\d+)\)', '.$1'
+            if ($dotForm -ne $cid -and $lookup.ContainsKey($dotForm)) {
+                $title = $lookup[$dotForm]
+            } elseif ($dotForm -ne $cid -and $lookup.ContainsKey($dotForm.ToUpper())) {
+                $title = $lookup[$dotForm.ToUpper()]
+            }
+            # Try base without trailing lowercase letter
+            if (-not $title) {
+                $base = $cid -replace '[a-z]$', ''
+                if ($lookup.ContainsKey($base)) {
+                    $title = $lookup[$base]
+                } elseif ($lookup.ContainsKey($base.ToUpper())) {
+                    $title = $lookup[$base.ToUpper()]
+                }
             }
         }
 
