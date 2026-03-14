@@ -77,7 +77,14 @@ jobs:
             Write-Host "::error::check-id-mapping.csv is empty"
             exit 1
           }
-          Write-Host "  check-id-mapping.csv: $($cid.Count) rows OK"
+          $cidExpected = @('CisControl','CheckId','Collector','Area','Notes','SupersededBy')
+          $cidActual = $cid[0].PSObject.Properties.Name
+          $cidMissing = $cidExpected | Where-Object { $_ -notin $cidActual }
+          if ($cidMissing) {
+            Write-Host "::error::check-id-mapping.csv missing columns: $($cidMissing -join ', ')"
+            exit 1
+          }
+          Write-Host "  check-id-mapping.csv: $($cid.Count) rows, $($cidActual.Count) columns OK"
 
       - name: Validate JSON files
         shell: pwsh
@@ -148,9 +155,9 @@ jobs:
 
           if ($committedCount -ne $rebuiltCount) {
             $delta = $committedCount - $rebuiltCount
-            Write-Host "::warning::Registry mismatch: $committedCount committed vs $rebuiltCount rebuilt ($delta checks differ)"
-            Write-Host "::warning::Expected until issue #3 (supersededBy) is resolved"
-            # Warn only — do not fail. Flip to exit 1 after #3 is fixed.
+            Write-Host "::error::Registry mismatch: $committedCount committed vs $rebuiltCount rebuilt ($delta checks differ)"
+            Write-Host "Run scripts/Build-Registry.ps1 to regenerate data/registry.json"
+            exit 1
           } else {
             Write-Host "Registry is consistent with CSVs"
           }
@@ -177,7 +184,6 @@ jobs:
           Write-Host "`nResults: $($result.PassedCount) passed, $($result.FailedCount) failed, $($result.SkippedCount) skipped"
 
           if ($result.FailedCount -gt 0) {
-            Write-Host "::warning::$($result.FailedCount) test(s) failed — see #3 (supersededBy) and #4 (naming convention)"
-            # Warn only — do not fail. Flip to exit 1 after #3 and #4 are fixed.
+            Write-Host "::error::$($result.FailedCount) test(s) failed"
+            exit 1
           }
-          exit 0

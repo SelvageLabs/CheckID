@@ -41,7 +41,7 @@ Describe 'Control Registry Integrity' {
     }
 
     It 'CIS-mapped entries have valid CIS framework data' {
-        $cisMapped = $checks | Where-Object { $_.frameworks.'cis-m365-v6' }
+        $cisMapped = $checks | Where-Object { $_.frameworks.PSObject.Properties.Name -contains 'cis-m365-v6' }
         $cisMapped.Count | Should -BeGreaterOrEqual 139 -Because "at least 139 CIS benchmark controls exist"
         foreach ($check in $cisMapped) {
             $check.frameworks.'cis-m365-v6'.controlId | Should -Not -BeNullOrEmpty `
@@ -65,7 +65,7 @@ Describe 'Control Registry Integrity' {
     }
 
     It 'supersededBy references valid CheckIds when present' {
-        $superseded = $checks | Where-Object { $_.supersededBy }
+        $superseded = $checks | Where-Object { $_.PSObject.Properties.Name -contains 'supersededBy' }
         $allIds = $checks | ForEach-Object { $_.checkId }
         foreach ($check in $superseded) {
             $check.supersededBy | Should -BeIn $allIds `
@@ -77,7 +77,8 @@ Describe 'Control Registry Integrity' {
         $nistFamilies = @('AC-', 'AU-', 'IA-', 'SC-', 'SI-')
         $automated = $checks | Where-Object { $_.hasAutomatedCheck -eq $true }
         foreach ($check in $automated) {
-            $nist = $check.frameworks.'nist-800-53'
+            $hasNist = $check.frameworks.PSObject.Properties.Name -contains 'nist-800-53'
+            $nist = if ($hasNist) { $check.frameworks.'nist-800-53' } else { $null }
             if ($nist -and $nist.controlId) {
                 $matchesFamily = $nistFamilies | Where-Object {
                     $nist.controlId -like "$_*"
