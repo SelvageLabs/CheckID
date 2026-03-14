@@ -53,6 +53,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;AC-6(5);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -106,6 +118,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;AC-6(5);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-CLOUDADMIN-001"
@@ -157,6 +181,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(2);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -207,6 +237,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(2);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-ADMIN-003"
@@ -261,6 +297,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -308,6 +356,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -355,6 +415,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-CLOUDADMIN-002"
@@ -403,6 +475,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -450,6 +534,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-GROUP-003"
@@ -498,6 +594,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -545,6 +647,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "EXO-SHAREDMBX-001"
@@ -596,6 +704,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5;IA-5(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -643,6 +760,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.3"
+        },
+        "fedramp": {
+          "controlId": "AC-11;AC-12;AC-2(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
       }
     },
@@ -690,6 +816,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SC-7;SC-7(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -737,6 +872,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -784,6 +928,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "ENTRA-ORGSETTING-001"
@@ -832,6 +985,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -879,6 +1041,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "ENTRA-ORGSETTING-002"
@@ -926,6 +1097,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -973,6 +1156,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -1020,6 +1212,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       },
       "supersededBy": "ENTRA-ORGSETTING-003"
@@ -1068,6 +1269,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SC-7;SC-7(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -1115,6 +1325,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -1162,6 +1384,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-ORGSETTING-004"
@@ -1212,6 +1446,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -1262,6 +1505,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -1309,6 +1561,15 @@
           "controlId": "CC6.8;CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "cis-controls-v8": {
+          "controlId": "13;13.1;13.6;3.14;8;8.1;8.12;8.2;8.3;8.4;8.5;8.6;8.7;8.8;8.9"
+        },
+        "fedramp": {
+          "controlId": "AU-1;AU-2;AU-6;SI-10;SI-4;SI-4(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -1358,6 +1619,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -1498,6 +1768,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -1547,6 +1826,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -1597,6 +1885,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -1647,6 +1944,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "DNS-SPF-001"
@@ -1698,6 +2004,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "3.10"
+        },
+        "fedramp": {
+          "controlId": "SC-28(1);SC-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1020.001;T1040;T1090;T1090.004;T1550.001;T1550.004;T1552.007;T1557;T1557.001;T1557.002"
         }
       }
     },
@@ -1748,6 +2063,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "3.10"
+        },
+        "fedramp": {
+          "controlId": "SC-28(1);SC-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1020.001;T1040;T1090;T1090.004;T1550.001;T1550.004;T1552.007;T1557;T1557.001;T1557.002"
         }
       },
       "supersededBy": "DNS-DKIM-001"
@@ -1799,6 +2123,15 @@
           "controlId": "CC6.8;CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "cis-controls-v8": {
+          "controlId": "13;13.1;13.6;3.14;8;8.1;8.12;8.2;8.3;8.4;8.5;8.6;8.7;8.8;8.9;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AU-1;AU-2;AU-6;SI-10;SI-4;SI-4(5);SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -1849,6 +2182,15 @@
           "controlId": "CC6.8;CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "cis-controls-v8": {
+          "controlId": "13;13.1;13.6;3.14;8;8.1;8.12;8.2;8.3;8.4;8.5;8.6;8.7;8.8;8.9;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AU-1;AU-2;AU-6;SI-10;SI-4;SI-4(5);SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "DNS-DMARC-001"
@@ -1897,6 +2239,18 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10;10.1;10.2;10.4;10.7;12.1;18;18.3;7;7.1;7.3;7.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "SI-10;SI-2;SI-3;SI-3(2)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -1944,6 +2298,18 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10;10.1;10.2;10.4;10.7;12.1;18;18.3;7;7.1;7.3;7.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "SI-10;SI-2;SI-3;SI-3(2)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "DEFENDER-MALWARE-002"
@@ -1992,6 +2358,15 @@
           "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AC-4;SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       },
       "supersededBy": "EXO-CONNFILTER-001"
@@ -2040,6 +2415,15 @@
           "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AC-4;SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       }
     },
@@ -2087,6 +2471,15 @@
           "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AC-4;SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       }
     },
@@ -2134,6 +2527,15 @@
           "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AC-4;SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       },
       "supersededBy": "EXO-CONNFILTER-002"
@@ -2182,6 +2584,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -2229,6 +2640,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "DEFENDER-ANTISPAM-002"
@@ -2277,6 +2697,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -2323,6 +2752,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -2369,6 +2807,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "DEFENDER-PRIORITY-001"
@@ -2416,6 +2863,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -2462,6 +2918,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "DEFENDER-PRIORITY-002"
@@ -2509,6 +2974,15 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "cis-controls-v8": {
+          "controlId": "13;13.1;13.6;3.14;8;8.1;8.12;8.2;8.3;8.4;8.5;8.6;8.7;8.8;8.9"
+        },
+        "fedramp": {
+          "controlId": "AU-1;AU-2;AU-6;SI-10;SI-4;SI-4(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -2555,6 +3029,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -2601,6 +3084,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "DEFENDER-ZAP-001"
@@ -2652,6 +3144,9 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "fedramp": {
+          "controlId": "AU-12;AU-7;AU-7(1)"
         }
       }
     },
@@ -2702,6 +3197,9 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "fedramp": {
+          "controlId": "AU-12;AU-7;AU-7(1)"
         }
       },
       "supersededBy": "COMPLIANCE-AUDIT-001"
@@ -2753,6 +3251,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
       },
       "supersededBy": "COMPLIANCE-DLP-001"
@@ -2804,6 +3311,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
       }
     },
@@ -2850,6 +3366,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
       }
     },
@@ -2896,6 +3421,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
       },
       "supersededBy": "COMPLIANCE-DLP-002"
@@ -2944,6 +3478,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SC-7;SC-7(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -2991,6 +3534,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SC-7;SC-7(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "COMPLIANCE-LABELS-001"
@@ -3039,6 +3591,18 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;10.3;10.4;10.5;16.7;2;2.1;2.2;2.4;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML1-P6;ML1-P7;ML2-P1;ML2-P2;ML2-P5;ML2-P6;ML2-P7;ML3-P1;ML3-P2;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "CM-2;CM-6;CM-8;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -3086,6 +3650,18 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;10.3;10.4;10.5;16.7;2;2.1;2.2;2.4;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML1-P6;ML1-P7;ML2-P1;ML2-P2;ML2-P5;ML2-P6;ML2-P7;ML3-P1;ML3-P2;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "CM-2;CM-6;CM-8;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "INTUNE-COMPLIANCE-001"
@@ -3134,6 +3710,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -3181,6 +3766,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "INTUNE-ENROLL-001"
@@ -3229,6 +3823,18 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;12.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML1-P6;ML1-P7;ML2-P3;ML2-P5;ML2-P6;ML2-P7;ML3-P3;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "CM-2;CM-6;IA-2;IA-2(1);IA-2(2);IA-2(6);PL-10;SA-4(10);SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -3276,6 +3882,18 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;12.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML1-P6;ML1-P7;ML2-P3;ML2-P5;ML2-P6;ML2-P7;ML3-P3;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "CM-2;CM-6;IA-2;IA-2(1);IA-2(2);IA-2(6);PL-10;SA-4(10);SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "ENTRA-PERUSER-001"
@@ -3327,6 +3945,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -3377,6 +4007,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-APPS-001"
@@ -3425,6 +4067,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -3472,6 +4126,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-ADMIN-002"
@@ -3520,6 +4186,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -3567,6 +4245,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.3"
+        },
+        "fedramp": {
+          "controlId": "AC-11;AC-12;AC-2(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
       }
     },
@@ -3614,6 +4301,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -3661,6 +4357,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "ENTRA-LINKEDIN-001"
@@ -3709,6 +4414,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -3756,6 +4473,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-GROUP-002"
@@ -3804,6 +4533,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -3851,6 +4592,15 @@
           "controlId": "CC5;CC6.1;CC6.2;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;CM-7;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -3898,6 +4648,15 @@
           "controlId": "CC5;CC6.1;CC6.2;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;CM-7;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-DEVICE-001"
@@ -3946,6 +4705,18 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;2;2.1;2.2;2.4;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       }
     },
@@ -3993,6 +4764,18 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;2;2.1;2.2;2.4;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       },
       "supersededBy": "ENTRA-DEVICE-002"
@@ -4041,6 +4824,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML1-P6;ML1-P7;ML2-P4;ML2-P5;ML2-P6;ML2-P7;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5);CM-2;CM-6;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -4088,6 +4883,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML1-P6;ML1-P7;ML2-P4;ML2-P5;ML2-P6;ML2-P7;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5);CM-2;CM-6;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "ENTRA-DEVICE-003"
@@ -4136,6 +4943,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML1-P6;ML1-P7;ML2-P4;ML2-P5;ML2-P6;ML2-P7;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5);CM-2;CM-6;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "ENTRA-DEVICE-004"
@@ -4184,6 +5003,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML1-P6;ML1-P7;ML2-P4;ML2-P5;ML2-P6;ML2-P7;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(5);CM-2;CM-6;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -4231,6 +5062,18 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.2"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P6;ML1-P7;ML2-P5;ML2-P6;ML2-P7;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "CM-2;CM-6;IA-5;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -4278,6 +5121,18 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10.3;10.4;10.5;16.7;4.1;4.10;4.2;4.3;4.4;4.5;4.6;4.7;4.8;5.2"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P6;ML1-P7;ML2-P5;ML2-P6;ML2-P7;ML3-P4;ML3-P5;ML3-P6;ML3-P7"
+        },
+        "fedramp": {
+          "controlId": "CM-2;CM-6;IA-5;PL-10;SA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "ENTRA-DEVICE-005"
@@ -4326,6 +5181,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -4373,6 +5240,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-DEVICE-006"
@@ -4424,6 +5303,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -4474,6 +5365,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);CM-4"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -4524,6 +5427,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -4574,6 +5483,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-GUEST-004"
@@ -4628,6 +5543,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -4678,6 +5605,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -4725,6 +5664,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -4772,6 +5720,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "ENTRA-HYBRID-001"
@@ -4826,6 +5783,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "CA-MFA-ADMIN-001"
@@ -4880,6 +5849,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -4933,6 +5914,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -4986,6 +5979,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "CA-MFA-ALL-001"
@@ -5040,6 +6045,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -5093,6 +6107,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "CA-LEGACYAUTH-001"
@@ -5144,6 +6167,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.3"
+        },
+        "fedramp": {
+          "controlId": "AC-11;AC-12;AC-2(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
       }
     },
@@ -5194,6 +6226,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.3"
+        },
+        "fedramp": {
+          "controlId": "AC-11;AC-12;AC-2(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
       },
       "supersededBy": "CA-SIGNIN-FREQ-001"
@@ -5248,6 +6289,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);IA-2(8);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -5301,6 +6354,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);IA-2(8);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "CA-PHISHRES-001"
@@ -5354,6 +6419,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(12);AC-2(13);SI-10;SI-4(11)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -5406,6 +6477,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(12);AC-2(13);SI-10;SI-4(11)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "CA-USERRISK-001"
@@ -5459,6 +6536,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(12);AC-2(13);SI-10;SI-4(11)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -5511,6 +6594,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(12);AC-2(13);SI-10;SI-4(11)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "CA-SIGNINRISK-001"
@@ -5564,6 +6653,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(12);AC-2(13);SI-10;SI-4(11)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -5616,6 +6711,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(12);AC-2(13);SI-10;SI-4(11)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "CA-SIGNINRISK-002"
@@ -5667,6 +6768,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "IA-3"
+        },
+        "mitre-attack": {
+          "controlId": "T1530;T1537;T1552;T1552.005;T1602;T1602.001;T1602.002"
         }
       },
       "supersededBy": "CA-DEVICE-001"
@@ -5718,6 +6828,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "IA-3"
+        },
+        "mitre-attack": {
+          "controlId": "T1530;T1537;T1552;T1552.005;T1602;T1602.001;T1602.002"
         }
       }
     },
@@ -5768,6 +6887,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "IA-3"
+        },
+        "mitre-attack": {
+          "controlId": "T1530;T1537;T1552;T1552.005;T1602;T1602.001;T1602.002"
         }
       }
     },
@@ -5818,6 +6946,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "IA-3"
+        },
+        "mitre-attack": {
+          "controlId": "T1530;T1537;T1552;T1552.005;T1602;T1602.001;T1602.002"
         }
       },
       "supersededBy": "CA-DEVICE-002"
@@ -5869,6 +7006,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;4.3;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "AC-11;AC-2(5);IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -5919,6 +7068,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;4.3;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "AC-11;AC-2(5);IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "CA-INTUNE-001"
@@ -5967,6 +7128,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -6014,6 +7184,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "CA-DEVICECODE-001"
@@ -6065,6 +7244,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);IA-2(8);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -6115,6 +7306,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);IA-2(8);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "ENTRA-AUTHMETHOD-003"
@@ -6163,6 +7366,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5;IA-5(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -6210,6 +7422,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5;IA-5(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -6257,6 +7478,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5;IA-5(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "ENTRA-PASSWORD-005"
@@ -6305,6 +7535,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -6453,6 +7695,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -6500,6 +7754,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.3;6.4;6.5;6.7"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P3;ML2-P3;ML3-P3"
+        },
+        "fedramp": {
+          "controlId": "IA-2;IA-2(1);IA-2(2);IA-2(6);SA-4(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "ENTRA-AUTHMETHOD-004"
@@ -6548,6 +7814,15 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -6595,6 +7870,15 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "ENTRA-AUTHMETHOD-002"
@@ -6643,6 +7927,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5;IA-5(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -6690,6 +7983,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5;IA-5(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
       "supersededBy": "ENTRA-SSPR-001"
@@ -6743,6 +8045,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;AC-6(1);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -6795,6 +8109,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;AC-6(1);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-PIM-001"
@@ -6845,6 +8171,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5;5.3;5.6;6"
+        },
+        "essential-eight": {
+          "controlId": "ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(1);AC-2(3);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -6894,6 +8232,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5;5.3;5.6;6"
+        },
+        "essential-eight": {
+          "controlId": "ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(1);AC-2(3);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-PIM-002"
@@ -6944,6 +8294,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5;5.3;5.6;6"
+        },
+        "essential-eight": {
+          "controlId": "ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(1);AC-2(3);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -6993,6 +8355,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5;5.3;5.6;6"
+        },
+        "essential-eight": {
+          "controlId": "ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-2(1);AC-2(3);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-PIM-003"
@@ -7043,6 +8417,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-PIM-004"
@@ -7093,6 +8479,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -7142,6 +8540,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -7191,6 +8601,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(1)"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "ENTRA-PIM-005"
@@ -7242,6 +8664,9 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "fedramp": {
+          "controlId": "AU-12;AU-7;AU-7(1)"
         }
       }
     },
@@ -7292,6 +8717,9 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "fedramp": {
+          "controlId": "AU-12;AU-7;AU-7(1)"
         }
       }
     },
@@ -7342,6 +8770,9 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "fedramp": {
+          "controlId": "AU-12;AU-7;AU-7(1)"
         }
       },
       "supersededBy": "EXO-AUDIT-003"
@@ -7393,6 +8824,9 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "fedramp": {
+          "controlId": "AU-12;AU-7;AU-7(1)"
         }
       }
     },
@@ -7443,6 +8877,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6"
+        },
+        "fedramp": {
+          "controlId": "AC-4"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       }
     },
@@ -7490,6 +8933,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -7537,6 +8989,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
       "supersededBy": "EXO-TRANSPORT-001"
@@ -7588,6 +9049,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       }
     },
@@ -7635,6 +9105,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -7682,6 +9161,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -7765,6 +9253,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -7815,6 +9312,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -7849,6 +9355,15 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.7;13.5;9.6"
+        },
+        "fedramp": {
+          "controlId": "AC-17;SC-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -7896,6 +9411,15 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7;IA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -7943,6 +9467,15 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7;IA-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "SPO-AUTH-001"
@@ -7991,6 +9524,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "AC-2;IA-8;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8038,6 +9580,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "AC-2;IA-8;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "SPO-B2B-001"
@@ -8086,6 +9637,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;IA-8;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8133,6 +9693,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;IA-8;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8180,6 +9749,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5"
+        },
+        "fedramp": {
+          "controlId": "AC-2;AC-3;AC-6;IA-8;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "SPO-OD-001"
@@ -8228,6 +9806,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8275,6 +9865,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8322,6 +9924,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8369,6 +9983,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8416,6 +10042,18 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;AC-6(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "SPO-SHARING-008"
@@ -8464,6 +10102,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8511,6 +10155,12 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "fedramp": {
+          "controlId": "IA-11"
+        },
+        "mitre-attack": {
+          "controlId": "T1110;T1110.001;T1110.002;T1110.003;T1110.004"
         }
       }
     },
@@ -8558,6 +10208,18 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "cis-controls-v8": {
+          "controlId": "5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -8698,6 +10360,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -8742,6 +10413,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -8786,6 +10466,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "SPO-SCRIPT-001"
@@ -8831,6 +10520,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -8875,6 +10573,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-11;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "SPO-SCRIPT-002"
@@ -8923,6 +10630,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -8970,6 +10686,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       },
       "supersededBy": "TEAMS-CLIENT-001"
@@ -9018,6 +10743,15 @@
           "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;13.5;3.13;3.3;4.6;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AC-4;SC-7;SC-7(10);SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       },
       "supersededBy": "TEAMS-CLIENT-002"
@@ -9066,6 +10800,15 @@
           "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;13.5;3.13;3.3;4.6;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "AC-4;SC-7;SC-7(10);SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       }
     },
@@ -9113,6 +10856,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -9160,6 +10909,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "TEAMS-EXTACCESS-003"
@@ -9208,6 +10963,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -9255,6 +11019,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8;9;9.6;9.7"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SI-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -9302,6 +11075,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -9349,6 +11131,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "TEAMS-EXTACCESS-004"
@@ -9397,6 +11188,12 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "fedramp": {
+          "controlId": "CM-11"
+        },
+        "mitre-attack": {
+          "controlId": "T1021.005;T1059;T1059.006;T1176;T1195;T1195.001;T1195.002;T1218;T1218.001;T1218.002"
         }
       }
     },
@@ -9444,6 +11241,12 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "fedramp": {
+          "controlId": "CM-11"
+        },
+        "mitre-attack": {
+          "controlId": "T1021.005;T1059;T1059.006;T1176;T1195;T1195.001;T1195.002;T1218;T1218.001;T1218.002"
         }
       },
       "supersededBy": "TEAMS-APPS-002"
@@ -9492,6 +11295,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -9586,6 +11395,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -9680,6 +11495,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "TEAMS-MEETING-006"
@@ -9728,6 +11549,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -9775,6 +11602,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -9822,6 +11655,12 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
       "supersededBy": "TEAMS-MEETING-007"
@@ -9917,6 +11756,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -9964,6 +11812,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       },
       "supersededBy": "TEAMS-MEETING-008"
@@ -10012,6 +11869,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -10059,6 +11925,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
       "supersededBy": "TEAMS-MEETING-009"
@@ -10101,6 +11976,15 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "cis-controls-v8": {
+          "controlId": "13;13.1;13.6;3.14;8;8.1;8.12;8.2;8.3;8.4;8.5;8.6;8.7;8.8;8.9"
+        },
+        "fedramp": {
+          "controlId": "AU-1;AU-2;AU-5(2);AU-6;SI-10;SI-4;SI-4(12);SI-4(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -10142,6 +12026,15 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export",
           "title": "Detection and Monitoring of New Vulnerabilities; Monitoring System Components for Anomalies"
+        },
+        "cis-controls-v8": {
+          "controlId": "13;13.1;13.6;3.14;8;8.1;8.12;8.2;8.3;8.4;8.5;8.6;8.7;8.8;8.9"
+        },
+        "fedramp": {
+          "controlId": "AU-1;AU-2;AU-5(2);AU-6;SI-10;SI-4;SI-4(12);SI-4(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
       "supersededBy": "TEAMS-REPORTING-001"
@@ -10190,6 +12083,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -10237,6 +12142,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -10284,6 +12201,18 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -10331,6 +12260,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -10378,6 +12316,18 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "10;10.1;10.2;10.4;10.7;12.1;18;18.3;4;4.6;4.8;7;7.1;7.3;7.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SI-10;SI-2;SI-3;SI-3(2)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -10425,6 +12375,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SC-7;SC-7(10);SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -10472,6 +12431,15 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;9.6"
+        },
+        "fedramp": {
+          "controlId": "SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
       }
     },
@@ -10519,6 +12487,15 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "13.5;3.13;4;4.6;4.8;9.6"
+        },
+        "fedramp": {
+          "controlId": "CM-7;SC-7;SC-7(10)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       }
     },
@@ -10566,6 +12543,15 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -10613,6 +12599,18 @@
           "controlId": "CC6.1;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-4;AC-6;AC-6(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -10660,6 +12658,18 @@
           "controlId": "CC6.1;CC6.3;CC6.7",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials; Data Transmission and Movement Restriction"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.6;13.4;3.3;4.6;5.4"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P4;ML2-P4;ML3-P4"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-4;AC-6;AC-6(5)"
+        },
+        "mitre-attack": {
+          "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       }
     },
@@ -10685,6 +12695,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;2;2.1;2.2;2.4;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       }
     },
@@ -10721,6 +12743,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.7;5.2"
+        },
+        "fedramp": {
+          "controlId": "IA-5"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       }
     },
@@ -10746,6 +12777,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;2;2.1;2.2;2.4;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       }
     },
@@ -10771,6 +12814,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;2;2.1;2.2;2.4;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       }
     },
@@ -10807,6 +12862,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4.10"
+        },
+        "fedramp": {
+          "controlId": "AC-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1021;T1021.001;T1021.004;T1078.002;T1078.004;T1110;T1110.001;T1110.002;T1110.003;T1110.004"
         }
       }
     },
@@ -10843,6 +12907,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -10870,6 +12943,12 @@
           "controlId": "CC5;CC6.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -10897,6 +12976,12 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Enrollment and Authorization Based on Credentials"
+        },
+        "fedramp": {
+          "controlId": "AC-2;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -10936,6 +13021,15 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
+        },
+        "cis-controls-v8": {
+          "controlId": "4;4.6;4.8"
+        },
+        "fedramp": {
+          "controlId": "CM-7"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       }
     },
@@ -10975,6 +13069,15 @@
           "controlId": "CC6.1;CC6.2",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Prior to Issuing System Credentials and Granting System Access"
+        },
+        "cis-controls-v8": {
+          "controlId": "12.5;5.5;5.6;6.7"
+        },
+        "fedramp": {
+          "controlId": "AC-2;IA-2;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -11011,6 +13114,12 @@
           "controlId": "CC5;CC6.1",
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "fedramp": {
+          "controlId": "AC-3;AC-6;SI-10"
+        },
+        "mitre-attack": {
+          "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       }
     },
@@ -11036,6 +13145,18 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures"
+        },
+        "cis-controls-v8": {
+          "controlId": "1;1.1;1.3;2;2.1;2.2;2.4;6.6"
+        },
+        "essential-eight": {
+          "controlId": "ML1-P1;ML1-P2;ML2-P1;ML2-P2;ML3-P1;ML3-P2"
+        },
+        "fedramp": {
+          "controlId": "CM-8"
+        },
+        "mitre-attack": {
+          "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       }
     }
