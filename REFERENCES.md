@@ -24,10 +24,37 @@ for security framework reference data. CheckID's framework mappings are derived 
 
 ## Downstream Consumers
 
-These projects consume CheckID as a git submodule:
+These projects consume CheckID. All currently use git submodules; migration to the
+PSGallery module is in progress.
 
-| Project | Repository | Submodule Path | What They Use |
+| Project | Repository | Current Method | Target Method |
 |---------|-----------|---------------|--------------|
-| **M365-Assess** | [github.com/SelvageLabs/M365-Assess](https://github.com/SelvageLabs/M365-Assess) | `lib/CheckID/` | Full library (scripts + data) |
-| **Stitch-M365** | Private | `Engine/lib/CheckID/` | Full library (scripts + data) |
-| **Darn** | [github.com/SelvageLabs/Darn](https://github.com/SelvageLabs/Darn) | `lib/CheckID/` | Data only (`data/registry.json`) |
+| **M365-Assess** | [SelvageLabs/M365-Assess](https://github.com/SelvageLabs/M365-Assess) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+| **Stitch-M365** | Private | Submodule (`Engine/lib/CheckID/`) | `Install-Module CheckID` |
+| **Darn** | [SelvageLabs/Darn](https://github.com/SelvageLabs/Darn) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+
+### Migration: Submodule to PSGallery Module
+
+**For consumers migrating from git submodule to `Install-Module`:**
+
+1. Install the module: `Install-Module -Name CheckID -Scope CurrentUser`
+2. Replace dot-source imports:
+   ```powershell
+   # Before (submodule)
+   . ./lib/CheckID/scripts/Import-ControlRegistry.ps1
+   $registry = Import-ControlRegistry -ControlsPath ./lib/CheckID/data
+   $check = $registry['ENTRA-ADMIN-001']
+
+   # After (module)
+   Import-Module CheckID
+   $check = Get-CheckById 'ENTRA-ADMIN-001'
+   # Or load all checks:
+   $checks = Get-CheckRegistry
+   ```
+3. Replace script calls with module cmdlets:
+   - `Import-ControlRegistry` → `Get-CheckRegistry` / `Get-CheckById`
+   - `Search-Registry.ps1` → `Search-Check`
+   - `Test-RegistryData.ps1` → `Test-CheckRegistryData`
+4. Remove the submodule: `git submodule deinit lib/CheckID && git rm lib/CheckID`
+
+Both approaches work simultaneously during the transition period.

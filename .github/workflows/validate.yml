@@ -5,6 +5,7 @@ on:
     branches: [main]
   push:
     branches: [main]
+    tags: ['v*']
 
 jobs:
   lint:
@@ -198,3 +199,67 @@ jobs:
             Write-Host "::error::$($result.FailedCount) test(s) failed"
             exit 1
           }
+
+  module-test:
+    name: Module Import Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test module manifest
+        shell: pwsh
+        run: |
+          $manifest = Test-ModuleManifest -Path ./CheckID.psd1
+          Write-Host "Module: $($manifest.Name) v$($manifest.Version)"
+          Write-Host "Exported functions: $($manifest.ExportedFunctions.Keys -join ', ')"
+          if ($manifest.ExportedFunctions.Count -ne 4) {
+            Write-Host "::error::Expected 4 exported functions, got $($manifest.ExportedFunctions.Count)"
+            exit 1
+          }
+
+      - name: Test module import and basic operations
+        shell: pwsh
+        run: |
+          Import-Module ./CheckID.psd1 -Force
+          $checks = Get-CheckRegistry
+          Write-Host "Loaded $($checks.Count) checks"
+          if ($checks.Count -lt 233) {
+            Write-Host "::error::Expected at least 233 checks"
+            exit 1
+          }
+          $check = Get-CheckById 'ENTRA-ADMIN-001'
+          if (-not $check) {
+            Write-Host "::error::Get-CheckById failed for ENTRA-ADMIN-001"
+            exit 1
+          }
+          Write-Host "Module import and basic operations OK"
+
+  publish:
+    name: Publish to PSGallery
+    runs-on: ubuntu-latest
+    needs: [lint, validate-data, registry-consistency, data-quality, test, module-test]
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate tag matches manifest version
+        shell: pwsh
+        run: |
+          $tag = '${{ github.ref_name }}' -replace '^v', ''
+          $manifest = Test-ModuleManifest -Path ./CheckID.psd1
+          if ($manifest.Version.ToString() -ne $tag) {
+            Write-Host "::error::Tag version ($tag) does not match manifest version ($($manifest.Version))"
+            exit 1
+          }
+          Write-Host "Tag v$tag matches manifest version"
+
+      - name: Publish module
+        shell: pwsh
+        env:
+          NUGET_API_KEY: ${{ secrets.PSGALLERY_API_KEY }}
+        run: |
+          if (-not $env:NUGET_API_KEY) {
+            Write-Host "::error::PSGALLERY_API_KEY secret not set"
+            exit 1
+          }
+          Publish-Module -Path . -NuGetApiKey $env:NUGET_API_KEY -Verbose
