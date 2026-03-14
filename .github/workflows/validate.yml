@@ -107,7 +107,8 @@ jobs:
           $reg = Get-Content data/registry.json -Raw | ConvertFrom-Json
           $errors = @()
 
-          if (-not $reg.version) { $errors += "Missing 'version' field" }
+          if (-not $reg.schemaVersion) { $errors += "Missing 'schemaVersion' field" }
+          if (-not $reg.dataVersion) { $errors += "Missing 'dataVersion' field" }
           if (-not $reg.checks) { $errors += "Missing 'checks' array" }
           if ($reg.checks.Count -eq 0) { $errors += "'checks' array is empty" }
 

@@ -268,8 +268,9 @@ $checks = $checks | Sort-Object {
 
 # Build final registry object
 $registry = [ordered]@{
-    version       = '1.0.0'
-    generatedFrom = 'data/framework-mappings.csv + data/check-id-mapping.csv'
+    schemaVersion = '1.0.0'
+    dataVersion   = (Get-Date -Format 'yyyy-MM-dd')
+    generatedFrom = 'data/framework-mappings.csv + data/check-id-mapping.csv + data/standalone-checks.json'
     checks        = @($checks)
 }
 
