@@ -11,8 +11,8 @@ framework-agnostic compliance reporting.
 **Format:** `{COLLECTOR}-{AREA}-{NNN}` (e.g., `ENTRA-ADMIN-001`, `DEFENDER-SAFELINKS-001`)
 
 **Coverage:**
-- 151 total checks (57 automated, 94 manual/tracked)
-- 5 collectors: Entra, ExchangeOnline, Defender, SharePoint, Teams
+- 233 total checks (138 automated, 81 superseded, 14 manual/tracked)
+- 9 collectors: Entra, CAEvaluator, ExchangeOnline, DNS, Defender, Compliance, Intune, SharePoint, Teams
 - 13 frameworks: CIS M365 v6, NIST 800-53, NIST CSF, ISO 27001, STIG, PCI DSS, CMMC, HIPAA, CISA SCuBA, SOC 2, and more
 
 ## Quick Start
@@ -49,9 +49,12 @@ $check.frameworks    # Hashtable of all 13 framework mappings
 ```
 CheckID/
 ├── data/                          Registry data
-│   ├── registry.json              Master registry (151 checks, 13 frameworks)
+│   ├── registry.json              Master registry (233 checks, 13 frameworks)
 │   ├── check-id-mapping.csv       CheckID to collector/area assignments
-│   └── framework-mappings.csv     CIS to multi-framework cross-references
+│   ├── framework-mappings.csv     CIS to multi-framework cross-references
+│   └── frameworks/                Framework definitions
+│       ├── cis-m365-v6.json       CIS M365 v6.0.1 profiles and sections
+│       └── soc2-tsc.json          SOC 2 Trust Services Criteria
 ├── scripts/                       PowerShell scripts
 │   ├── Build-Registry.ps1         Generates registry.json from CSVs
 │   ├── Import-ControlRegistry.ps1 Loads registry into memory
