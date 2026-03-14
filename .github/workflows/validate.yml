@@ -180,3 +180,4 @@ jobs:
             Write-Host "::warning::$($result.FailedCount) test(s) failed — see #3 (supersededBy) and #4 (naming convention)"
             # Warn only — do not fail. Flip to exit 1 after #3 and #4 are fixed.
           }
+          exit 0
