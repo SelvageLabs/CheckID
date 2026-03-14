@@ -48,7 +48,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-CLOUDADMIN-001"
     },
     {
       "checkId": "MANUAL-CIS-1-1-2",
@@ -93,7 +94,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-ADMIN-003"
     },
     {
       "checkId": "ENTRA-ADMIN-001",
@@ -220,7 +222,8 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-CLOUDADMIN-002"
     },
     {
       "checkId": "MANUAL-CIS-1-2-1",
@@ -262,7 +265,8 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-GROUP-003"
     },
     {
       "checkId": "MANUAL-CIS-1-2-2",
@@ -304,7 +308,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "EXO-SHAREDMBX-001"
     },
     {
       "checkId": "ENTRA-PASSWORD-001",
@@ -475,7 +480,8 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-ORGSETTING-001"
     },
     {
       "checkId": "MANUAL-CIS-1-3-5",
@@ -517,7 +523,8 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-ORGSETTING-002"
     },
     {
       "checkId": "EXO-LOCKBOX-001",
@@ -600,7 +607,8 @@
           "controlId": "CC5;CC6.1;CC6.7;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-ORGSETTING-003"
     },
     {
       "checkId": "MANUAL-CIS-1-3-8",
@@ -684,7 +692,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-ORGSETTING-004"
     },
     {
       "checkId": "DEFENDER-SAFELINKS-001",
@@ -862,11 +871,53 @@
       }
     },
     {
+      "checkId": "DEFENDER-SAFEATTACH-002",
+      "name": "Ensure Safe Attachments for SharePoint OneDrive and Microsoft Teams is Enabled",
+      "category": "SAFEATTACH",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.5",
+          "title": "Ensure Safe Attachments for SharePoint OneDrive and Microsoft Teams is Enabled",
+          "profiles": [
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "SI-3a"
+        },
+        "iso-27001": {
+          "controlId": "A.8.7"
+        },
+        "pci-dss": {
+          "controlId": "5.2.x;5.3.x"
+        },
+        "cmmc": {
+          "controlId": "3.14.2;3.14.5"
+        },
+        "hipaa": {
+          "controlId": "§164.308(a)(5)(ii)(B)"
+        },
+        "soc2": {
+          "controlId": "CC6.8;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-2-1-5",
       "name": "Ensure Safe Attachments for SharePoint OneDrive and Microsoft Teams is Enabled",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "DEFENDER-SAFEATTACH-002",
       "licensing": {
         "minimum": "E5"
       },
@@ -1031,7 +1082,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3;CC6.8;CC7.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DNS-SPF-001"
     },
     {
       "checkId": "MANUAL-CIS-2-1-9",
@@ -1076,7 +1128,8 @@
           "controlId": "CC6.1;CC6.7",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DNS-DKIM-001"
     },
     {
       "checkId": "MANUAL-CIS-2-1-10",
@@ -1121,7 +1174,8 @@
           "controlId": "CC6.8;CC7.1;CC7.2",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DNS-DMARC-001"
     },
     {
       "checkId": "MANUAL-CIS-2-1-11",
@@ -1163,14 +1217,15 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DEFENDER-MALWARE-002"
     },
     {
-      "checkId": "MANUAL-CIS-2-1-12",
+      "checkId": "EXO-CONNFILTER-001",
       "name": "Ensure the connection filter IP allow list is not used",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "CONNFILTER",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -1208,11 +1263,97 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-2-1-12",
+      "name": "Ensure the connection filter IP allow list is not used",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "EXO-CONNFILTER-001",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.12",
+          "title": "Ensure the connection filter IP allow list is not used",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "AC-4;SI-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.20;A.8.23"
+        },
+        "pci-dss": {
+          "controlId": "5.4.x"
+        },
+        "cmmc": {
+          "controlId": "3.14.5;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.308(a)(5)(ii)(B)"
+        },
+        "soc2": {
+          "controlId": "CC6.8;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "EXO-CONNFILTER-002",
+      "name": "Ensure the connection filter safe list is off",
+      "category": "CONNFILTER",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.13",
+          "title": "Ensure the connection filter safe list is off",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "AC-4;SI-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.20;A.8.23"
+        },
+        "pci-dss": {
+          "controlId": "5.4.x"
+        },
+        "cmmc": {
+          "controlId": "3.14.5;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.308(a)(5)(ii)(B)"
+        },
+        "soc2": {
+          "controlId": "CC6.8;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-2-1-13",
       "name": "Ensure the connection filter safe list is off",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "EXO-CONNFILTER-002",
       "licensing": {
         "minimum": "E3"
       },
@@ -1289,7 +1430,8 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DEFENDER-ANTISPAM-002"
     },
     {
       "checkId": "DEFENDER-OUTBOUND-001",
@@ -1372,7 +1514,8 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DEFENDER-PRIORITY-001"
     },
     {
       "checkId": "MANUAL-CIS-2-4-2",
@@ -1413,7 +1556,8 @@
           "controlId": "CC5;CC6.8;CC7.1;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DEFENDER-PRIORITY-002"
     },
     {
       "checkId": "MANUAL-CIS-2-4-3",
@@ -1495,14 +1639,15 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "DEFENDER-ZAP-001"
     },
     {
-      "checkId": "MANUAL-CIS-3-1-1",
+      "checkId": "COMPLIANCE-AUDIT-001",
       "name": "Ensure Microsoft 365 audit log search is Enabled",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "AUDIT",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -1543,11 +1688,57 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-3-2-1",
-      "name": "Ensure DLP policies are enabled",
+      "checkId": "MANUAL-CIS-3-1-1",
+      "name": "Ensure Microsoft 365 audit log search is Enabled",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "COMPLIANCE-AUDIT-001",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "3.1.1",
+          "title": "Ensure Microsoft 365 audit log search is Enabled",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.AE-03"
+        },
+        "nist-800-53": {
+          "controlId": "AU-12"
+        },
+        "iso-27001": {
+          "controlId": "A.8.15"
+        },
+        "pci-dss": {
+          "controlId": "10.2.x;10.3.x"
+        },
+        "cmmc": {
+          "controlId": "3.3.1;3.3.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(b)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.EXO.16.1v1"
+        },
+        "soc2": {
+          "controlId": "CC7.1;CC7.2",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "COMPLIANCE-DLP-001",
+      "name": "Ensure DLP policies are enabled",
+      "category": "DLP",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -1588,11 +1779,57 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-3-2-2",
-      "name": "Ensure DLP policies are enabled for Microsoft Teams",
+      "checkId": "MANUAL-CIS-3-2-1",
+      "name": "Ensure DLP policies are enabled",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "COMPLIANCE-DLP-001",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "3.2.1",
+          "title": "Ensure DLP policies are enabled",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-01;PR.DS-02"
+        },
+        "nist-800-53": {
+          "controlId": "SC-7(10)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.12;A.8.12"
+        },
+        "pci-dss": {
+          "controlId": "3.4.x;3.5.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.22;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(c)(1);§164.312(e)(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.EXO.8.1v1"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.7",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "COMPLIANCE-DLP-002",
+      "name": "Ensure DLP policies are enabled for Microsoft Teams",
+      "category": "DLP",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E5"
       },
@@ -1629,11 +1866,96 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-3-2-2",
+      "name": "Ensure DLP policies are enabled for Microsoft Teams",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "COMPLIANCE-DLP-002",
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "3.2.2",
+          "title": "Ensure DLP policies are enabled for Microsoft Teams",
+          "profiles": [
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-01;PR.DS-02"
+        },
+        "nist-800-53": {
+          "controlId": "SC-7(10)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.12;A.8.12"
+        },
+        "pci-dss": {
+          "controlId": "3.4.x;3.5.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.22;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(c)(1);§164.312(e)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.7",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "COMPLIANCE-LABELS-001",
+      "name": "Ensure Information Protection sensitivity label policies are published",
+      "category": "Sensitivity Labels",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "3.3.1",
+          "title": "Ensure Information Protection sensitivity label policies are published",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-01"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;SC-7(10)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.12;A.5.13;A.8.12"
+        },
+        "pci-dss": {
+          "controlId": "3.4.x;3.5.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.22;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(c)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-3-3-1",
       "name": "Ensure Information Protection sensitivity label policies are published",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "COMPLIANCE-LABELS-001",
       "licensing": {
         "minimum": "E3"
       },
@@ -1710,7 +2032,8 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "INTUNE-COMPLIANCE-001"
     },
     {
       "checkId": "MANUAL-CIS-4-2",
@@ -1752,7 +2075,8 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "INTUNE-ENROLL-001"
     },
     {
       "checkId": "MANUAL-CIS-5-1-2-1",
@@ -1794,7 +2118,8 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-PERUSER-001"
     },
     {
       "checkId": "MANUAL-CIS-5-1-2-2",
@@ -1839,7 +2164,8 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-APPS-001"
     },
     {
       "checkId": "ENTRA-TENANT-001",
@@ -1923,7 +2249,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-ADMIN-002"
     },
     {
       "checkId": "MANUAL-CIS-5-1-2-5",
@@ -1968,11 +2295,54 @@
       }
     },
     {
+      "checkId": "ENTRA-LINKEDIN-001",
+      "name": "Ensure 'LinkedIn account connections' is disabled",
+      "category": "LINKEDIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.1.2.6",
+          "title": "Ensure 'LinkedIn account connections' is disabled",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.19"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-5-1-2-6",
       "name": "Ensure 'LinkedIn account connections' is disabled",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-LINKEDIN-001",
       "licensing": {
         "minimum": "E3"
       },
@@ -2049,7 +2419,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-GROUP-002"
     },
     {
       "checkId": "ENTRA-GROUP-001",
@@ -2094,11 +2465,11 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-5-1-4-1",
+      "checkId": "ENTRA-DEVICE-001",
       "name": "Ensure the ability to join devices to Entra is restricted",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -2136,11 +2507,54 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-5-1-4-2",
-      "name": "Ensure the maximum number of devices per user is limited",
+      "checkId": "MANUAL-CIS-5-1-4-1",
+      "name": "Ensure the ability to join devices to Entra is restricted",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-DEVICE-001",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.1.4.1",
+          "title": "Ensure the ability to join devices to Entra is restricted",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.5.15"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.2;3.4.6"
+        },
+        "hipaa": {
+          "controlId": "§164.310(b);§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC6.2;CC6.3;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-DEVICE-002",
+      "name": "Ensure the maximum number of devices per user is limited",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -2178,11 +2592,97 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-5-1-4-2",
+      "name": "Ensure the maximum number of devices per user is limited",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-DEVICE-002",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.1.4.2",
+          "title": "Ensure the maximum number of devices per user is limited",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "ID.AM-01;PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-8;AC-19a"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.5.9"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.1;3.1.18"
+        },
+        "hipaa": {
+          "controlId": "§164.310(b);§164.310(c)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-DEVICE-003",
+      "name": "Ensure the GA role is not added as a local administrator during Entra join",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.1.4.3",
+          "title": "Ensure the GA role is not added as a local administrator during Entra join",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6(5);CM-6"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.2"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.5;3.1.6;3.4.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC6.3;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-5-1-4-3",
       "name": "Ensure the GA role is not added as a local administrator during Entra join",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-DEVICE-003",
       "licensing": {
         "minimum": "E3"
       },
@@ -2259,7 +2759,8 @@
           "controlId": "CC5;CC6.1;CC6.3;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-DEVICE-004"
     },
     {
       "checkId": "MANUAL-CIS-5-1-4-5",
@@ -2301,7 +2802,8 @@
           "controlId": "CC5;CC6.1;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-DEVICE-005"
     },
     {
       "checkId": "MANUAL-CIS-5-1-4-6",
@@ -2343,7 +2845,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-DEVICE-006"
     },
     {
       "checkId": "ENTRA-CONSENT-001",
@@ -2515,7 +3018,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-GUEST-004"
     },
     {
       "checkId": "ENTRA-GUEST-001",
@@ -2675,7 +3179,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-HYBRID-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-1",
@@ -2723,7 +3228,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-MFA-ADMIN-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-2",
@@ -2771,14 +3277,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-MFA-ALL-001"
     },
     {
       "checkId": "ENTRA-CA-001",
       "name": "Enable Conditional Access policies to block legacy authentication",
       "category": "CA",
       "collector": "Entra",
-      "hasAutomatedCheck": true,
+      "hasAutomatedCheck": false,
       "licensing": {
         "minimum": "E3"
       },
@@ -2819,7 +3326,8 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-LEGACYAUTH-001"
     },
     {
       "checkId": "ENTRA-CA-002",
@@ -2923,7 +3431,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-SIGNIN-FREQ-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-5",
@@ -2971,7 +3480,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-PHISHRES-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-6",
@@ -3018,7 +3528,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-USERRISK-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-7",
@@ -3065,7 +3576,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-SIGNINRISK-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-8",
@@ -3112,7 +3624,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-SIGNINRISK-002"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-9",
@@ -3157,7 +3670,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-DEVICE-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-10",
@@ -3202,7 +3716,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-DEVICE-002"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-11",
@@ -3247,7 +3762,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "CA-INTUNE-001"
     },
     {
       "checkId": "MANUAL-CIS-5-2-2-12",
@@ -3288,6 +3804,562 @@
         "soc2": {
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
+        }
+      },
+      "supersededBy": "CA-DEVICECODE-001"
+    },
+    {
+      "checkId": "CA-MFA-ADMIN-001",
+      "name": "Ensure multifactor authentication is enabled for all users in administrative roles",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.1",
+          "title": "Ensure multifactor authentication is enabled for all users in administrative roles"
+        },
+        "stig": {
+          "controlId": "V-260337"
+        },
+        "nist-800-53": {
+          "controlId": "IA-2(1);IA-2(2)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.1v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cmmc": {
+          "controlId": "3.5.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.4.1;8.4.2"
+        }
+      }
+    },
+    {
+      "checkId": "CA-MFA-ALL-001",
+      "name": "Ensure multifactor authentication is enabled for all users",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.2",
+          "title": "Ensure multifactor authentication is enabled for all users"
+        },
+        "stig": {
+          "controlId": "V-260337"
+        },
+        "nist-800-53": {
+          "controlId": "IA-2(1);IA-2(2)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.2v1;MS.AAD.3.3v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cmmc": {
+          "controlId": "3.5.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.4.1;8.4.2;8.3.1"
+        }
+      }
+    },
+    {
+      "checkId": "CA-LEGACYAUTH-001",
+      "name": "Enable Conditional Access policies to block legacy authentication",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.20"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.3",
+          "title": "Enable Conditional Access policies to block legacy authentication"
+        },
+        "stig": {
+          "controlId": "V-260338"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.1.1v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.312(a)(1)"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.5.2"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x;8.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-SIGNIN-FREQ-001",
+      "name": "Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.4",
+          "title": "Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users"
+        },
+        "nist-800-53": {
+          "controlId": "AC-11;AC-12"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.7.6v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(2)(iii);§164.312(d)"
+        },
+        "cmmc": {
+          "controlId": "3.1.10"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-PHISHRES-001",
+      "name": "Ensure 'Phishing-resistant MFA strength' is required for Administrators",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ],
+          "controlId": "5.2.2.5",
+          "title": "Ensure 'Phishing-resistant MFA strength' is required for Administrators"
+        },
+        "stig": {
+          "controlId": "V-260339"
+        },
+        "nist-800-53": {
+          "controlId": "IA-2(1);IA-5c;IA-5g;IA-2(8)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.1v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cmmc": {
+          "controlId": "3.5.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.4.1;8.4.2"
+        }
+      }
+    },
+    {
+      "checkId": "CA-USERRISK-001",
+      "name": "Enable Identity Protection user risk policies",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.16"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.6",
+          "title": "Enable Identity Protection user risk policies"
+        },
+        "stig": {
+          "controlId": "V-260341"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2(12);AC-2(13)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.2.1v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.308(a)(1)(ii)(A)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.5.2"
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-01;PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-SIGNINRISK-001",
+      "name": "Enable Identity Protection sign-in risk policies",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.16"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.7",
+          "title": "Enable Identity Protection sign-in risk policies"
+        },
+        "stig": {
+          "controlId": "V-260340"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2(12);AC-2(13)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.2.3v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.308(a)(1)(ii)(A)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.5.2"
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-01;PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-SIGNINRISK-002",
+      "name": "Ensure 'sign-in risk' is blocked for medium and high risk",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.16"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L2"
+          ],
+          "controlId": "5.2.2.8",
+          "title": "Ensure 'sign-in risk' is blocked for medium and high risk"
+        },
+        "stig": {
+          "controlId": "V-260340"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2(12);AC-2(13)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.2.3v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.308(a)(1)(ii)(A)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.5.2"
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-01;PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-DEVICE-001",
+      "name": "Ensure a managed device is required for authentication",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.9",
+          "title": "Ensure a managed device is required for authentication"
+        },
+        "nist-800-53": {
+          "controlId": "AC-20b;IA-3"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.6v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.310(b)"
+        },
+        "cmmc": {
+          "controlId": "3.1.18;3.1.19;3.5.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03;PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;2.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-DEVICE-002",
+      "name": "Ensure a managed device is required to register security information",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.10",
+          "title": "Ensure a managed device is required to register security information"
+        },
+        "nist-800-53": {
+          "controlId": "AC-20b;IA-3"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.7v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.310(b)"
+        },
+        "cmmc": {
+          "controlId": "3.1.18;3.1.19;3.5.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03;PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;2.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-INTUNE-001",
+      "name": "Ensure sign-in frequency for Intune Enrollment is set to 'Every time'",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.11",
+          "title": "Ensure sign-in frequency for Intune Enrollment is set to 'Every time'"
+        },
+        "nist-800-53": {
+          "controlId": "AC-11;IA-2(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.8v1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.312(a)(2)(iii)"
+        },
+        "cmmc": {
+          "controlId": "3.1.10;3.5.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03;PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x"
+        }
+      }
+    },
+    {
+      "checkId": "CA-DEVICECODE-001",
+      "name": "Ensure the device code sign-in flow is blocked",
+      "category": "Conditional Access",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.2.12",
+          "title": "Ensure the device code sign-in flow is blocked"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.5.2"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.312(a)(1)"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.20"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x;8.2.x"
         }
       }
     },
@@ -3334,7 +4406,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-AUTHMETHOD-003"
     },
     {
       "checkId": "ENTRA-PASSWORD-002",
@@ -3486,7 +4559,8 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-PASSWORD-005"
     },
     {
       "checkId": "ENTRA-MFA-001",
@@ -3531,11 +4605,57 @@
       }
     },
     {
+      "checkId": "ENTRA-AUTHMETHOD-001",
+      "name": "Ensure weak authentication methods are disabled",
+      "category": "AUTHMETHOD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.2.3.5",
+          "title": "Ensure weak authentication methods are disabled",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7b;IA-5c"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.20"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.5.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.4v1"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-5-2-3-5",
       "name": "Ensure weak authentication methods are disabled",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-AUTHMETHOD-001",
       "licensing": {
         "minimum": "E3"
       },
@@ -3615,14 +4735,15 @@
           "controlId": "CC6.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-AUTHMETHOD-004"
     },
     {
-      "checkId": "MANUAL-CIS-5-2-3-7",
+      "checkId": "ENTRA-AUTHMETHOD-002",
       "name": "Ensure the email OTP authentication method is disabled",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "AUTHMETHOD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -3660,11 +4781,97 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-5-2-3-7",
+      "name": "Ensure the email OTP authentication method is disabled",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-AUTHMETHOD-002",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.2.3.7",
+          "title": "Ensure the email OTP authentication method is disabled",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7;IA-5c"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.20"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.5.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-SSPR-001",
+      "name": "Ensure 'Self service password reset enabled' is set to 'All'",
+      "category": "SSPR",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.2.4.1",
+          "title": "Ensure 'Self service password reset enabled' is set to 'All'",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-01"
+        },
+        "nist-800-53": {
+          "controlId": "IA-5(1)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.17"
+        },
+        "pci-dss": {
+          "controlId": "8.3.x"
+        },
+        "cmmc": {
+          "controlId": "3.5.7;3.5.8"
+        },
+        "hipaa": {
+          "controlId": "§164.308(a)(5)(ii)(D)"
+        },
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-5-2-4-1",
       "name": "Ensure 'Self service password reset enabled' is set to 'All'",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "ENTRA-SSPR-001",
       "licensing": {
         "minimum": "E3"
       },
@@ -3746,7 +4953,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-PIM-001"
     },
     {
       "checkId": "MANUAL-CIS-5-3-2",
@@ -3790,7 +4998,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-PIM-002"
     },
     {
       "checkId": "MANUAL-CIS-5-3-3",
@@ -3834,7 +5043,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-PIM-003"
     },
     {
       "checkId": "MANUAL-CIS-5-3-4",
@@ -3878,7 +5088,8 @@
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "ENTRA-PIM-004"
     },
     {
       "checkId": "MANUAL-CIS-5-3-5",
@@ -3921,6 +5132,617 @@
         "soc2": {
           "controlId": "CC6.1;CC6.3",
           "evidenceType": "config-export"
+        }
+      },
+      "supersededBy": "ENTRA-PIM-005"
+    },
+    {
+      "checkId": "ENTRA-PERUSER-001",
+      "name": "Ensure 'Per-user MFA' is disabled",
+      "category": "Authentication Methods",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC5;CC6.1;CC8.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.4.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.5.3;3.4.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.1.2.1",
+          "title": "Ensure 'Per-user MFA' is disabled"
+        },
+        "nist-800-53": {
+          "controlId": "IA-2(1);IA-2(2);CM-6"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-APPS-001",
+      "name": "Ensure third party integrated applications are not allowed",
+      "category": "Application Consent",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.4.5"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC5;CC6.1;CC6.3;CC8.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6(10);CM-5"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.5.4v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.26"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ],
+          "controlId": "5.1.2.2",
+          "title": "Ensure third party integrated applications are not allowed"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-GUEST-004",
+      "name": "Ensure that collaboration invitations are sent to allowed domains only",
+      "category": "External Collaboration",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "7.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.2;3.1.20"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.2;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.8.2v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.5.19"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ],
+          "controlId": "5.1.6.1",
+          "title": "Ensure that collaboration invitations are sent to allowed domains only"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-GROUP-002",
+      "name": "Ensure a dynamic group for guest users is created",
+      "category": "External Collaboration",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.2;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-01;PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.1.5"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.1.3.1",
+          "title": "Ensure a dynamic group for guest users is created"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2;AC-6"
+        },
+        "iso-27001": {
+          "controlId": "A.5.16;A.5.18"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-DEVICE-004",
+      "name": "Ensure local administrator assignment is limited during Entra join",
+      "category": "Device Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC5;CC6.1;CC6.3;CC8.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.5;3.1.6;3.4.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.1.4.4",
+          "title": "Ensure local administrator assignment is limited during Entra join"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6(5);CM-6"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.2"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-DEVICE-005",
+      "name": "Ensure Local Administrator Password Solution is enabled",
+      "category": "Device Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC5;CC6.1;CC8.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-01"
+        },
+        "pci-dss": {
+          "controlId": "8.3.x"
+        },
+        "cmmc": {
+          "controlId": "3.5.7;3.5.10;3.4.2"
+        },
+        "hipaa": {
+          "controlId": "§164.308(a)(5)(ii)(D)"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.1.4.5",
+          "title": "Ensure Local Administrator Password Solution is enabled"
+        },
+        "nist-800-53": {
+          "controlId": "IA-5;CM-6"
+        },
+        "iso-27001": {
+          "controlId": "A.5.17;A.8.5"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-DEVICE-006",
+      "name": "Ensure users are restricted from recovering BitLocker keys",
+      "category": "Device Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.2;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.5;3.1.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.312(a)(2)(iv)"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ],
+          "controlId": "5.1.4.6",
+          "title": "Ensure users are restricted from recovering BitLocker keys"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6;AC-3"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.24"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-AUTHMETHOD-003",
+      "name": "Ensure Microsoft Authenticator is configured to protect against MFA fatigue",
+      "category": "Authentication Methods",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "8.4.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cmmc": {
+          "controlId": "3.5.3"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "nist-800-53": {
+          "controlId": "IA-2(1);IA-2(2);IA-5c;IA-5g;IA-2(8);IA-2(13)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.3.5v1"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.3.1",
+          "title": "Ensure Microsoft Authenticator is configured to protect against MFA fatigue"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-AUTHMETHOD-004",
+      "name": "Ensure system-preferred multifactor authentication is enabled",
+      "category": "Authentication Methods",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "pci-dss": {
+          "controlId": "8.4.x"
+        },
+        "cmmc": {
+          "controlId": "3.5.3"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d)"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ],
+          "controlId": "5.2.3.6",
+          "title": "Ensure system-preferred multifactor authentication is enabled"
+        },
+        "nist-800-53": {
+          "controlId": "IA-2(1);IA-2(2)"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-PIM-001",
+      "name": "Ensure 'Privileged Identity Management' is used to manage roles",
+      "category": "Privileged Identity Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "stig": {
+          "controlId": "V-260336"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.1.5;3.1.6"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.2;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2;AC-6(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.7.5v1;MS.AAD.7.7v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.5.18;A.8.2"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L2"
+          ],
+          "controlId": "5.3.1",
+          "title": "Ensure 'Privileged Identity Management' is used to manage roles"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-PIM-002",
+      "name": "Ensure 'Access reviews' for Guest Users are configured",
+      "category": "Privileged Identity Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.1.5"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.2;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2(3);AC-2(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.7.3v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.5.18"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L1"
+          ],
+          "controlId": "5.3.2",
+          "title": "Ensure 'Access reviews' for Guest Users are configured"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-PIM-003",
+      "name": "Ensure 'Access reviews' for privileged roles are configured",
+      "category": "Privileged Identity Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.1;3.1.5"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.2;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2(3);AC-2(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.7.3v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.5.18;A.8.2"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L1"
+          ],
+          "controlId": "5.3.3",
+          "title": "Ensure 'Access reviews' for privileged roles are configured"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-PIM-004",
+      "name": "Ensure approval is required for Global Administrator role activation",
+      "category": "Privileged Identity Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.5;3.1.6"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.7.8v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.2"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L1"
+          ],
+          "controlId": "5.3.4",
+          "title": "Ensure approval is required for Global Administrator role activation"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-PIM-005",
+      "name": "Ensure approval is required for Privileged Role Administrator activation",
+      "category": "Privileged Identity Management",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "cmmc": {
+          "controlId": "3.1.5;3.1.6"
+        },
+        "soc2": {
+          "evidenceType": "config-export",
+          "controlId": "CC6.1;CC6.3"
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6(1)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.AAD.7.9v1"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.2"
+        },
+        "cis-m365-v6": {
+          "profiles": [
+            "E5-L1"
+          ],
+          "controlId": "5.3.5",
+          "title": "Ensure approval is required for Privileged Role Administrator activation"
         }
       }
     },
@@ -3970,11 +5792,57 @@
       }
     },
     {
+      "checkId": "EXO-AUDIT-003",
+      "name": "Ensure mailbox auditing is enabled",
+      "category": "AUDIT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "6.1.2",
+          "title": "Ensure mailbox audit actions are configured",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.AE-03"
+        },
+        "nist-800-53": {
+          "controlId": "AU-12;AU-12c"
+        },
+        "iso-27001": {
+          "controlId": "A.8.15"
+        },
+        "pci-dss": {
+          "controlId": "10.2.x;10.3.x"
+        },
+        "cmmc": {
+          "controlId": "3.3.1;3.3.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(b)"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.EXO.17.1v1;MS.EXO.17.2v1"
+        },
+        "soc2": {
+          "controlId": "CC7.1;CC7.2",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-6-1-2",
       "name": "Ensure mailbox audit actions are configured",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "EXO-AUDIT-003",
       "licensing": {
         "minimum": "E3"
       },
@@ -4105,11 +5973,54 @@
       }
     },
     {
+      "checkId": "EXO-TRANSPORT-001",
+      "name": "Ensure mail transport rules do not whitelist specific domains",
+      "category": "TRANSPORT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "6.2.2",
+          "title": "Ensure mail transport rules do not whitelist specific domains",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "SI-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.23"
+        },
+        "pci-dss": {
+          "controlId": "5.4.x"
+        },
+        "cmmc": {
+          "controlId": "3.14.5"
+        },
+        "hipaa": {
+          "controlId": "§164.308(a)(5)(ii)(B)"
+        },
+        "soc2": {
+          "controlId": "CC6.8;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-6-2-2",
       "name": "Ensure mail transport rules do not whitelist specific domains",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "EXO-TRANSPORT-001",
       "licensing": {
         "minimum": "E3"
       },
@@ -4395,11 +6306,54 @@
       }
     },
     {
+      "checkId": "SPO-AUTH-001",
+      "name": "Ensure modern authentication for SharePoint applications is required",
+      "category": "AUTH",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.2.1",
+          "title": "Ensure modern authentication for SharePoint applications is required",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-03"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7;IA-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5;A.8.20"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x;8.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.5.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-7-2-1",
       "name": "Ensure modern authentication for SharePoint applications is required",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "SPO-AUTH-001",
       "licensing": {
         "minimum": "E3"
       },
@@ -4476,7 +6430,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "SPO-B2B-001"
     },
     {
       "checkId": "SPO-SHARING-001",
@@ -4560,7 +6515,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "SPO-OD-001"
     },
     {
       "checkId": "SPO-SHARING-002",
@@ -4728,7 +6684,8 @@
           "controlId": "CC6.1;CC6.2;CC6.3",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "SPO-SHARING-008"
     },
     {
       "checkId": "SPO-SHARING-005",
@@ -4895,7 +6852,8 @@
           "controlId": "CC6.8;CC7.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "SPO-MALWARE-002"
     },
     {
       "checkId": "SPO-SYNC-001",
@@ -5042,7 +7000,8 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "SPO-SCRIPT-001"
     },
     {
       "checkId": "MANUAL-CIS-7-3-4",
@@ -5081,14 +7040,15 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "SPO-SCRIPT-002"
     },
     {
-      "checkId": "MANUAL-CIS-8-1-1",
+      "checkId": "TEAMS-CLIENT-001",
       "name": "Ensure external file sharing in Teams is enabled for only approved cloud storage services",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "CLIENT",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -5126,11 +7086,54 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-8-1-2",
-      "name": "Ensure users can't send emails to a channel email address",
+      "checkId": "MANUAL-CIS-8-1-1",
+      "name": "Ensure external file sharing in Teams is enabled for only approved cloud storage services",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-CLIENT-001",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.1.1",
+          "title": "Ensure external file sharing in Teams is enabled for only approved cloud storage services",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-01"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7;SC-7(10)"
+        },
+        "iso-27001": {
+          "controlId": "A.8.19;A.8.26"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x;7.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC6.7;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "TEAMS-CLIENT-002",
+      "name": "Ensure users can't send emails to a channel email address",
+      "category": "CLIENT",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -5168,11 +7171,97 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-8-1-2",
+      "name": "Ensure users can't send emails to a channel email address",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-CLIENT-002",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.1.2",
+          "title": "Ensure users can't send emails to a channel email address",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-02"
+        },
+        "nist-800-53": {
+          "controlId": "SI-8;SC-7(10);AC-4"
+        },
+        "iso-27001": {
+          "controlId": "A.8.20;A.8.23"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x;5.4.x"
+        },
+        "cmmc": {
+          "controlId": "3.13.1;3.14.5"
+        },
+        "hipaa": {
+          "controlId": "§164.312(e)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.7;CC6.8;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "TEAMS-EXTACCESS-003",
+      "name": "Ensure external domains are restricted in the Teams admin center",
+      "category": "EXTACCESS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.2.1",
+          "title": "Ensure external domains are restricted in the Teams admin center",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.5.19"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.2;3.1.20"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-8-2-1",
       "name": "Ensure external domains are restricted in the Teams admin center",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-EXTACCESS-003",
       "licensing": {
         "minimum": "E3"
       },
@@ -5294,11 +7383,54 @@
       }
     },
     {
+      "checkId": "TEAMS-EXTACCESS-004",
+      "name": "Ensure communication with Skype users is disabled",
+      "category": "EXTACCESS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.2.4",
+          "title": "Ensure communication with Skype users is disabled",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.19;A.8.20"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-8-2-4",
       "name": "Ensure communication with Skype users is disabled",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-EXTACCESS-004",
       "licensing": {
         "minimum": "E3"
       },
@@ -5375,7 +7507,8 @@
           "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "TEAMS-APPS-002"
     },
     {
       "checkId": "TEAMS-MEETING-001",
@@ -5546,11 +7679,11 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-8-5-5",
+      "checkId": "TEAMS-MEETING-006",
       "name": "Ensure meeting chat does not allow anonymous users",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -5588,11 +7721,97 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-8-5-5",
+      "name": "Ensure meeting chat does not allow anonymous users",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-MEETING-006",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.5.5",
+          "title": "Ensure meeting chat does not allow anonymous users",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "SC-15a;AC-3"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.3"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.2;3.13.12"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3;CC6.7",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "TEAMS-MEETING-007",
+      "name": "Ensure only organizers and co-organizers can present",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.5.6",
+          "title": "Ensure only organizers and co-organizers can present",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;AC-21a"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x;2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.2"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-8-5-6",
       "name": "Ensure only organizers and co-organizers can present",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-MEETING-007",
       "licensing": {
         "minimum": "E3"
       },
@@ -5728,11 +7947,11 @@
       }
     },
     {
-      "checkId": "MANUAL-CIS-8-5-8",
+      "checkId": "TEAMS-MEETING-008",
       "name": "Ensure external meeting chat is off",
-      "category": "",
-      "collector": "",
-      "hasAutomatedCheck": false,
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
       "licensing": {
         "minimum": "E3"
       },
@@ -5770,11 +7989,97 @@
       }
     },
     {
+      "checkId": "MANUAL-CIS-8-5-8",
+      "name": "Ensure external meeting chat is off",
+      "category": "",
+      "collector": "",
+      "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-MEETING-008",
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.5.8",
+          "title": "Ensure external meeting chat is off",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7;SC-7(10)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.20"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x;7.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.13.1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1;CC6.7;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "TEAMS-MEETING-009",
+      "name": "Ensure meeting recording is off by default",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.5.9",
+          "title": "Ensure meeting recording is off by default",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-01;PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.11"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
       "checkId": "MANUAL-CIS-8-5-9",
       "name": "Ensure meeting recording is off by default",
       "category": "",
       "collector": "",
       "hasAutomatedCheck": false,
+      "supersededBy": "TEAMS-MEETING-009",
       "licensing": {
         "minimum": "E3"
       },
@@ -5845,7 +8150,8 @@
           "controlId": "CC7.1;CC7.2",
           "evidenceType": "config-export"
         }
-      }
+      },
+      "supersededBy": "TEAMS-REPORTING-001"
     },
     {
       "checkId": "MANUAL-CIS-9-1-1",
@@ -6305,6 +8611,1088 @@
         },
         "soc2": {
           "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DNS-SPF-001",
+      "name": "Ensure that SPF records are published for all Exchange Domains",
+      "category": "SPF",
+      "collector": "DNS",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.8",
+          "title": "Ensure that SPF records are published for all Exchange Domains",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-02"
+        },
+        "nist-800-53": {
+          "controlId": "SI-8;SC-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.23;A.8.24"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.EXO.4.1v1"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.8",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DNS-DKIM-001",
+      "name": "Ensure DKIM is enabled for all Exchange Online Domains",
+      "category": "DKIM",
+      "collector": "DNS",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.9",
+          "title": "Ensure DKIM is enabled for all Exchange Online Domains",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-02"
+        },
+        "nist-800-53": {
+          "controlId": "SI-8;SC-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.23;A.8.24"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.EXO.5.1v1"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.8",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DNS-DMARC-001",
+      "name": "Ensure that DMARC Records are published for all Exchange Domains",
+      "category": "DMARC",
+      "collector": "DNS",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.10",
+          "title": "Ensure that DMARC Records are published for all Exchange Domains",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-02"
+        },
+        "nist-800-53": {
+          "controlId": "SI-8;SC-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.23;A.8.24"
+        },
+        "cisa-scuba": {
+          "controlId": "MS.EXO.4.2v1;MS.EXO.4.3v1"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.8",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DEFENDER-MALWARE-002",
+      "name": "Ensure comprehensive attachment filtering is applied",
+      "category": "MALWARE",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.11",
+          "title": "Ensure comprehensive attachment filtering is applied",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "SI-3;CM-6a"
+        },
+        "iso-27001": {
+          "controlId": "A.8.7;A.8.23"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.8;CC7.1;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DEFENDER-ANTISPAM-002",
+      "name": "Ensure no allowed domains are configured in anti-spam policies",
+      "category": "ANTISPAM",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.1.14",
+          "title": "Ensure no allowed domains are configured in anti-spam policies",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "SI-8;CM-6a"
+        },
+        "iso-27001": {
+          "controlId": "A.8.23"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.8;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DEFENDER-PRIORITY-001",
+      "name": "Ensure priority account protection is enabled",
+      "category": "PRIORITY",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.4.1",
+          "title": "Ensure Priority account protection is enabled and configured",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6;SI-4"
+        },
+        "iso-27001": {
+          "controlId": "A.8.2;A.8.7"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DEFENDER-PRIORITY-002",
+      "name": "Ensure strict preset security policy is applied to priority accounts",
+      "category": "PRIORITY",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.4.2",
+          "title": "Ensure the Strict Preset Security Policy is applied to Priority accounts",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6;SI-4"
+        },
+        "iso-27001": {
+          "controlId": "A.8.2;A.8.7"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "DEFENDER-ZAP-001",
+      "name": "Ensure Zero-hour Auto Purge for Teams is enabled",
+      "category": "ZAP",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "2.4.4",
+          "title": "Ensure Zero-hour auto purge for Microsoft Teams is on",
+          "profiles": [
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "SI-3;SI-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.7;A.8.23"
+        },
+        "soc2": {
+          "controlId": "CC5;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "EXO-DIRECTSEND-001",
+      "name": "Ensure Direct Send is not allowed for unauthorized relay",
+      "category": "DIRECTSEND",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "6.5.5",
+          "title": "Ensure Direct Send is not configured to allow external senders to relay through Exchange Online",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-03"
+        },
+        "nist-800-53": {
+          "controlId": "SC-7;AC-17"
+        },
+        "iso-27001": {
+          "controlId": "A.8.20;A.8.23"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.6",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-CLOUDADMIN-001",
+      "name": "Ensure Administrative accounts are cloud-only",
+      "category": "CLOUDADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.1.1",
+          "title": "Ensure Administrative accounts are cloud-only",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-01"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2;AC-6"
+        },
+        "iso-27001": {
+          "controlId": "A.8.2;A.8.5"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-CLOUDADMIN-002",
+      "name": "Ensure administrative accounts use licenses with a reduced application footprint",
+      "category": "CLOUDADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.1.4",
+          "title": "Ensure administrative accounts use licenses with a reduced application footprint",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6;CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.2"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-GROUP-003",
+      "name": "Ensure that all public M365 groups have assigned owners",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.2.1",
+          "title": "Ensure that only organizationally managed/approved public groups exist",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2;AC-6"
+        },
+        "iso-27001": {
+          "controlId": "A.8.2;A.8.3"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "EXO-SHAREDMBX-001",
+      "name": "Ensure sign-in to shared mailboxes is blocked",
+      "category": "SHAREDMBX",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.2.2",
+          "title": "Ensure sign-in to shared mailboxes is blocked",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-01"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2;AC-6"
+        },
+        "iso-27001": {
+          "controlId": "A.8.2;A.8.5"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-001",
+      "name": "Ensure user consent to apps is not allowed",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.3.4",
+          "title": "Ensure user consent to apps accessing company data on their behalf is not allowed",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.9;A.8.19"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-002",
+      "name": "Ensure internal phishing protection for Forms is enabled",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.3.5",
+          "title": "Ensure internal phishing protection for Forms is enabled",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AT-01"
+        },
+        "nist-800-53": {
+          "controlId": "SI-3;SI-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.7;A.8.23"
+        },
+        "soc2": {
+          "controlId": "CC5;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-003",
+      "name": "Ensure third-party storage services are restricted in M365 on the web",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.3.7",
+          "title": "Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web'",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-01"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;SC-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.10;A.8.11"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.7",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-004",
+      "name": "Ensure shared bookings pages are restricted to select users",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.3.9",
+          "title": "Ensure shared bookings pages are restricted to select users",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;AC-6"
+        },
+        "iso-27001": {
+          "controlId": "A.8.3;A.8.9"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-PASSWORD-005",
+      "name": "Ensure Azure AD Password Protection is enabled for on-premises",
+      "category": "PASSWORD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.2.3.3",
+          "title": "Ensure the Azure AD 'Password protection' feature for on-premises Active Directory is enabled",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-01"
+        },
+        "nist-800-53": {
+          "controlId": "IA-5"
+        },
+        "iso-27001": {
+          "controlId": "A.8.5"
+        },
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "INTUNE-COMPLIANCE-001",
+      "name": "Ensure devices without a compliance policy are marked not compliant",
+      "category": "COMPLIANCE",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "4.1",
+          "title": "Ensure devices without a compliance policy are marked 'not compliant'",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.IP-01"
+        },
+        "nist-800-53": {
+          "controlId": "CM-6;CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.8.9"
+        },
+        "soc2": {
+          "controlId": "CC5;CC6.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "INTUNE-ENROLL-001",
+      "name": "Ensure device enrollment for personally owned devices is blocked by default",
+      "category": "ENROLL",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "4.2",
+          "title": "Ensure device enrollment for personally owned devices is blocked by default",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-03"
+        },
+        "nist-800-53": {
+          "controlId": "AC-19;CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.1;A.8.9"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.6",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "SPO-B2B-001",
+      "name": "Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled",
+      "category": "B2B",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.2.2",
+          "title": "Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;IA-8"
+        },
+        "iso-27001": {
+          "controlId": "A.8.3;A.8.5"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "SPO-OD-001",
+      "name": "Ensure OneDrive content sharing is restricted",
+      "category": "OD",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.2.4",
+          "title": "Ensure OneDrive content sharing is restricted",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.DS-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;AC-21"
+        },
+        "iso-27001": {
+          "controlId": "A.8.10;A.8.12"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.6",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "SPO-MALWARE-002",
+      "name": "Ensure that infected files cannot be downloaded from SharePoint Online",
+      "category": "MALWARE",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.3.1",
+          "title": "Ensure that infected files cannot be downloaded from SharePoint Online",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "DE.CM-09"
+        },
+        "nist-800-53": {
+          "controlId": "SI-3"
+        },
+        "iso-27001": {
+          "controlId": "A.8.7"
+        },
+        "soc2": {
+          "controlId": "CC5;CC7.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "TEAMS-APPS-002",
+      "name": "Ensure app permission policies are configured for Teams",
+      "category": "APPS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.4.1",
+          "title": "Ensure app permission policies are configured",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AC-04"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;CM-7"
+        },
+        "iso-27001": {
+          "controlId": "A.8.9;A.8.19"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "TEAMS-REPORTING-001",
+      "name": "Ensure users can report security concerns in Teams",
+      "category": "REPORTING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "8.6.1",
+          "title": "Ensure users can report security concerns in Teams",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "RS.CO-02"
+        },
+        "nist-800-53": {
+          "controlId": "IR-6;SI-4"
+        },
+        "iso-27001": {
+          "controlId": "A.5.24;A.6.8"
+        },
+        "soc2": {
+          "controlId": "CC2.2;CC7.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-ADMIN-002",
+      "name": "Ensure access to the Entra admin center is restricted",
+      "category": "Access Control",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.1.2.4",
+          "title": "Ensure access to the Entra admin center is restricted",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-6(5);AC-3"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.2"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x;8.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.5;3.1.6"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-ADMIN-003",
+      "name": "Ensure two emergency access accounts have been defined",
+      "category": "Admin Accounts",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "1.1.2",
+          "title": "Ensure two emergency access accounts have been defined",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-01;PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-2;AC-2(2)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.16;A.5.18;A.8.2"
+        },
+        "stig": {
+          "controlId": "V-260334"
+        },
+        "pci-dss": {
+          "controlId": "8.2.x;8.6.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.1"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1);§164.308(a)(7)(i)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "ENTRA-HYBRID-001",
+      "name": "Ensure that password hash sync is enabled for hybrid deployments",
+      "category": "Hybrid Identity",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "5.1.8.1",
+          "title": "Ensure that password hash sync is enabled for hybrid deployments",
+          "profiles": [
+            "E3-L1",
+            "E5-L1"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-01;PR.AA-03"
+        },
+        "nist-800-53": {
+          "controlId": "IA-5"
+        },
+        "iso-27001": {
+          "controlId": "A.5.17;A.8.5"
+        },
+        "pci-dss": {
+          "controlId": "8.3.x"
+        },
+        "cmmc": {
+          "controlId": "3.5.7;3.5.8"
+        },
+        "hipaa": {
+          "controlId": "§164.312(d);§164.308(a)(5)(ii)(D)"
+        },
+        "soc2": {
+          "controlId": "CC6.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "SPO-SHARING-008",
+      "name": "Ensure external sharing is restricted by security group",
+      "category": "Sharing",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E3"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.2.8",
+          "title": "Ensure external sharing is restricted by security group",
+          "profiles": [
+            "E3-L2",
+            "E5-L2"
+          ]
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "AC-3;AC-6(10)"
+        },
+        "iso-27001": {
+          "controlId": "A.5.15;A.8.3"
+        },
+        "pci-dss": {
+          "controlId": "7.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.1.2;3.1.5"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC6.1;CC6.2;CC6.3",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "SPO-SCRIPT-001",
+      "name": "Ensure custom script execution is restricted on personal sites",
+      "category": "Script Execution",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.3.3",
+          "title": "Ensure custom script execution is restricted on personal sites",
+          "profiles": []
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7;CM-11"
+        },
+        "iso-27001": {
+          "controlId": "A.8.19;A.8.26"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.4.9"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
+          "evidenceType": "config-export"
+        }
+      }
+    },
+    {
+      "checkId": "SPO-SCRIPT-002",
+      "name": "Ensure custom script execution is restricted on site collections",
+      "category": "Script Execution",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": {
+        "minimum": "E5"
+      },
+      "frameworks": {
+        "cis-m365-v6": {
+          "controlId": "7.3.4",
+          "title": "Ensure custom script execution is restricted on site collections",
+          "profiles": []
+        },
+        "nist-csf": {
+          "controlId": "PR.AA-05"
+        },
+        "nist-800-53": {
+          "controlId": "CM-7;CM-11"
+        },
+        "iso-27001": {
+          "controlId": "A.8.19;A.8.26"
+        },
+        "pci-dss": {
+          "controlId": "2.2.x"
+        },
+        "cmmc": {
+          "controlId": "3.4.6;3.4.9"
+        },
+        "hipaa": {
+          "controlId": "§164.312(a)(1)"
+        },
+        "soc2": {
+          "controlId": "CC5;CC8.1",
           "evidenceType": "config-export"
         }
       }
