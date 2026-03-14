@@ -13,7 +13,7 @@
     global functions (Update-CheckProgress, Update-ProgressStatus) that
     collectors call from Add-Setting to drive real-time updates.
 .NOTES
-    Version: 0.6.0
+    Version: 0.8.1
     Author:  Daren9m
 #>
 
@@ -26,22 +26,30 @@ if (-not $script:ProgressActivityName) {
 # ── Map registry collector names to section names and display labels ──
 $script:CollectorSectionMap = @{
     'Entra'          = 'Identity'
+    'CAEvaluator'    = 'Identity'
     'ExchangeOnline' = 'Email'
+    'DNS'            = 'Email'
     'Defender'       = 'Security'
+    'Compliance'     = 'Security'
+    'Intune'         = 'Intune'
     'SharePoint'     = 'Collaboration'
     'Teams'          = 'Collaboration'
 }
 
 $script:CollectorLabelMap = @{
     'Entra'          = 'Entra Security Config'
+    'CAEvaluator'    = 'CA Policy Evaluation'
     'ExchangeOnline' = 'EXO Security Config'
+    'DNS'            = 'DNS Security Config'
     'Defender'       = 'Defender Security Config'
+    'Compliance'     = 'Compliance Security Config'
+    'Intune'         = 'Intune Security Config'
     'SharePoint'     = 'SharePoint Security Config'
     'Teams'          = 'Teams Security Config'
 }
 
 # Ordered list for consistent display
-$script:CollectorOrder = @('Entra', 'ExchangeOnline', 'Defender', 'SharePoint', 'Teams')
+$script:CollectorOrder = @('Entra', 'CAEvaluator', 'ExchangeOnline', 'DNS', 'Defender', 'Compliance', 'Intune', 'SharePoint', 'Teams')
 
 function Initialize-CheckProgress {
     <#
