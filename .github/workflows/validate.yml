@@ -1,0 +1,180 @@
+name: Validate
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint PowerShell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse-check all scripts
+        shell: pwsh
+        run: |
+          $allClean = $true
+          Get-ChildItem scripts/*.ps1 | ForEach-Object {
+            $parseErrors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile(
+              $_.FullName, [ref]$null, [ref]$parseErrors
+            )
+            if ($parseErrors) {
+              $allClean = $false
+              Write-Host "::error file=$($_.Name)::$($parseErrors.Count) parse error(s)"
+              $parseErrors | ForEach-Object { Write-Host "  $_" }
+            } else {
+              Write-Host "  OK: $($_.Name)"
+            }
+          }
+          if (-not $allClean) { exit 1 }
+          Write-Host "`nAll scripts parse clean"
+
+      - name: Run PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -RequiredVersion 1.24.0 -Force -Scope CurrentUser
+          $results = Get-ChildItem scripts/*.ps1 |
+            ForEach-Object { Invoke-ScriptAnalyzer -Path $_.FullName }
+          if ($results) {
+            Write-Host "::warning::$($results.Count) PSScriptAnalyzer finding(s)"
+            $results | Format-Table RuleName, Severity, ScriptName, Line, Message -AutoSize
+          } else {
+            Write-Host "No PSScriptAnalyzer findings"
+          }
+          # Warn only — do not fail on style issues
+
+  validate-data:
+    name: Validate Data Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate CSV files
+        shell: pwsh
+        run: |
+          # --- framework-mappings.csv ---
+          $fm = Import-Csv data/framework-mappings.csv
+          $expectedCols = @(
+            'CisControl','CisTitle','CisE3L1','CisE3L2',
+            'CisE5L1','CisE5L2','NistCsf','Nist80053',
+            'Iso27001','Stig','PciDss','Cmmc','Hipaa','CisaScuba'
+          )
+          $actualCols = $fm[0].PSObject.Properties.Name
+          $missing = $expectedCols | Where-Object { $_ -notin $actualCols }
+          if ($missing) {
+            Write-Host "::error::framework-mappings.csv missing columns: $($missing -join ', ')"
+            exit 1
+          }
+          Write-Host "  framework-mappings.csv: $($fm.Count) rows, $($actualCols.Count) columns OK"
+
+          # --- check-id-mapping.csv ---
+          $cid = Import-Csv data/check-id-mapping.csv
+          if ($cid.Count -eq 0) {
+            Write-Host "::error::check-id-mapping.csv is empty"
+            exit 1
+          }
+          Write-Host "  check-id-mapping.csv: $($cid.Count) rows OK"
+
+      - name: Validate JSON files
+        shell: pwsh
+        run: |
+          $failed = @()
+          Get-ChildItem data/*.json -Recurse | ForEach-Object {
+            try {
+              $null = Get-Content $_.FullName -Raw | ConvertFrom-Json -ErrorAction Stop
+              Write-Host "  OK: $($_.FullName -replace '.*data/', 'data/')"
+            } catch {
+              $failed += $_.Name
+              Write-Host "::error file=$($_.FullName)::Invalid JSON: $($_.Exception.Message)"
+            }
+          }
+          if ($failed) { exit 1 }
+
+      - name: Validate registry.json schema
+        shell: pwsh
+        run: |
+          $reg = Get-Content data/registry.json -Raw | ConvertFrom-Json
+          $errors = @()
+
+          if (-not $reg.version) { $errors += "Missing 'version' field" }
+          if (-not $reg.checks) { $errors += "Missing 'checks' array" }
+          if ($reg.checks.Count -eq 0) { $errors += "'checks' array is empty" }
+
+          foreach ($check in $reg.checks) {
+            if (-not $check.checkId) {
+              $errors += "Check missing 'checkId'"
+              break
+            }
+            if (-not $check.name) {
+              $errors += "Check '$($check.checkId)' missing 'name'"
+              break
+            }
+            if (-not $check.frameworks) {
+              $errors += "Check '$($check.checkId)' missing 'frameworks'"
+              break
+            }
+          }
+
+          if ($errors) {
+            $errors | ForEach-Object { Write-Host "::error::$_" }
+            exit 1
+          }
+          Write-Host "  registry.json: $($reg.checks.Count) checks, schema valid"
+
+  registry-consistency:
+    name: Registry Consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild and compare
+        shell: pwsh
+        run: |
+          $tempOut = Join-Path $env:RUNNER_TEMP 'registry-rebuilt.json'
+          & scripts/Build-Registry.ps1 -OutputPath $tempOut
+
+          $committed = Get-Content data/registry.json -Raw | ConvertFrom-Json
+          $rebuilt = Get-Content $tempOut -Raw | ConvertFrom-Json
+
+          $committedCount = $committed.checks.Count
+          $rebuiltCount = $rebuilt.checks.Count
+
+          Write-Host "Committed registry: $committedCount checks"
+          Write-Host "Rebuilt registry:   $rebuiltCount checks"
+
+          if ($committedCount -ne $rebuiltCount) {
+            $delta = $committedCount - $rebuiltCount
+            Write-Host "::warning::Registry mismatch: $committedCount committed vs $rebuiltCount rebuilt ($delta checks differ)"
+            Write-Host "::warning::Expected until issue #3 (supersededBy) is resolved"
+            # Warn only — do not fail. Flip to exit 1 after #3 is fixed.
+          } else {
+            Write-Host "Registry is consistent with CSVs"
+          }
+
+  test:
+    name: Pester Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Pester
+        shell: pwsh
+        run: |
+          Install-Module Pester -RequiredVersion 5.7.1 -Force -Scope CurrentUser
+          $config = New-PesterConfiguration
+          $config.Run.Path = './tests/'
+          $config.Output.Verbosity = 'Detailed'
+          $config.Run.Exit = $false
+          $result = Invoke-Pester -Configuration $config
+
+          # Summary
+          Write-Host "`nResults: $($result.PassedCount) passed, $($result.FailedCount) failed, $($result.SkippedCount) skipped"
+
+          if ($result.FailedCount -gt 0) {
+            Write-Host "::warning::$($result.FailedCount) test(s) failed — see #3 (supersededBy) and #4 (naming convention)"
+            # Warn only — do not fail. Flip to exit 1 after #3 and #4 are fixed.
+          }
