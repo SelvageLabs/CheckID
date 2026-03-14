@@ -10,6 +10,8 @@ for security framework reference data. CheckID's framework mappings are derived 
 | `CIS/CIS_M365_to_NIST_to_FedRAMP_Crosswalk.csv` | CIS M365 to NIST 800-53 to FedRAMP mappings |
 | `SOC/tsc_to_nist_800-53.xlsx` | SOC 2 Trust Services Criteria to NIST 800-53 |
 | `SCF/secure-controls-framework-scf-2025-4.csv` | Master cross-framework mapping (80+ frameworks) |
+| `SCF/scf.db` | Normalized SQLite database (13 tables, 261 frameworks, 66K+ mappings) |
+| `SCF/checkid-framework-export.csv` | CheckID-compatible flat export from SCF database |
 | `NIST/csf-pf-to-sp800-53r5-mappings.xlsx` | NIST CSF 2.0 to NIST 800-53 R5 |
 
 ### Update Workflow

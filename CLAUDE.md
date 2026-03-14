@@ -30,7 +30,7 @@ CheckID/
 1. **This is a shared library** -- M365-Assess, Stitch-M365, and Darn consume it via git submodule.
    After any change, consumers must bump their submodule pointer.
 2. **After modifying CSVs**, run `scripts/Build-Registry.ps1` to regenerate `data/registry.json`.
-3. **SecFrame is upstream** -- framework mapping data originates from `C:\git\SecFrame`. See REFERENCES.md.
+3. **SecFrame is upstream** -- framework mapping data originates from [SecFrame](https://github.com/SelvageLabs/SecFrame). See REFERENCES.md.
 4. **Do not add consumer-specific code** -- report generators, orchestrators, and collectors belong
    in their respective consumer repos, not here.
 
