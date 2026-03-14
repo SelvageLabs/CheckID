@@ -3,7 +3,7 @@
     Builds the master control registry (registry.json) from framework mappings and check-ID mappings.
 
 .DESCRIPTION
-    Reads two CSV sources and produces controls/registry.json — the canonical registry
+    Reads two CSV sources and produces data/registry.json — the canonical registry
     mapping every CIS check to all its framework memberships including SOC 2.
 
     Source 1: data/framework-mappings.csv  (CIS controls + framework cross-references)
@@ -13,7 +13,7 @@
     NIST 800-53 control families present on each check.
 
 .PARAMETER OutputPath
-    Path to write the JSON registry. Defaults to controls/registry.json relative to
+    Path to write the JSON registry. Defaults to data/registry.json relative to
     the repository root.
 
 .NOTES
@@ -22,7 +22,7 @@
 
 .EXAMPLE
     .\scripts\Build-Registry.ps1
-    Generates controls/registry.json from the default CSV sources.
+    Generates data/registry.json from the default CSV sources.
 #>
 [CmdletBinding()]
 param(
@@ -67,6 +67,7 @@ $soc2MappingRules = [ordered]@{
     '^AC-6'      = 'CC6.1;CC6.3'
     '^AC-11'     = 'CC6.1'
     '^AC-12'     = 'CC6.1'
+    '^AC-17'     = 'CC6.1;CC6.7'
     '^AU-'       = 'CC7.1;CC7.2'
     '^IA-'       = 'CC6.1'
     '^CM-'       = 'CC5;CC8.1'
@@ -255,7 +256,11 @@ foreach ($sc in $standaloneChecks) {
 # Sort by CIS control ID (numerical sort on each dotted segment)
 # Checks without CIS control sort to the end
 $checks = $checks | Sort-Object {
-    $cisId = $_.frameworks['cis-m365-v6'].controlId
+    $fw = $_.frameworks
+    $cis = if ($fw -is [System.Collections.IDictionary]) { $fw['cis-m365-v6'] }
+           elseif ($fw.PSObject.Properties.Name -contains 'cis-m365-v6') { $fw.'cis-m365-v6' }
+           else { $null }
+    $cisId = if ($cis) { $cis.controlId } else { $null }
     if ([string]::IsNullOrWhiteSpace($cisId)) { return 'zzzz' }
     $parts = $cisId -split '\.'
     ($parts | ForEach-Object { $_.PadLeft(4, '0') }) -join '.'

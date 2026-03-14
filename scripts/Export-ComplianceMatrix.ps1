@@ -6,7 +6,7 @@
     in the control registry, and generates a two-sheet XLSX file:
       Sheet 1 — Compliance Matrix (one row per check with all framework mappings)
       Sheet 2 — Summary (pass/fail counts and coverage per framework)
-    Requires the ImportExcel module. If not available, logs a warning and returns.
+    Requires the ImportExcel module. Throws a terminating error if not installed.
 .PARAMETER AssessmentFolder
     Path to the assessment output folder containing collector CSVs and the summary file.
 .PARAMETER TenantName
@@ -34,8 +34,7 @@ $ErrorActionPreference = 'Stop'
 # Check for ImportExcel module
 # ------------------------------------------------------------------
 if (-not (Get-Module -ListAvailable -Name ImportExcel)) {
-    Write-Warning "ImportExcel module not available — skipping XLSX compliance matrix export. Install with: Install-Module ImportExcel -Scope CurrentUser"
-    return
+    throw "ImportExcel module is required for XLSX export. Install with: Install-Module ImportExcel -Scope CurrentUser"
 }
 Import-Module ImportExcel -ErrorAction Stop
 
