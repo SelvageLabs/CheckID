@@ -116,6 +116,16 @@ Describe 'Control Registry Integrity' {
         }
     }
 
+    # --- NIST 800-53 profiles ---
+
+    It 'Most NIST 800-53 entries have profiles array' {
+        $nistMapped = $checks | Where-Object { $_.frameworks.PSObject.Properties.Name -contains 'nist-800-53' }
+        $nistMapped.Count | Should -BeGreaterOrEqual 1 -Because "at least some checks must map to NIST 800-53"
+        $withProfiles = @($nistMapped | Where-Object { $_.frameworks.'nist-800-53'.profiles }).Count
+        $withProfiles | Should -BeGreaterOrEqual ($nistMapped.Count * 0.9) `
+            -Because "at least 90% of NIST 800-53 entries should have baseline profiles (some enhancements may not be in any baseline)"
+    }
+
     # --- Framework coverage ---
 
     It 'All 14 frameworks are represented across checks' {
