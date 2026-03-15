@@ -80,13 +80,45 @@ if (Test-Path $derivedMappingsPath) {
 }
 
 # --- Load NIST 800-53 baseline lookup (for standalone check profile detection) ---
+# Requires SecFrame as a sibling repo. In CI where SecFrame is unavailable,
+# standalone checks use a static fallback built from framework-mappings.csv.
 $nistBaselineLookup = @{}
 $nistBaselinePath = Join-Path $repoRoot 'scripts' 'Import-NistBaselines.ps1'
 if (Test-Path $nistBaselinePath) {
-    $nistBaselineLookup = & $nistBaselinePath
-    Write-Verbose "Loaded NIST baseline lookup: $($nistBaselineLookup.Count) controls"
-} else {
-    Write-Warning "Import-NistBaselines.ps1 not found — standalone checks will not have NIST profiles."
+    try {
+        $result = & $nistBaselinePath -ErrorAction Stop
+        if ($result -and $result.Count -gt 0) {
+            $nistBaselineLookup = $result
+            Write-Verbose "Loaded NIST baseline lookup: $($nistBaselineLookup.Count) controls"
+        }
+    } catch {
+        Write-Warning "Could not load NIST baselines (SecFrame unavailable?) — building fallback from CSV."
+    }
+}
+# Fallback: derive baseline lookup from the CSV profile columns when SecFrame is absent
+if ($nistBaselineLookup.Count -eq 0) {
+    $profileColumns = @{ 'Nist80053Low' = 'Low'; 'Nist80053Moderate' = 'Moderate'; 'Nist80053High' = 'High'; 'Nist80053Privacy' = 'Privacy' }
+    foreach ($fwRow in $frameworkRows) {
+        foreach ($colName in $profileColumns.Keys) {
+            $colValue = $fwRow.$colName
+            if (-not [string]::IsNullOrWhiteSpace($colValue)) {
+                foreach ($cid in ($colValue -split ';')) {
+                    $cid = $cid.Trim()
+                    if ([string]::IsNullOrWhiteSpace($cid)) { continue }
+                    if (-not $nistBaselineLookup.ContainsKey($cid)) {
+                        $nistBaselineLookup[$cid] = [System.Collections.Generic.List[string]]::new()
+                    }
+                    $profileName = $profileColumns[$colName]
+                    if (-not $nistBaselineLookup[$cid].Contains($profileName)) {
+                        $nistBaselineLookup[$cid].Add($profileName)
+                    }
+                }
+            }
+        }
+    }
+    if ($nistBaselineLookup.Count -gt 0) {
+        Write-Verbose "Built NIST baseline fallback from CSV: $($nistBaselineLookup.Count) controls"
+    }
 }
 
 function Resolve-NistProfiles {
