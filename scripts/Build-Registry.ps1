@@ -79,6 +79,49 @@ if (Test-Path $derivedMappingsPath) {
     Write-Warning "No derived-mappings.json found — derived frameworks will not be added. Run Build-DerivedMappings.py first."
 }
 
+# --- Load NIST 800-53 baseline lookup (for standalone check profile detection) ---
+$nistBaselineLookup = @{}
+$nistBaselinePath = Join-Path $repoRoot 'scripts' 'Import-NistBaselines.ps1'
+if (Test-Path $nistBaselinePath) {
+    $nistBaselineLookup = & $nistBaselinePath
+    Write-Verbose "Loaded NIST baseline lookup: $($nistBaselineLookup.Count) controls"
+} else {
+    Write-Warning "Import-NistBaselines.ps1 not found — standalone checks will not have NIST profiles."
+}
+
+function Resolve-NistProfiles {
+    <#
+    .SYNOPSIS
+        Resolves NIST 800-53 baseline profiles for a semicolon-delimited list of control IDs.
+    #>
+    [CmdletBinding()]
+    param([string]$ControlIds)
+
+    if ([string]::IsNullOrWhiteSpace($ControlIds)) { return @() }
+
+    $allProfiles = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    foreach ($cid in ($ControlIds -split ';')) {
+        $cid = $cid.Trim()
+        if ([string]::IsNullOrWhiteSpace($cid)) { continue }
+        # Try exact match, then strip trailing lowercase parameter indicator
+        $profiles = $null
+        if ($nistBaselineLookup.ContainsKey($cid)) {
+            $profiles = $nistBaselineLookup[$cid]
+        } else {
+            $base = $cid -replace '[a-z]$', ''
+            if ($base -ne $cid -and $nistBaselineLookup.ContainsKey($base)) {
+                $profiles = $nistBaselineLookup[$base]
+            }
+        }
+        if ($profiles) {
+            foreach ($p in $profiles) { [void]$allProfiles.Add($p) }
+        }
+    }
+    # Return in canonical order
+    $order = @('Low', 'Moderate', 'High', 'Privacy')
+    return @($order | Where-Object { $allProfiles.Contains($_) })
+}
+
 # --- Load standalone checks (non-CIS automated checks with framework data) ---
 $standaloneChecks = @()
 if (Test-Path $standaloneJsonPath) {
@@ -249,6 +292,13 @@ foreach ($fwRow in $frameworkRows) {
     if (-not [string]::IsNullOrWhiteSpace($fwRow.CisE5L1)) { $profiles.Add('E5-L1') }
     if (-not [string]::IsNullOrWhiteSpace($fwRow.CisE5L2)) { $profiles.Add('E5-L2') }
 
+    # Determine NIST 800-53 baseline profiles
+    $nistProfiles = [System.Collections.Generic.List[string]]::new()
+    if (-not [string]::IsNullOrWhiteSpace($fwRow.Nist80053Low))      { $nistProfiles.Add('Low') }
+    if (-not [string]::IsNullOrWhiteSpace($fwRow.Nist80053Moderate)) { $nistProfiles.Add('Moderate') }
+    if (-not [string]::IsNullOrWhiteSpace($fwRow.Nist80053High))     { $nistProfiles.Add('High') }
+    if (-not [string]::IsNullOrWhiteSpace($fwRow.Nist80053Privacy))  { $nistProfiles.Add('Privacy') }
+
     # Licensing: E5 only if no E3 profiles
     $hasE3 = (-not [string]::IsNullOrWhiteSpace($fwRow.CisE3L1)) -or
              (-not [string]::IsNullOrWhiteSpace($fwRow.CisE3L2))
@@ -288,6 +338,11 @@ foreach ($fwRow in $frameworkRows) {
             }
             $frameworks[$jsonKey] = $entry
         }
+    }
+
+    # Add NIST 800-53 baseline profiles (if entry exists and profiles detected)
+    if ($nistProfiles.Count -gt 0 -and $frameworks.Contains('nist-800-53')) {
+        $frameworks['nist-800-53']['profiles'] = @($nistProfiles)
     }
 
     # Add SOC 2 derived from NIST 800-53
@@ -395,6 +450,13 @@ foreach ($sc in $standaloneChecks) {
                 $dfwEntry['title'] = $dfwTitle
             }
             $enrichedFrameworks[$dfwKey] = $dfwEntry
+        }
+    }
+    # Add NIST 800-53 baseline profiles for standalone checks
+    if ($enrichedFrameworks.Contains('nist-800-53')) {
+        $scNistProfiles = Resolve-NistProfiles -ControlIds $enrichedFrameworks['nist-800-53'].controlId
+        if ($scNistProfiles.Count -gt 0) {
+            $enrichedFrameworks['nist-800-53']['profiles'] = $scNistProfiles
         }
     }
     $checkObj = [ordered]@{
