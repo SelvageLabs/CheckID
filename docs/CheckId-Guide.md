@@ -1,6 +1,6 @@
 # CheckId System Guide
 
-The CheckId system is the backbone of M365-Assess's multi-framework compliance reporting. Each security check gets a framework-agnostic identifier that maps to controls across 10 compliance frameworks simultaneously.
+The CheckId system is the backbone of M365-Assess's multi-framework compliance reporting. Each security check gets a framework-agnostic identifier that maps to controls across 14 compliance frameworks simultaneously.
 
 ## What Is a CheckId?
 
@@ -67,7 +67,11 @@ All CheckIds live in `data/registry.json`. Each entry contains:
       "title": "Ensure that between two and four global admins are designated",
       "profiles": ["E3-L1", "E5-L1"]
     },
-    "nist-800-53": { "controlId": "AC-2;AC-6" },
+    "nist-800-53": {
+      "controlId": "AC-2;AC-6",
+      "title": "Account Management; Least Privilege",
+      "profiles": ["Low", "Moderate", "High"]
+    },
     "nist-csf": { "controlId": "PR.AA-05" },
     "iso-27001": { "controlId": "A.5.15;A.5.18;A.8.2" },
     "stig": { "controlId": "V-260335" },
@@ -106,7 +110,7 @@ All CheckIds live in `data/registry.json`. Each entry contains:
 | Framework | Registry Key | Notes |
 |-----------|-------------|-------|
 | CIS M365 v6.0.1 | `cis-m365-v6` | 4 profiles: E3-L1, E3-L2, E5-L1, E5-L2 |
-| NIST 800-53 Rev 5 | `nist-800-53` | Control families (AC, AU, IA, CM, etc.) |
+| NIST 800-53 Rev 5 | `nist-800-53` | 4 baseline profiles: Low, Moderate, High, Privacy |
 | NIST CSF 2.0 | `nist-csf` | Functions and categories (PR.AC, DE.CM, etc.) |
 | ISO 27001:2022 | `iso-27001` | Annex A controls |
 | DISA STIG | `stig` | Vulnerability IDs (V-xxxxxx) |
@@ -115,8 +119,39 @@ All CheckIds live in `data/registry.json`. Each entry contains:
 | HIPAA Security Rule | `hipaa` | Sec. 164.3xx references |
 | CISA SCuBA | `cisa-scuba` | MS.AAD/EXO/DEFENDER/SPO/TEAMS baselines |
 | SOC 2 TSC | `soc2` | Trust Services Criteria (CC/A/C/PI/P) |
+| FedRAMP Rev 5 | `fedramp` | Derived from NIST 800-53 via SCF bridge |
+| CIS Controls v8.1 | `cis-controls-v8` | Derived from NIST 800-53 via SCF bridge |
+| Essential Eight | `essential-eight` | Derived from NIST 800-53 via SCF bridge |
+| MITRE ATT&CK v10 | `mitre-attack` | Derived from NIST 800-53 via SCF bridge |
 
-SOC 2 mappings are auto-derived from NIST 800-53 control families using rules in `scripts/Build-Registry.ps1`.
+SOC 2 mappings are auto-derived from NIST 800-53 control families using rules in `scripts/Build-Registry.ps1`. FedRAMP, CIS Controls v8, Essential Eight, and MITRE ATT&CK are derived via the SecFrame SCF transitive bridge.
+
+### NIST 800-53 Coverage Scope
+
+NIST 800-53 Rev 5 catalogs 1,189 controls spanning physical security, personnel processes, contingency planning, and technical configuration. CheckID maps the **59 controls that are verifiable through M365 configuration export**, concentrated in 7 control families:
+
+| Family | Controls Mapped | Examples |
+|--------|----------------|---------|
+| AC (Access Control) | 25 | Account management, least privilege, remote access |
+| IA (Identification/Auth) | 12 | MFA, authenticator management, credential policies |
+| CM (Configuration Mgmt) | 8 | Baseline config, least functionality |
+| SC (System/Comms Protection) | 5 | Boundary protection, DLP, encryption |
+| SI (System/Info Integrity) | 5 | Malware protection, security alerts |
+| AU (Audit/Accountability) | 2 | Audit record generation |
+| AT (Awareness/Training) | 2 | Security awareness |
+
+**Families with zero coverage** (by design -- not assessable via M365 config export):
+
+PE (Physical), CP (Contingency Planning), PS (Personnel), MA (Maintenance), MP (Media Protection), IR (Incident Response), SA (System Acquisition), SR (Supply Chain), PL (Planning), PM (Program Management), PT (Privacy), RA (Risk Assessment), CA (Security Assessment)
+
+### Baseline Profiles
+
+Both CIS and NIST use cumulative profile hierarchies. Each registry entry includes a `profiles` array indicating which baselines apply:
+
+- **CIS:** `["E3-L1", "E5-L1"]` -- L1 is a subset of L2; E3 is a subset of E5
+- **NIST:** `["Low", "Moderate", "High"]` -- Low is a subset of Moderate, which is a subset of High; Privacy is independent
+
+Consumers can use profiles to scope coverage reporting accurately. For example, instead of reporting *"25 of 1,189 NIST controls"*, a consumer can report *"Of the 149 Low baseline controls, 25 are M365-assessable and we check all 25."*
 
 ## How It Works End-to-End
 
@@ -131,7 +166,7 @@ checks settings      (e.g., ENTRA-ADMIN-001)   in registry.json
                                               mappings from one entry
                                                     |
                                                     v
-                                              Populates 13 framework
+                                              Populates 14 framework
                                               columns in compliance
                                               matrix (HTML + XLSX)
 ```
@@ -214,7 +249,7 @@ To rebuild after editing the source CSVs:
 - [ ] Status logic: Pass/Fail for deterministic checks, Review for API gaps, Info for data points
 - [ ] Remediation text includes specific portal path or PowerShell command
 - [ ] MANUAL entry (if exists) has `supersededBy` pointing to new CheckId
-- [ ] Registry integrity tests pass (7/7)
+- [ ] Registry integrity tests pass (`Invoke-Pester ./tests/`)
 
 ## Using CheckIds in Reports
 
