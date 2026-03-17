@@ -9,6 +9,7 @@
 
 # Module-scoped registry cache
 $script:RegistryCache = $null
+$script:RegistryIndex = $null
 $script:ModuleRoot = $PSScriptRoot
 
 function Get-CheckRegistry {
@@ -43,6 +44,13 @@ function Get-CheckRegistry {
 
     $raw = Get-Content -Path $registryPath -Raw | ConvertFrom-Json
     $script:RegistryCache = $raw.checks
+
+    # Build hash index for O(1) lookups
+    $script:RegistryIndex = @{}
+    foreach ($check in $script:RegistryCache) {
+        $script:RegistryIndex[$check.checkId] = $check
+    }
+
     return $script:RegistryCache
 }
 
@@ -63,8 +71,8 @@ function Get-CheckById {
         [string]$CheckId
     )
 
-    $checks = Get-CheckRegistry
-    return $checks | Where-Object { $_.checkId -eq $CheckId }
+    if (-not $script:RegistryIndex) { Get-CheckRegistry | Out-Null }
+    return $script:RegistryIndex[$CheckId]
 }
 
 function Search-Check {
