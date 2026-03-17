@@ -121,7 +121,7 @@ All CheckIds live in `data/registry.json`. Each entry contains:
 | SOC 2 TSC | `soc2` | Trust Services Criteria (CC/A/C/PI/P) |
 | FedRAMP Rev 5 | `fedramp` | Derived from NIST 800-53 via SCF bridge |
 | CIS Controls v8.1 | `cis-controls-v8` | Derived from NIST 800-53 via SCF bridge |
-| Essential Eight | `essential-eight` | Derived from NIST 800-53 via SCF bridge |
+| Essential Eight (ASD) | `essential-eight` | ML1–ML3 maturity levels, P1–P7 strategies; derived via SCF bridge |
 | MITRE ATT&CK v10 | `mitre-attack` | Derived from NIST 800-53 via SCF bridge |
 
 SOC 2 mappings are auto-derived from NIST 800-53 control families using rules in `scripts/Build-Registry.ps1`. FedRAMP, CIS Controls v8, Essential Eight, and MITRE ATT&CK are derived via the SecFrame SCF transitive bridge.
@@ -152,6 +152,27 @@ Both CIS and NIST use cumulative profile hierarchies. Each registry entry includ
 - **NIST:** `["Low", "Moderate", "High"]` -- Low is a subset of Moderate, which is a subset of High; Privacy is independent
 
 Consumers can use profiles to scope coverage reporting accurately. For example, instead of reporting *"25 of 1,189 NIST controls"*, a consumer can report *"Of the 149 Low baseline controls, 25 are M365-assessable and we check all 25."*
+
+### Essential Eight (ASD)
+
+The [Essential Eight](https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight) is published by the Australian Signals Directorate (ASD). It defines eight mitigation strategies at three maturity levels:
+
+| Strategy | Key | Description |
+|----------|-----|-------------|
+| Application Control | P1 | Prevent execution of unapproved programs |
+| Patch Applications | P2 | Patch security vulnerabilities in applications |
+| Configure Microsoft Office Macro Settings | P3 | Disable macros for users without a business requirement |
+| User Application Hardening | P4 | Harden web browsers and applications |
+| Restrict Administrative Privileges | P5 | Validate and monitor privileged access |
+| Patch Operating Systems | P6 | Patch security vulnerabilities in operating systems |
+| Multi-Factor Authentication | P7 | Require stronger authentication for sensitive systems |
+| Regular Backups | P8 | Back up data, applications, and settings |
+
+Control IDs use the format `ML{level}-P{strategy}` (e.g., `ML1-P4;ML2-P4;ML3-P4`). Higher maturity levels are cumulative — ML3 includes all ML2 requirements, which include all ML1 requirements.
+
+Seven of the eight strategies (P1–P7) are mapped to M365 checks. P8 (Regular Backups) is not assessable through M365 configuration export. Essential Eight mappings are derived from NIST 800-53 controls via the SecFrame SCF transitive bridge.
+
+The framework definition is in `data/frameworks/essential-eight.json`.
 
 ## How It Works End-to-End
 
