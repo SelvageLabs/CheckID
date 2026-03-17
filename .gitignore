@@ -11,9 +11,8 @@
 CLAUDE.md
 .cursorrules
 .github/copilot-instructions.md
-.claudeignore/
-.claudeignore
 claudeignore
+superpowers/
 
 # Assessment output
 M365-Assessment/
@@ -22,6 +21,7 @@ CIS/
 ScubaGear-Report/
 SCF/
 SecFrame/
+
 
 # Credentials and certificates
 .env
