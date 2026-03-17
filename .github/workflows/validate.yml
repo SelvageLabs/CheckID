@@ -245,6 +245,30 @@ jobs:
           }
           Write-Host "Module import and basic operations OK"
 
+  python-validate:
+    name: Validate Python Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Syntax-check Python scripts
+        run: |
+          python -m py_compile scripts/Build-DerivedMappings.py
+          python -m py_compile scripts/Build-FrameworkTitles.py
+          echo "All Python scripts compile clean"
+
+      - name: Validate committed JSON outputs
+        run: |
+          python -c "import json; json.load(open('data/derived-mappings.json'))"
+          echo "  OK: data/derived-mappings.json"
+          python -c "import json; json.load(open('data/framework-titles.json'))"
+          echo "  OK: data/framework-titles.json"
+
   publish:
     name: Publish to PSGallery
     runs-on: ubuntu-latest
