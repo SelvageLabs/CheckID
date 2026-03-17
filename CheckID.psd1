@@ -27,6 +27,7 @@
         'CheckID.psd1'
         'CheckID.psm1'
         'data/registry.json'
+        'data/registry.schema.json'
         'data/framework-titles.json'
         'data/derived-mappings.json'
         'data/framework-mappings.csv'
@@ -36,8 +37,14 @@
         'data/frameworks/soc2-tsc.json'
         'data/frameworks/nist-800-53-r5.json'
         'data/frameworks/essential-eight.json'
+        'scripts/Build-Registry.ps1'
+        'scripts/Build-DerivedMappings.py'
+        'scripts/Build-FrameworkTitles.py'
+        'scripts/Export-ComplianceMatrix.ps1'
         'scripts/Import-ControlRegistry.ps1'
+        'scripts/Import-NistBaselines.ps1'
         'scripts/Search-Registry.ps1'
+        'scripts/Show-CheckProgress.ps1'
         'scripts/Test-RegistryData.ps1'
     )
 
