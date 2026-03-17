@@ -1,1 +1,63 @@
 .worktrees/
+
+# AI assistants
+.claude/
+.cursor/
+.copilot/
+.codeium/
+.windsurf/
+.aider*
+.continue/
+CLAUDE.md
+.cursorrules
+.github/copilot-instructions.md
+.claudeignore/
+.claudeignore
+claudeignore
+
+# Assessment output
+M365-Assessment/
+M365-Assess/
+CIS/
+ScubaGear-Report/
+SCF/
+SecFrame/
+
+# Credentials and certificates
+.env
+.env.*
+*.pfx
+*.pem
+*.key
+*.p12
+*.cer
+secrets.json
+credentials.json
+
+# Temp files
+_tmp.ps1
+*.tmp
+*~
+
+# OS artifacts
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# PowerShell artifacts
+PSScriptAnalyzerResults.*
+testResults.xml
+coverage.xml
+*.clixml
+*_transcript_*.txt
+
+# Module cache (local installs)
+Modules/
+
+# IDE
+.vscode/
+.vs/
+*.code-workspace
+*.suo
+*.user
+.superpowers/
