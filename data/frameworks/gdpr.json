@@ -3,7 +3,6 @@
   "label": "EU General Data Protection Regulation (GDPR)",
   "version": "2016/679",
   "css": "fw-gdpr",
-  "totalControls": 99,
   "scoring": {
     "method": "article-coverage",
     "articles": {
@@ -41,5 +40,5 @@
       }
     }
   },
-  "notes": "CheckID maps checks to the GDPR articles that the control directly supports. Only the security-relevant articles (Art. 5, 25, 32-35) are represented; administrative and data subject rights articles are out of scope for technical configuration assessment."
+  "notes": "GDPR has 99 articles in total. CheckID maps only the 8 security-relevant articles (Art. 5, 25, 32-35) that are verifiable through M365 configuration assessment. Administrative, data subject rights, and supervisory authority articles are out of scope for technical configuration checks. No checks in registry.json carry GDPR mappings yet — this definition establishes the article structure for contributors to add them."
 }

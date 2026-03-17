@@ -76,32 +76,6 @@ for check in registry['checks']:
         print(f"{check['checkId']}: {check['frameworks']['hipaa']['controlId']}")
 ```
 
-### Use the Python client library
-
-A higher-level Python client is available in `clients/python/`:
-
-```bash
-pip install -e lib/CheckID/clients/python
-```
-
-```python
-from checkid import CheckIDRegistry
-
-reg = CheckIDRegistry()
-
-# Look up a specific check
-check = reg.get_by_id("ENTRA-ADMIN-001")
-print(check["name"])
-
-# Search by framework, control ID, or keyword
-results = reg.search(framework="hipaa", keyword="password")
-results = reg.search(control_id="AC-6")
-
-# Coverage analytics per framework
-for cov in reg.framework_coverage():
-    print(f"{cov['framework_key']:20s}  {cov['check_count']} checks")
-```
-
 ### Generate a compliance matrix (XLSX)
 
 ```powershell
@@ -148,11 +122,6 @@ Consumers can use baseline profiles to report accurately: *"Of the 149 Low basel
 
 ```
 CheckID/
-├── clients/                       Language-specific client libraries
-│   └── python/                    Python client (pip-installable)
-│       ├── checkid/               Package source
-│       ├── tests/                 pytest tests
-│       └── pyproject.toml
 ├── data/                          Registry data
 │   ├── registry.json              Master registry (233 checks, 14 frameworks)
 │   ├── check-id-mapping.csv       CheckID → service/area assignments
