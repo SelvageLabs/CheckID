@@ -34,6 +34,8 @@
         'data/standalone-checks.json'
         'data/frameworks/cis-m365-v6.json'
         'data/frameworks/soc2-tsc.json'
+        'data/frameworks/nist-800-53-r5.json'
+        'data/frameworks/essential-eight.json'
         'scripts/Import-ControlRegistry.ps1'
         'scripts/Search-Registry.ps1'
         'scripts/Test-RegistryData.ps1'

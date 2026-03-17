@@ -175,11 +175,15 @@ Describe 'Control Registry Integrity' {
             $controlId = $check.frameworks.hipaa.controlId
             $controlId | Should -Not -BeNullOrEmpty `
                 -Because "$($check.checkId) has HIPAA mapping and needs a controlId"
-            # Detect garbled encoding: Â§ instead of §
+            # Detect garbled encoding: Â§ or ┬º instead of §
             $controlId | Should -Not -Match '\xC3\x82\xC2\xA7' `
                 -Because "$($check.checkId) HIPAA controlId must not contain double-encoded section symbol"
             $controlId | Should -Not -Match 'Â§' `
                 -Because "$($check.checkId) HIPAA controlId has garbled section symbol encoding"
+            $controlId | Should -Not -Match '┬º' `
+                -Because "$($check.checkId) HIPAA controlId has mojibake section symbol encoding"
+            $controlId | Should -Match '§' `
+                -Because "$($check.checkId) HIPAA controlId must contain the § section symbol"
         }
     }
 
