@@ -1,0 +1,45 @@
+{
+  "frameworkId": "gdpr",
+  "label": "EU General Data Protection Regulation (GDPR)",
+  "version": "2016/679",
+  "css": "fw-gdpr",
+  "totalControls": 99,
+  "scoring": {
+    "method": "article-coverage",
+    "articles": {
+      "Art. 5(1)(f)": {
+        "label": "Integrity and Confidentiality",
+        "description": "Personal data shall be processed in a manner that ensures appropriate security, including protection against unauthorised or unlawful processing and against accidental loss, destruction or damage, using appropriate technical or organisational measures."
+      },
+      "Art. 25": {
+        "label": "Data Protection by Design and by Default",
+        "description": "The controller shall implement appropriate technical and organisational measures for ensuring that, by default, only personal data which are necessary for each specific purpose of the processing are processed."
+      },
+      "Art. 32(1)(a)": {
+        "label": "Security of Processing — Encryption",
+        "description": "The pseudonymisation and encryption of personal data."
+      },
+      "Art. 32(1)(b)": {
+        "label": "Security of Processing — Confidentiality, Integrity, Availability",
+        "description": "The ability to ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services."
+      },
+      "Art. 32(1)(c)": {
+        "label": "Security of Processing — Availability Restoration",
+        "description": "The ability to restore the availability and access to personal data in a timely manner in the event of a physical or technical incident."
+      },
+      "Art. 32(1)(d)": {
+        "label": "Security of Processing — Regular Testing",
+        "description": "A process for regularly testing, assessing and evaluating the effectiveness of technical and organisational measures for ensuring the security of the processing."
+      },
+      "Art. 33": {
+        "label": "Notification of Personal Data Breach",
+        "description": "In the case of a personal data breach, the controller shall without undue delay notify the competent supervisory authority."
+      },
+      "Art. 35": {
+        "label": "Data Protection Impact Assessment",
+        "description": "Where a type of processing is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall carry out an assessment of the impact of the envisaged processing operations on the protection of personal data."
+      }
+    }
+  },
+  "notes": "CheckID maps checks to the GDPR articles that the control directly supports. Only the security-relevant articles (Art. 5, 25, 32-35) are represented; administrative and data subject rights articles are out of scope for technical configuration assessment."
+}

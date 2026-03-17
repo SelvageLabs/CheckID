@@ -6,7 +6,7 @@
     Author            = 'SelvageLabs'
     CompanyName       = 'SelvageLabs'
     Copyright         = '(c) SelvageLabs. All rights reserved. MIT License.'
-    Description       = 'Stable, unique identifiers for security configuration checks mapped across 14 compliance frameworks.'
+    Description       = 'Stable, unique identifiers for security configuration checks mapped across compliance frameworks. Includes cmdlets for registry lookup, cross-framework search, and coverage analytics.'
 
     # Requirements
     PowerShellVersion = '7.0'
@@ -16,6 +16,7 @@
         'Get-CheckRegistry'
         'Get-CheckById'
         'Search-Check'
+        'Get-FrameworkCoverage'
         'Test-CheckRegistryData'
     )
     CmdletsToExport   = @()
@@ -33,6 +34,8 @@
         'data/check-id-mapping.csv'
         'data/standalone-checks.json'
         'data/frameworks/cis-m365-v6.json'
+        'data/frameworks/gdpr.json'
+        'data/frameworks/nist-800-53-r5.json'
         'data/frameworks/soc2-tsc.json'
         'scripts/Import-ControlRegistry.ps1'
         'scripts/Search-Registry.ps1'

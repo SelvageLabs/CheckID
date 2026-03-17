@@ -7,6 +7,9 @@ on:
     branches: [main]
     tags: ['v*']
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint PowerShell
@@ -212,8 +215,8 @@ jobs:
           $manifest = Test-ModuleManifest -Path ./CheckID.psd1
           Write-Host "Module: $($manifest.Name) v$($manifest.Version)"
           Write-Host "Exported functions: $($manifest.ExportedFunctions.Keys -join ', ')"
-          if ($manifest.ExportedFunctions.Count -ne 4) {
-            Write-Host "::error::Expected 4 exported functions, got $($manifest.ExportedFunctions.Count)"
+          if ($manifest.ExportedFunctions.Count -ne 5) {
+            Write-Host "::error::Expected 5 exported functions, got $($manifest.ExportedFunctions.Count)"
             exit 1
           }
 
@@ -234,10 +237,29 @@ jobs:
           }
           Write-Host "Module import and basic operations OK"
 
+  python-client-test:
+    name: Python Client Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install package and pytest
+        run: |
+          pip install -e clients/python
+          pip install pytest
+
+      - name: Run pytest
+        run: pytest clients/python/tests/ -v
+
   publish:
     name: Publish to PSGallery
     runs-on: ubuntu-latest
-    needs: [lint, validate-data, registry-consistency, data-quality, test, module-test]
+    needs: [lint, validate-data, registry-consistency, data-quality, test, module-test, python-client-test]
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - uses: actions/checkout@v4

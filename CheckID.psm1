@@ -127,6 +127,72 @@ function Search-Check {
     return @($checks)
 }
 
+function Get-FrameworkCoverage {
+    <#
+    .SYNOPSIS
+        Returns coverage statistics for each compliance framework in the registry.
+    .DESCRIPTION
+        Counts how many active (non-superseded) checks map to each compliance framework
+        and returns a summary object per framework. Superseded MANUAL-CIS entries are
+        excluded so counts reflect the active, non-duplicate check population.
+        Useful for dashboards, gap analysis, and integration with downstream
+        assessment tools such as M365-Assess and Darn.
+    .PARAMETER Framework
+        Limit results to a single framework key (e.g., 'hipaa', 'nist-800-53').
+        If omitted, all frameworks are returned in alphabetical order.
+    .OUTPUTS
+        PSCustomObject[] — one object per framework with properties:
+          FrameworkKey    — Registry key (e.g., 'nist-800-53')
+          CheckCount      — Total active checks mapped to this framework
+          AutomatedCount  — Checks with hasAutomatedCheck = $true
+          ManualCount     — Checks with hasAutomatedCheck = $false
+    .EXAMPLE
+        Get-FrameworkCoverage
+        Returns coverage for all 14 frameworks.
+    .EXAMPLE
+        Get-FrameworkCoverage -Framework 'hipaa'
+        Returns coverage stats for HIPAA only.
+    .EXAMPLE
+        Get-FrameworkCoverage | Sort-Object CheckCount -Descending | Format-Table
+        Show frameworks ranked by check coverage.
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Position = 0)]
+        [string]$Framework
+    )
+
+    $checks = Get-CheckRegistry
+
+    # Exclude superseded entries so counts reflect the active check population
+    $active = @($checks | Where-Object {
+        -not ($_.PSObject.Properties.Name -contains 'supersededBy')
+    })
+
+    # Collect all framework keys present across active checks
+    $allFrameworks = [System.Collections.Generic.SortedSet[string]]::new()
+    foreach ($check in $active) {
+        foreach ($fw in $check.frameworks.PSObject.Properties.Name) {
+            [void]$allFrameworks.Add($fw)
+        }
+    }
+
+    $results = foreach ($fw in $allFrameworks) {
+        if ($Framework -and $fw -ne $Framework) { continue }
+        $mapped = @($active | Where-Object {
+            $_.frameworks.PSObject.Properties.Name -contains $fw
+        })
+        [PSCustomObject]@{
+            FrameworkKey   = $fw
+            CheckCount     = $mapped.Count
+            AutomatedCount = @($mapped | Where-Object { $_.hasAutomatedCheck -eq $true }).Count
+            ManualCount    = @($mapped | Where-Object { $_.hasAutomatedCheck -ne $true }).Count
+        }
+    }
+
+    return @($results)
+}
+
 function Test-CheckRegistryData {
     <#
     .SYNOPSIS
@@ -157,5 +223,6 @@ Export-ModuleMember -Function @(
     'Get-CheckRegistry'
     'Get-CheckById'
     'Search-Check'
+    'Get-FrameworkCoverage'
     'Test-CheckRegistryData'
 )

@@ -54,6 +54,14 @@ coverage.xml
 # Module cache (local installs)
 Modules/
 
+# Python artifacts
+**/*.egg-info/
+**/__pycache__/
+**/*.pyc
+**/dist/
+**/build/
+**/.pytest_cache/
+
 # IDE
 .vscode/
 .vs/

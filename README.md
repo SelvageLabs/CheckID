@@ -35,6 +35,10 @@ $check.frameworks    # All framework mappings with titles
 # Search by framework, control ID, or keyword
 Search-Check -Framework 'hipaa' -Keyword 'password'
 Search-Check -ControlId 'AC-6'
+
+# Framework coverage analytics (excludes superseded entries)
+Get-FrameworkCoverage | Format-Table
+Get-FrameworkCoverage -Framework 'hipaa'
 ```
 
 ### Add as a git submodule (legacy)
@@ -70,6 +74,32 @@ with open('lib/CheckID/data/registry.json') as f:
 for check in registry['checks']:
     if 'hipaa' in check['frameworks']:
         print(f"{check['checkId']}: {check['frameworks']['hipaa']['controlId']}")
+```
+
+### Use the Python client library
+
+A higher-level Python client is available in `clients/python/`:
+
+```bash
+pip install -e lib/CheckID/clients/python
+```
+
+```python
+from checkid import CheckIDRegistry
+
+reg = CheckIDRegistry()
+
+# Look up a specific check
+check = reg.get_by_id("ENTRA-ADMIN-001")
+print(check["name"])
+
+# Search by framework, control ID, or keyword
+results = reg.search(framework="hipaa", keyword="password")
+results = reg.search(control_id="AC-6")
+
+# Coverage analytics per framework
+for cov in reg.framework_coverage():
+    print(f"{cov['framework_key']:20s}  {cov['check_count']} checks")
 ```
 
 ### Generate a compliance matrix (XLSX)
@@ -118,6 +148,11 @@ Consumers can use baseline profiles to report accurately: *"Of the 149 Low basel
 
 ```
 CheckID/
+├── clients/                       Language-specific client libraries
+│   └── python/                    Python client (pip-installable)
+│       ├── checkid/               Package source
+│       ├── tests/                 pytest tests
+│       └── pyproject.toml
 ├── data/                          Registry data
 │   ├── registry.json              Master registry (233 checks, 14 frameworks)
 │   ├── check-id-mapping.csv       CheckID → service/area assignments
@@ -125,6 +160,7 @@ CheckID/
 │   ├── standalone-checks.json     Non-CIS automated checks with framework data
 │   └── frameworks/                Framework definitions
 │       ├── cis-m365-v6.json       CIS M365 v6.0.1 profiles and sections
+│       ├── gdpr.json              GDPR security-relevant articles (Art. 5, 25, 32–35)
 │       ├── nist-800-53-r5.json    NIST 800-53 Rev 5 baseline profiles
 │       └── soc2-tsc.json          SOC 2 Trust Services Criteria
 ├── scripts/                       PowerShell 7.x scripts
@@ -133,11 +169,12 @@ CheckID/
 │   ├── Import-ControlRegistry.ps1 Loads registry into memory
 │   ├── Export-ComplianceMatrix.ps1 XLSX multi-framework compliance report
 │   ├── Search-Registry.ps1        Search registry by CheckId, framework, or keyword
-│   ├── Test-RegistryData.ps1      Data quality validation (14 checks)
+│   ├── Test-RegistryData.ps1      Data quality validation
 │   └── Show-CheckProgress.ps1     Real-time progress display
-├── tests/                         Pester 5.x tests (36 tests)
+├── tests/                         Pester 5.x tests
 │   ├── registry-integrity.Tests.ps1
 │   ├── nist-baselines.Tests.ps1
+│   ├── module.Tests.ps1
 │   └── search-registry.Tests.ps1
 └── docs/
     └── CheckId-Guide.md           Detailed system documentation
@@ -178,8 +215,8 @@ After editing the CSV files, regenerate `registry.json`:
 Then validate:
 
 ```powershell
-./scripts/Test-RegistryData.ps1          # 14 data quality checks
-Invoke-Pester ./tests/ -Output Detailed  # 36 integrity tests
+./scripts/Test-RegistryData.ps1          # data quality checks
+Invoke-Pester ./tests/ -Output Detailed  # 57 integrity tests
 ```
 
 ## Contributing
@@ -194,8 +231,8 @@ Contributions are welcome — especially new framework mappings, additional serv
 
 **Areas we'd love help with:**
 - Framework mappings for platforms beyond M365 (AWS, GCP, Azure IaaS)
-- New compliance frameworks (GDPR)
-- Language-specific client libraries (Python, Go, TypeScript)
+- Adding GDPR control mappings to existing registry entries (see `data/frameworks/gdpr.json` for the article structure)
+- Language-specific client libraries (Go, TypeScript)
 - Documentation and guides
 
 ## License
