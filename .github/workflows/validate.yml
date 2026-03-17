@@ -102,7 +102,7 @@ jobs:
           }
           if ($failed) { exit 1 }
 
-      - name: Validate registry.json schema
+      - name: Validate registry.json schema (basic)
         shell: pwsh
         run: |
           $reg = Get-Content data/registry.json -Raw | ConvertFrom-Json
@@ -133,6 +133,17 @@ jobs:
             exit 1
           }
           Write-Host "  registry.json: $($reg.checks.Count) checks, schema valid"
+
+      - name: Validate registry against JSON Schema
+        run: |
+          pip install jsonschema
+          python -c "
+          import json, jsonschema
+          schema = json.load(open('data/registry.schema.json'))
+          registry = json.load(open('data/registry.json'))
+          jsonschema.validate(registry, schema)
+          print(f'Registry validates against schema ({len(registry[\"checks\"])} checks)')
+          "
 
   registry-consistency:
     name: Registry Consistency

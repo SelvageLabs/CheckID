@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SelvageLabs/CheckID/data/registry.schema.json",
+  "title": "CheckID Registry",
+  "description": "Schema for CheckID registry.json — a universal identifier registry mapping M365 security checks across compliance frameworks.",
+  "type": "object",
+  "required": ["schemaVersion", "dataVersion", "generatedFrom", "checks"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the registry schema format."
+    },
+    "dataVersion": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date the registry data was generated (YYYY-MM-DD)."
+    },
+    "generatedFrom": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Source files used to generate this registry."
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 139,
+      "description": "Array of check objects, each representing a security check mapped to one or more compliance frameworks.",
+      "items": {
+        "$ref": "#/$defs/check"
+      }
+    }
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "required": ["checkId", "name", "category", "collector", "hasAutomatedCheck", "licensing", "frameworks"],
+      "additionalProperties": false,
+      "properties": {
+        "checkId": {
+          "type": "string",
+          "pattern": "^[A-Z]+-[A-Z0-9-]+-\\d{3}$|^MANUAL-CIS-\\d+-\\d+(-\\d+)*$",
+          "description": "Unique identifier: {SERVICE}-{AREA}-{NNN} for automated checks, MANUAL-CIS-{n}-{n}[-{n}]* for manual checks."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable name of the security check."
+        },
+        "category": {
+          "type": "string",
+          "description": "Functional category (e.g., CLOUDADMIN, MFA). Empty string for manual checks."
+        },
+        "collector": {
+          "type": "string",
+          "description": "Data collector responsible for this check. Empty string for manual checks."
+        },
+        "hasAutomatedCheck": {
+          "type": "boolean",
+          "description": "Whether this check has an automated implementation."
+        },
+        "licensing": {
+          "type": "object",
+          "required": ["minimum"],
+          "additionalProperties": false,
+          "properties": {
+            "minimum": {
+              "type": "string",
+              "enum": ["E3", "E5"],
+              "description": "Minimum M365 license tier required."
+            }
+          }
+        },
+        "frameworks": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "$ref": "#/$defs/frameworkMapping"
+          },
+          "description": "Map of framework identifiers to their mapping details. At least one framework mapping is required."
+        },
+        "supersededBy": {
+          "type": "string",
+          "pattern": "^[A-Z]+-[A-Z0-9-]+-\\d{3}$",
+          "description": "CheckId of the automated check that supersedes this manual check."
+        }
+      },
+      "if": {
+        "properties": {
+          "hasAutomatedCheck": { "const": true }
+        },
+        "required": ["hasAutomatedCheck"]
+      },
+      "then": {
+        "properties": {
+          "collector": {
+            "enum": ["Entra", "CAEvaluator", "ExchangeOnline", "DNS", "Defender", "Compliance", "Intune", "SharePoint", "Teams"]
+          }
+        }
+      }
+    },
+    "frameworkMapping": {
+      "type": "object",
+      "required": ["controlId"],
+      "additionalProperties": false,
+      "properties": {
+        "controlId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Control identifier(s) within the framework, semicolon-separated if multiple."
+        },
+        "title": {
+          "type": "string",
+          "description": "Human-readable title of the mapped control(s)."
+        },
+        "profiles": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Applicable profiles or baselines within the framework."
+        },
+        "evidenceType": {
+          "type": "string",
+          "description": "Type of evidence produced for this framework mapping."
+        }
+      }
+    }
+  }
+}
