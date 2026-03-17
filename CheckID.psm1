@@ -135,6 +135,95 @@ function Search-Check {
     return @($checks)
 }
 
+function Get-FrameworkCoverage {
+    <#
+    .SYNOPSIS
+        Returns coverage statistics per compliance framework.
+    .DESCRIPTION
+        Calculates how many checks map to each framework, broken down by
+        automated vs manual. Excludes superseded entries by default.
+        When a framework definition file exists, includes totalControls
+        and coverage percentage.
+    .PARAMETER Framework
+        Filter to a single framework key (e.g., 'nist-800-53', 'soc2').
+    .PARAMETER IncludeSuperseded
+        Include superseded MANUAL-CIS entries in counts.
+    .OUTPUTS
+        PSCustomObject[] — one object per framework with coverage stats.
+    .EXAMPLE
+        Get-FrameworkCoverage
+    .EXAMPLE
+        Get-FrameworkCoverage -Framework 'nist-800-53'
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Position = 0)]
+        [string]$Framework,
+
+        [switch]$IncludeSuperseded
+    )
+
+    $checks = Get-CheckRegistry
+
+    if (-not $IncludeSuperseded) {
+        $checks = $checks | Where-Object {
+            -not ($_.PSObject.Properties.Name -contains 'supersededBy' -and $_.supersededBy)
+        }
+    }
+
+    # Load framework definitions for totalControls
+    $fwDefsPath = Join-Path $script:ModuleRoot 'data' 'frameworks'
+    $fwDefs = @{}
+    if (Test-Path $fwDefsPath) {
+        foreach ($file in Get-ChildItem $fwDefsPath -Filter '*.json') {
+            $def = Get-Content $file.FullName -Raw | ConvertFrom-Json
+            $key = if ($def.frameworkId) { $def.frameworkId } else { $def.framework }
+            if ($key) { $fwDefs[$key] = $def }
+        }
+    }
+
+    # Collect all framework keys
+    $allFrameworks = [System.Collections.Generic.HashSet[string]]::new()
+    foreach ($check in $checks) {
+        foreach ($prop in $check.frameworks.PSObject.Properties) {
+            [void]$allFrameworks.Add($prop.Name)
+        }
+    }
+
+    if ($Framework) {
+        $allFrameworks = @($Framework)
+    }
+
+    foreach ($fw in ($allFrameworks | Sort-Object)) {
+        $mapped = @($checks | Where-Object {
+            $_.frameworks.PSObject.Properties.Name -contains $fw
+        })
+        $automated = @($mapped | Where-Object { $_.hasAutomatedCheck -eq $true })
+        $manual = @($mapped | Where-Object { $_.hasAutomatedCheck -eq $false })
+
+        $totalControls = $null
+        $coveragePct = $null
+        if ($fwDefs.ContainsKey($fw)) {
+            $def = $fwDefs[$fw]
+            $totalControls = if ($def.totalControls) { $def.totalControls }
+                             elseif ($def.controls) { $def.controls }
+                             else { $null }
+            if ($totalControls -and $totalControls -gt 0) {
+                $coveragePct = [math]::Round(($mapped.Count / $totalControls) * 100, 1)
+            }
+        }
+
+        [PSCustomObject]@{
+            Framework      = $fw
+            MappedChecks   = $mapped.Count
+            Automated      = $automated.Count
+            Manual         = $manual.Count
+            TotalControls  = $totalControls
+            CoveragePct    = $coveragePct
+        }
+    }
+}
+
 function Test-CheckRegistryData {
     <#
     .SYNOPSIS
@@ -165,5 +254,6 @@ Export-ModuleMember -Function @(
     'Get-CheckRegistry'
     'Get-CheckById'
     'Search-Check'
+    'Get-FrameworkCoverage'
     'Test-CheckRegistryData'
 )

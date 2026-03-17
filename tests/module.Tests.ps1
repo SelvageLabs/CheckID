@@ -12,13 +12,13 @@ Describe 'CheckID Module' {
     It 'Loads successfully with correct version' {
         $mod = Get-Module CheckID
         $mod | Should -Not -BeNullOrEmpty
-        $mod.Version | Should -Be '1.0.0'
+        $mod.Version | Should -Be '1.1.0'
     }
 
     It 'Exports exactly the expected functions' {
         $mod = Get-Module CheckID
         $exported = $mod.ExportedFunctions.Keys | Sort-Object
-        $expected = @('Get-CheckById', 'Get-CheckRegistry', 'Search-Check', 'Test-CheckRegistryData') | Sort-Object
+        $expected = @('Get-CheckById', 'Get-CheckRegistry', 'Get-FrameworkCoverage', 'Search-Check', 'Test-CheckRegistryData') | Sort-Object
         $exported | Should -Be $expected
     }
 
@@ -88,6 +88,39 @@ Describe 'Search-Check' {
     It 'Combines framework and keyword filters' {
         $results = Search-Check -Framework 'hipaa' -Keyword 'password'
         $results.Count | Should -BeGreaterThan 0
+    }
+}
+
+Describe 'Get-FrameworkCoverage' {
+
+    It 'Returns coverage for all frameworks' {
+        $results = Get-FrameworkCoverage
+        $results.Count | Should -BeGreaterOrEqual 14
+        foreach ($r in $results) {
+            $r.Framework | Should -Not -BeNullOrEmpty
+            $r.MappedChecks | Should -BeGreaterOrEqual 1
+            $r.Automated | Should -BeOfType [int]
+            $r.Manual | Should -BeOfType [int]
+        }
+    }
+
+    It 'Filters by single framework' {
+        $result = Get-FrameworkCoverage -Framework 'nist-800-53'
+        $result | Should -HaveCount 1
+        $result.Framework | Should -Be 'nist-800-53'
+        $result.MappedChecks | Should -BeGreaterOrEqual 100
+    }
+
+    It 'Excludes superseded entries by default' {
+        $withoutSuperseded = Get-FrameworkCoverage -Framework 'cis-m365-v6'
+        $withSuperseded = Get-FrameworkCoverage -Framework 'cis-m365-v6' -IncludeSuperseded
+        $withSuperseded.MappedChecks | Should -BeGreaterOrEqual $withoutSuperseded.MappedChecks
+    }
+
+    It 'Includes CoveragePct when framework definition exists' {
+        $result = Get-FrameworkCoverage -Framework 'cis-m365-v6'
+        $result.TotalControls | Should -Not -BeNullOrEmpty
+        $result.CoveragePct | Should -Not -BeNullOrEmpty
     }
 }
 
