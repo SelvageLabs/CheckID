@@ -94,7 +94,7 @@ for check in registry['checks']:
 | SOC 2 Trust Services Criteria | `soc2` | 232 checks | |
 | FedRAMP Rev 5 | `fedramp` | 223 checks | |
 | CIS Controls v8.1 | `cis-controls-v8` | 190 checks | |
-| Essential Eight | `essential-eight` | 77 checks | |
+| Essential Eight (ASD) | `essential-eight` | 77 checks | ML1, ML2, ML3 |
 | MITRE ATT&CK v10 | `mitre-attack` | 217 checks | |
 
 ### NIST 800-53 Baseline Profiles
@@ -114,6 +114,25 @@ The remaining NIST controls cover areas outside M365's scope: physical security 
 
 Consumers can use baseline profiles to report accurately: *"Of the 149 Low baseline controls, 25 are M365-assessable and we check all 25"* rather than the misleading *"25 of 1,189 total controls."*
 
+### Essential Eight Maturity Model
+
+The [Essential Eight](https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight) is a set of baseline mitigation strategies published by the Australian Signals Directorate (ASD). It defines three maturity levels (ML1–ML3) across eight strategies:
+
+| Strategy | Key | Description |
+|----------|-----|-------------|
+| Application Control | P1 | Prevent execution of unapproved programs |
+| Patch Applications | P2 | Patch security vulnerabilities in applications |
+| Configure Microsoft Office Macro Settings | P3 | Disable macros for users without a business requirement |
+| User Application Hardening | P4 | Harden web browsers and applications |
+| Restrict Administrative Privileges | P5 | Validate and monitor privileged access |
+| Patch Operating Systems | P6 | Patch security vulnerabilities in operating systems |
+| Multi-Factor Authentication | P7 | Require stronger authentication for sensitive systems |
+| Regular Backups | P8 | Back up data, applications, and settings |
+
+Each registry entry's `essential-eight` mapping uses control IDs in the format `ML{level}-P{strategy}` (e.g., `ML1-P4;ML2-P4;ML3-P4`). Of the eight strategies, seven (P1–P7) are assessable through M365 configuration export. P8 (Regular Backups) requires infrastructure-level assessment beyond M365 configuration state.
+
+Essential Eight mappings are derived from NIST 800-53 controls via the SecFrame SCF transitive bridge and stored in `data/derived-mappings.json`.
+
 ## Repository Structure
 
 ```
@@ -125,6 +144,7 @@ CheckID/
 │   ├── standalone-checks.json     Non-CIS automated checks with framework data
 │   └── frameworks/                Framework definitions
 │       ├── cis-m365-v6.json       CIS M365 v6.0.1 profiles and sections
+│       ├── essential-eight.json   ASD Essential Eight maturity model
 │       ├── nist-800-53-r5.json    NIST 800-53 Rev 5 baseline profiles
 │       └── soc2-tsc.json          SOC 2 Trust Services Criteria
 ├── scripts/                       PowerShell 7.x scripts

@@ -142,6 +142,32 @@ Describe 'Control Registry Integrity' {
         }
     }
 
+    It 'Essential Eight control IDs follow ML{n}-P{n} format' {
+        $e8Mapped = $checks | Where-Object { $_.frameworks.PSObject.Properties.Name -contains 'essential-eight' }
+        $e8Mapped.Count | Should -BeGreaterOrEqual 1 -Because "at least some checks must map to Essential Eight"
+        foreach ($check in $e8Mapped) {
+            $controlId = $check.frameworks.'essential-eight'.controlId
+            $controlId | Should -Not -BeNullOrEmpty `
+                -Because "$($check.checkId) has Essential Eight mapping and needs a controlId"
+            foreach ($part in ($controlId -split ';')) {
+                $part.Trim() | Should -Match '^ML[1-3]-P[1-8]$' `
+                    -Because "$($check.checkId) Essential Eight controlId part '$($part.Trim())' must follow ML{1-3}-P{1-8} format"
+            }
+        }
+    }
+
+    It 'Essential Eight framework definition file exists and is valid' {
+        $e8Path = "$PSScriptRoot/../data/frameworks/essential-eight.json"
+        Test-Path $e8Path | Should -Be $true -Because "Essential Eight framework definition file must exist"
+        $e8 = Get-Content -Path $e8Path -Raw | ConvertFrom-Json
+        $e8.frameworkId | Should -Be 'essential-eight'
+        $e8.scoring.maturityLevels.PSObject.Properties.Name | Should -Contain 'ML1'
+        $e8.scoring.maturityLevels.PSObject.Properties.Name | Should -Contain 'ML2'
+        $e8.scoring.maturityLevels.PSObject.Properties.Name | Should -Contain 'ML3'
+        $e8.strategies.PSObject.Properties.Name.Count | Should -Be 8 `
+            -Because "Essential Eight has 8 mitigation strategies"
+    }
+
     It 'HIPAA control IDs use correct section symbol encoding' {
         $hipaaChecks = $checks | Where-Object { $_.frameworks.PSObject.Properties.Name -contains 'hipaa' }
         $hipaaChecks.Count | Should -BeGreaterOrEqual 1 -Because "at least some checks must map to HIPAA"
