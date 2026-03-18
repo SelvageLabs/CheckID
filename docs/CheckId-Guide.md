@@ -36,18 +36,13 @@ When a single CheckId evaluates multiple settings (e.g., an anti-phishing policy
 
 This is handled automatically by the `Add-Setting` function's `$checkIdCounter` hash in each collector. The registry entry uses the base CheckId (`DEFENDER-ANTIPHISH-001`); the sub-numbers appear only in CSV output and the report.
 
-### Manual Check Format
-
-Controls not yet automated use the format `MANUAL-CIS-{controlId}` (e.g., `MANUAL-CIS-1-1-1`). When a manual check gets automated, the MANUAL entry receives a `supersededBy` field pointing to the new automated CheckId.
-
 ## How Many CheckIds Exist?
 
 | Type | Count | Description |
 |------|-------|-------------|
-| Automated | 138 | Checked by collectors, appear in CSV output and reports |
-| Superseded | 81 | Former manual checks now replaced by automated equivalents |
-| Manual | 14 | CIS benchmark controls not yet automated, tracked for coverage |
-| **Total** | **233** | Full registry across all frameworks |
+| Automated | 168 | Checked by collectors, appear in CSV output and reports |
+| Manual | 1 | CIS benchmark controls not yet automated, tracked for coverage |
+| **Total** | **169** | Full registry across all frameworks |
 
 ## The Control Registry
 
@@ -89,7 +84,6 @@ All CheckIds live in `data/registry.json`. Each entry contains:
 - `collector` -- Which collector script produces the result (see Collectors table below)
 - `licensing.minimum` -- E3 or E5 license required
 - `frameworks` -- Maps to every applicable compliance framework
-- `supersededBy` -- (on MANUAL entries) Points to the automated CheckId that replaced it
 
 ### Collectors
 
@@ -209,27 +203,6 @@ Each check produces one of five statuses:
 | Review | Cannot determine automatically -- requires manual assessment | Counted in pass rate |
 | Info | Informational data point -- no right/wrong answer | **Excluded** from scoring |
 
-## Superseded Checks
-
-When a manual check gets automated, the MANUAL entry is kept in the registry with a `supersededBy` field:
-
-```json
-{
-  "checkId": "MANUAL-CIS-5-1-2-4",
-  "name": "Ensure access to the Entra admin center is restricted",
-  "hasAutomatedCheck": false,
-  "supersededBy": "ENTRA-ADMIN-002",
-  ...
-}
-```
-
-Superseded entries are excluded from:
-- Active check counts
-- Compliance matrix pass rates
-- Progress display totals
-
-They remain in the registry for historical traceability and to prevent duplicate CheckId assignments.
-
 ## Building the Registry
 
 The registry can be generated from two CSV source files:
@@ -242,7 +215,7 @@ data/check-id-mapping.csv            ->  CheckId assignments + collector mapping
                                scripts/Build-Registry.ps1
                                          |
                                          v
-                               data/registry.json (233 entries)
+                               data/registry.json (169 entries)
 ```
 
 To rebuild after editing the source CSVs:
@@ -257,8 +230,7 @@ To rebuild after editing the source CSVs:
 
 1. **Assign the CheckId** following the `{COLLECTOR}-{AREA}-{NNN}` convention
 2. **Add the entry** to `data/registry.json` with framework mappings
-3. **If superseding a manual check**, add `"supersededBy": "YOUR-CHECK-001"` to the MANUAL entry
-4. **Add the check** to the appropriate collector script using `Add-Setting -CheckId 'YOUR-CHECK-001'`
+3. **Add the check** to the appropriate collector script using `Add-Setting -CheckId 'YOUR-CHECK-001'`
 5. **Run tests** to validate: `Invoke-Pester -Path './tests'`
 
 ### Checklist for New Checks
@@ -269,7 +241,6 @@ To rebuild after editing the source CSVs:
 - [ ] Collector uses `Add-Setting` with `-CheckId` parameter
 - [ ] Status logic: Pass/Fail for deterministic checks, Review for API gaps, Info for data points
 - [ ] Remediation text includes specific portal path or PowerShell command
-- [ ] MANUAL entry (if exists) has `supersededBy` pointing to new CheckId
 - [ ] Registry integrity tests pass (`Invoke-Pester ./tests/`)
 
 ## Using CheckIds in Reports

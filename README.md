@@ -9,9 +9,8 @@ CheckID gives every security check a permanent ID and maps it to controls across
 **Format:** `{SERVICE}-{AREA}-{NNN}` (e.g., `ENTRA-ADMIN-001`, `DEFENDER-SAFELINKS-001`)
 
 **Current coverage:**
-- 233 checks across Microsoft 365 (Entra ID, Exchange Online, Defender, SharePoint, Teams, Intune, Compliance)
+- 169 checks across Microsoft 365 (Entra ID, Exchange Online, Defender, SharePoint, Teams, Intune, Compliance)
 - 14 compliance frameworks mapped per check
-- Automated + manual checks with supersession tracking
 
 CheckID starts with M365 but is designed to expand. The identifier format, registry schema, and framework mapping approach are platform-agnostic — new services and platforms can be added without breaking existing consumers.
 
@@ -46,16 +45,13 @@ git submodule add https://github.com/SelvageLabs/CheckID.git lib/CheckID
 ```
 
 ```powershell
-# Dot-source the loader
-. ./lib/CheckID/scripts/Import-ControlRegistry.ps1
-
-# Load the registry (returns a hashtable keyed by CheckID)
-$registry = Import-ControlRegistry -ControlsPath ./lib/CheckID/data
+# Import the module from the submodule path
+Import-Module ./lib/CheckID/CheckID.psd1
 
 # Look up a specific check
-$check = $registry['ENTRA-ADMIN-001']
+$check = Get-CheckById 'ENTRA-ADMIN-001'
 $check.name          # "Ensure that between two and four global admins are designated"
-$check.frameworks    # Hashtable of all framework mappings
+$check.frameworks    # All framework mappings
 ```
 
 ### Use the registry data directly
@@ -82,20 +78,20 @@ for check in registry['checks']:
 
 | Framework | Key | Coverage | Profiles |
 |-----------|-----|----------|----------|
-| CIS Microsoft 365 v6.0.1 | `cis-m365-v6` | 221 checks | E3-L1, E3-L2, E5-L1, E5-L2 |
-| NIST SP 800-53 Rev 5 | `nist-800-53` | 233 checks | Low, Moderate, High, Privacy |
-| NIST Cybersecurity Framework 2.0 | `nist-csf` | 229 checks | |
-| ISO/IEC 27001:2022 | `iso-27001` | 233 checks | |
-| DISA STIG | `stig` | 22 checks | |
-| PCI DSS v4.0.1 | `pci-dss` | 223 checks | |
-| CMMC 2.0 | `cmmc` | 223 checks | |
-| HIPAA Security Rule | `hipaa` | 226 checks | |
-| CISA SCuBA | `cisa-scuba` | 71 checks | |
-| SOC 2 Trust Services Criteria | `soc2` | 232 checks | |
-| FedRAMP Rev 5 | `fedramp` | 223 checks | |
-| CIS Controls v8.1 | `cis-controls-v8` | 190 checks | |
-| Essential Eight (ASD) | `essential-eight` | 77 checks | ML1, ML2, ML3 |
-| MITRE ATT&CK v10 | `mitre-attack` | 217 checks | |
+| CIS Microsoft 365 v6.0.1 | `cis-m365-v6` | 157 checks | E3-L1, E3-L2, E5-L1, E5-L2 |
+| NIST SP 800-53 Rev 5 | `nist-800-53` | 169 checks | Low, Moderate, High, Privacy |
+| NIST Cybersecurity Framework 2.0 | `nist-csf` | 165 checks | |
+| ISO/IEC 27001:2022 | `iso-27001` | 169 checks | |
+| DISA STIG | `stig` | 12 checks | |
+| PCI DSS v4.0.1 | `pci-dss` | 143 checks | |
+| CMMC 2.0 | `cmmc` | 143 checks | |
+| HIPAA Security Rule | `hipaa` | 162 checks | |
+| CISA SCuBA | `cisa-scuba` | 44 checks | |
+| SOC 2 Trust Services Criteria | `soc2` | 168 checks | |
+| FedRAMP Rev 5 | `fedramp` | 145 checks | |
+| CIS Controls v8.1 | `cis-controls-v8` | 124 checks | |
+| Essential Eight (ASD) | `essential-eight` | 50 checks | ML1, ML2, ML3 |
+| MITRE ATT&CK v10 | `mitre-attack` | 141 checks | |
 
 ### NIST 800-53 Baseline Profiles
 
@@ -138,7 +134,7 @@ Essential Eight mappings are derived from NIST 800-53 controls via the SecFrame 
 ```
 CheckID/
 ├── data/                          Registry data
-│   ├── registry.json              Master registry (233 checks, 14 frameworks)
+│   ├── registry.json              Master registry (169 checks, 14 frameworks)
 │   ├── check-id-mapping.csv       CheckID → service/area assignments
 │   ├── framework-mappings.csv     CIS → multi-framework cross-references
 │   ├── standalone-checks.json     Non-CIS automated checks with framework data
@@ -150,15 +146,14 @@ CheckID/
 ├── scripts/                       PowerShell 7.x scripts
 │   ├── Build-Registry.ps1         Generates registry.json from CSVs
 │   ├── Import-NistBaselines.ps1   Reads OSCAL baseline profiles from SecFrame
-│   ├── Import-ControlRegistry.ps1 Loads registry into memory
+│   ├── Import-ControlRegistry.ps1 [deprecated] Loads registry into memory
 │   ├── Export-ComplianceMatrix.ps1 XLSX multi-framework compliance report
-│   ├── Search-Registry.ps1        Search registry by CheckId, framework, or keyword
+│   ├── Search-Registry.ps1        [deprecated] Search registry by CheckId, framework, or keyword
 │   ├── Test-RegistryData.ps1      Data quality validation (14 checks)
-│   └── Show-CheckProgress.ps1     Real-time progress display
-├── tests/                         Pester 5.x tests (36 tests)
+│   └── Show-CheckProgress.ps1     [deprecated] Real-time progress display
+├── tests/                         Pester 5.x tests
 │   ├── registry-integrity.Tests.ps1
-│   ├── nist-baselines.Tests.ps1
-│   └── search-registry.Tests.ps1
+│   └── nist-baselines.Tests.ps1
 └── docs/
     └── CheckId-Guide.md           Detailed system documentation
 ```
