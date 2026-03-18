@@ -12,7 +12,8 @@ Describe 'CheckID Module' {
     It 'Loads successfully with correct version' {
         $mod = Get-Module CheckID
         $mod | Should -Not -BeNullOrEmpty
-        $mod.Version | Should -Be '1.1.0'
+        $expected = (Import-PowerShellDataFile "$PSScriptRoot/../CheckID.psd1").ModuleVersion
+        $mod.Version | Should -Be $expected
     }
 
     It 'Exports exactly the expected functions' {
