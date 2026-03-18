@@ -1,0 +1,15 @@
+{
+  "frameworkId": "cis-controls-v8",
+  "label": "CIS Controls v8.1",
+  "version": "8.1",
+  "css": "fw-cis-ctrl",
+  "totalControls": 153,
+  "registryKey": "cis-controls-v8",
+  "csvColumn": "CisControlsV8",
+  "displayOrder": 12,
+  "scoring": { "method": "coverage" },
+  "colors": {
+    "light": { "background": "#dbeafe", "color": "#1e40af" },
+    "dark": { "background": "#1E3A5F", "color": "#60A5FA" }
+  }
+}
