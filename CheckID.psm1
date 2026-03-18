@@ -141,9 +141,8 @@ function Get-FrameworkCoverage {
         Returns coverage statistics per compliance framework.
     .DESCRIPTION
         Calculates how many checks map to each framework, broken down by
-        automated vs manual. Excludes superseded entries by default.
-        When a framework definition file exists, includes totalControls
-        and coverage percentage.
+        automated vs manual. When a framework definition file exists,
+        includes totalControls and coverage percentage.
     .PARAMETER Framework
         Filter to a single framework key (e.g., 'nist-800-53', 'soc2').
     .OUTPUTS
@@ -156,16 +155,10 @@ function Get-FrameworkCoverage {
     [CmdletBinding()]
     param(
         [Parameter(Position = 0)]
-        [string]$Framework,
+        [string]$Framework
     )
 
     $checks = Get-CheckRegistry
-
-    if (-not $IncludeSuperseded) {
-        $checks = $checks | Where-Object {
-            -not ($_.PSObject.Properties.Name -contains 'supersededBy' -and $_.supersededBy)
-        }
-    }
 
     # Load framework definitions for totalControls
     $fwDefsPath = Join-Path $script:ModuleRoot 'data' 'frameworks'
@@ -226,13 +219,9 @@ function Get-CheckAutomationGaps {
         Returns checks that lack automated assessment.
     .DESCRIPTION
         Identifies checks where hasAutomatedCheck is false, indicating they
-        require manual review. Optionally filters by framework. Excludes
-        superseded entries by default.
+        lack automated assessment. Optionally filters by framework.
     .PARAMETER Framework
         Filter to checks mapped to this framework key (e.g., 'hipaa', 'cmmc').
-    .PARAMETER ManualOnly
-        Only return checks where hasAutomatedCheck is false (default behavior).
-        This switch is accepted for readability but has no additional effect.
     .OUTPUTS
         PSCustomObject[] - check objects lacking automated assessment.
     .EXAMPLE
@@ -243,19 +232,10 @@ function Get-CheckAutomationGaps {
     [CmdletBinding()]
     param(
         [Parameter(Position = 0)]
-        [string]$Framework,
-
-        [switch]$ManualOnly
+        [string]$Framework
     )
 
     $checks = Get-CheckRegistry
-
-    # Exclude superseded entries
-    $checks = $checks | Where-Object {
-        -not ($_.PSObject.Properties.Name -contains 'supersededBy' -and $_.supersededBy)
-    }
-
-    # Filter to manual-only checks
     $checks = $checks | Where-Object { $_.hasAutomatedCheck -eq $false }
 
     if ($Framework) {
