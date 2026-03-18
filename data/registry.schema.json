@@ -106,7 +106,7 @@
       "then": {
         "properties": {
           "collector": {
-            "enum": ["Entra", "CAEvaluator", "ExchangeOnline", "DNS", "Defender", "Compliance", "Intune", "SharePoint", "Teams", "PBI", "PURVIEW"]
+            "enum": ["Entra", "CAEvaluator", "ExchangeOnline", "DNS", "Defender", "Compliance", "Intune", "SharePoint", "Teams", "PowerBI", "Purview"]
           }
         }
       }
