@@ -1,0 +1,15 @@
+{
+  "frameworkId": "cmmc",
+  "label": "CMMC 2.0",
+  "version": "2.0",
+  "css": "fw-cmmc",
+  "totalControls": 110,
+  "registryKey": "cmmc",
+  "csvColumn": "Cmmc",
+  "displayOrder": 7,
+  "scoring": { "method": "coverage" },
+  "colors": {
+    "light": { "background": "#f0fdfa", "color": "#134e4a" },
+    "dark": { "background": "#134E4A", "color": "#5EEAD4" }
+  }
+}
