@@ -271,6 +271,37 @@ function Get-CheckAutomationGaps {
     return @($checks)
 }
 
+function Export-ComplianceMatrix {
+    <#
+    .SYNOPSIS
+        Exports a compliance matrix workbook from assessment data.
+    .DESCRIPTION
+        Wrapper around scripts/Export-ComplianceMatrix.ps1. Reads collector
+        CSVs from an assessment folder and generates an XLSX compliance matrix.
+    .PARAMETER AssessmentFolder
+        Path to the assessment output folder containing collector CSVs.
+    .PARAMETER TenantName
+        Optional tenant name for the output filename.
+    .OUTPUTS
+        None - writes an XLSX file to the assessment folder.
+    .EXAMPLE
+        Export-ComplianceMatrix -AssessmentFolder ./Assessment_20260311
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [string]$AssessmentFolder,
+
+        [Parameter()]
+        [string]$TenantName
+    )
+
+    $scriptPath = Join-Path $script:ModuleRoot 'scripts' 'Export-ComplianceMatrix.ps1'
+    $params = @{ AssessmentFolder = $AssessmentFolder }
+    if ($TenantName) { $params['TenantName'] = $TenantName }
+    & $scriptPath @params
+}
+
 function Test-CheckRegistryData {
     <#
     .SYNOPSIS
@@ -298,6 +329,7 @@ function Test-CheckRegistryData {
 
 # Export module members
 Export-ModuleMember -Function @(
+    'Export-ComplianceMatrix'
     'Get-CheckAutomationGaps'
     'Get-CheckById'
     'Get-CheckRegistry'

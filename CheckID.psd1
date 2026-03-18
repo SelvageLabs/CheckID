@@ -13,6 +13,7 @@
 
     # Exported members
     FunctionsToExport = @(
+        'Export-ComplianceMatrix'
         'Get-CheckAutomationGaps'
         'Get-CheckById'
         'Get-CheckRegistry'
@@ -35,20 +36,20 @@
         'data/framework-mappings.csv'
         'data/check-id-mapping.csv'
         'data/standalone-checks.json'
-        'data/frameworks/cis-m365-v6.json'
-        'data/frameworks/nist-800-53-r5.json'
-        'data/frameworks/nist-csf-2.json'
-        'data/frameworks/iso-27001-2022.json'
-        'data/frameworks/disa-stig-m365.json'
-        'data/frameworks/pci-dss-v4.json'
-        'data/frameworks/cmmc-2.json'
-        'data/frameworks/hipaa-security-rule.json'
-        'data/frameworks/cisa-scuba-baselines.json'
-        'data/frameworks/soc2-tsc.json'
-        'data/frameworks/essential-eight.json'
         'data/frameworks/cis-controls-v8.json'
+        'data/frameworks/cis-m365-v6.json'
+        'data/frameworks/cisa-scuba.json'
+        'data/frameworks/cmmc.json'
+        'data/frameworks/essential-eight.json'
         'data/frameworks/fedramp.json'
+        'data/frameworks/hipaa.json'
+        'data/frameworks/iso-27001.json'
         'data/frameworks/mitre-attack.json'
+        'data/frameworks/nist-800-53-r5.json'
+        'data/frameworks/nist-csf.json'
+        'data/frameworks/pci-dss-v4.json'
+        'data/frameworks/soc2-tsc.json'
+        'data/frameworks/stig.json'
         'scripts/Build-Registry.ps1'
         'scripts/Build-DerivedMappings.py'
         'scripts/Build-FrameworkTitles.py'
@@ -65,7 +66,7 @@
             Tags         = @('Security', 'Compliance', 'CheckID', 'NIST', 'CIS', 'ISO27001', 'HIPAA', 'SOC2', 'FedRAMP', 'M365')
             LicenseUri   = 'https://github.com/SelvageLabs/CheckID/blob/main/LICENSE'
             ProjectUri   = 'https://github.com/SelvageLabs/CheckID'
-            ReleaseNotes = 'v1.2.0: Complete framework definitions for all 14 frameworks with unified schema (registryKey, csvColumn, displayOrder, colors). Add Pester validation test suite.'
+            ReleaseNotes = 'v1.2.0: Add Get-CheckAutomationGaps and Export-ComplianceMatrix cmdlets, 17 new M365-Remediate checks, impactRating schema field (schemaVersion 1.1.0), complete framework definitions (14 files).'
         }
     }
 }

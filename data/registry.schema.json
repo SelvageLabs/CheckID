@@ -83,6 +83,18 @@
           "type": "string",
           "pattern": "^[A-Z]+-[A-Z0-9-]+-\\d{3}$",
           "description": "CheckId of the automated check that supersedes this manual check."
+        },
+        "impactRating": {
+          "type": "object",
+          "properties": {
+            "severity": {
+              "type": "string",
+              "enum": ["Critical", "High", "Medium", "Low"],
+              "description": "Impact severity rating for this check."
+            }
+          },
+          "additionalProperties": false,
+          "description": "Impact rating metadata for this check."
         }
       },
       "if": {
@@ -94,7 +106,7 @@
       "then": {
         "properties": {
           "collector": {
-            "enum": ["Entra", "CAEvaluator", "ExchangeOnline", "DNS", "Defender", "Compliance", "Intune", "SharePoint", "Teams"]
+            "enum": ["Entra", "CAEvaluator", "ExchangeOnline", "DNS", "Defender", "Compliance", "Intune", "SharePoint", "Teams", "PowerBI", "Purview"]
           }
         }
       }
