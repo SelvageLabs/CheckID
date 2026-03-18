@@ -1,0 +1,15 @@
+{
+  "frameworkId": "pci-dss",
+  "label": "PCI DSS v4.0.1",
+  "version": "4.0.1",
+  "css": "fw-pci",
+  "totalControls": 63,
+  "registryKey": "pci-dss",
+  "csvColumn": "PciDss",
+  "displayOrder": 6,
+  "scoring": { "method": "coverage" },
+  "colors": {
+    "light": { "background": "#fef2f2", "color": "#991b1b" },
+    "dark": { "background": "#7F1D1D", "color": "#FCA5A5" }
+  }
+}

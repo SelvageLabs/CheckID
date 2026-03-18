@@ -1,0 +1,15 @@
+{
+  "frameworkId": "stig",
+  "label": "DISA STIG",
+  "version": "M365",
+  "css": "fw-stig",
+  "totalControls": 148,
+  "registryKey": "stig",
+  "csvColumn": "Stig",
+  "displayOrder": 5,
+  "scoring": { "method": "coverage" },
+  "colors": {
+    "light": { "background": "#f3e8ff", "color": "#6b21a8" },
+    "dark": { "background": "#3B0764", "color": "#C4B5FD" }
+  }
+}
