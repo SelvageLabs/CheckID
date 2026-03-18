@@ -7,9 +7,35 @@
   "registryKey": "iso-27001",
   "csvColumn": "Iso27001",
   "displayOrder": 4,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "control-coverage",
+    "themes": {
+      "5": {
+        "label": "Organizational Controls",
+        "controlCount": 37
+      },
+      "6": {
+        "label": "People Controls",
+        "controlCount": 8
+      },
+      "7": {
+        "label": "Physical Controls",
+        "controlCount": 14
+      },
+      "8": {
+        "label": "Technological Controls",
+        "controlCount": 34
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#ecfdf5", "color": "#065f46" },
-    "dark": { "background": "#064E3B", "color": "#6EE7B7" }
+    "light": {
+      "background": "#ecfdf5",
+      "color": "#065f46"
+    },
+    "dark": {
+      "background": "#064E3B",
+      "color": "#6EE7B7"
+    }
   }
 }

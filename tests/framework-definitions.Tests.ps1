@@ -51,7 +51,7 @@ Describe 'Framework Definition Schema' {
         }
 
         It 'Has scoring.method as a valid value' {
-            $validMethods = @('coverage', 'profile-compliance', 'criteria-coverage', 'maturity-level')
+            $validMethods = @('coverage', 'profile-compliance', 'criteria-coverage', 'maturity-level', 'function-coverage', 'control-coverage', 'requirement-compliance', 'severity-coverage', 'policy-compliance', 'technique-coverage')
             $Data.scoring | Should -Not -BeNullOrEmpty
             $Data.scoring.method | Should -Not -BeNullOrEmpty
             $Data.scoring.method | Should -BeIn $validMethods
