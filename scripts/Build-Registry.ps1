@@ -303,6 +303,8 @@ $collectorPrefixMap = @{
     'INTUNE'     = 'Intune'
     'DNS'        = 'DNS'
     'CA'         = 'CAEvaluator'
+    'PBI'        = 'PowerBI'
+    'PURVIEW'    = 'Compliance'
 }
 
 # --- Build checks array ---
@@ -417,6 +419,14 @@ foreach ($fwRow in $frameworkRows) {
         frameworks        = $frameworks
     }
 
+    $impactSeverity = if ($cidRow.PSObject.Properties['ImpactSeverity'] -and
+                          -not [string]::IsNullOrWhiteSpace($cidRow.ImpactSeverity)) {
+        $cidRow.ImpactSeverity.Trim()
+    } else { $null }
+    if ($impactSeverity) {
+        $checkObj['impactRating'] = [ordered]@{ severity = $impactSeverity }
+    }
+
     if ($supersededBy) {
         $checkObj['supersededBy'] = $supersededBy
 
@@ -491,14 +501,22 @@ foreach ($sc in $standaloneChecks) {
             $enrichedFrameworks['nist-800-53']['profiles'] = $scNistProfiles
         }
     }
+    $scLicensing = if ($sc.PSObject.Properties['licensing'] -and $sc.licensing) {
+        $sc.licensing
+    } else {
+        [ordered]@{ minimum = 'E3' }
+    }
     $checkObj = [ordered]@{
         checkId           = $sc.checkId
         name              = $sc.name
         category          = $sc.category
         collector         = $sc.collector
         hasAutomatedCheck = $true
-        licensing         = [ordered]@{ minimum = 'E3' }
+        licensing         = $scLicensing
         frameworks        = $enrichedFrameworks
+    }
+    if ($sc.PSObject.Properties['impactRating'] -and $sc.impactRating) {
+        $checkObj['impactRating'] = $sc.impactRating
     }
     $checks.Add($checkObj)
 }
@@ -518,7 +536,7 @@ $checks = $checks | Sort-Object {
 
 # Build final registry object
 $registry = [ordered]@{
-    schemaVersion = '1.0.0'
+    schemaVersion = '1.1.0'
     dataVersion   = (Get-Date -Format 'yyyy-MM-dd')
     generatedFrom = 'data/framework-mappings.csv + data/check-id-mapping.csv + data/standalone-checks.json'
     checks        = @($checks)
