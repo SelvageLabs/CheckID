@@ -3,9 +3,9 @@
     RootModule        = 'CheckID.psm1'
     ModuleVersion     = '1.2.0'
     GUID              = 'a3b7c4d5-1e2f-4a5b-8c9d-0e1f2a3b4c5d'
-    Author            = 'SelvageLabs'
-    CompanyName       = 'SelvageLabs'
-    Copyright         = '(c) SelvageLabs. All rights reserved. MIT License.'
+    Author            = 'Galvnyz'
+    CompanyName       = 'Galvnyz'
+    Copyright         = '(c) Galvnyz. All rights reserved. MIT License.'
     Description       = 'Stable, unique identifiers for security configuration checks mapped across 14 compliance frameworks.'
 
     # Requirements
@@ -64,8 +64,8 @@
     PrivateData = @{
         PSData = @{
             Tags         = @('Security', 'Compliance', 'CheckID', 'NIST', 'CIS', 'ISO27001', 'HIPAA', 'SOC2', 'FedRAMP', 'M365')
-            LicenseUri   = 'https://github.com/SelvageLabs/CheckID/blob/main/LICENSE'
-            ProjectUri   = 'https://github.com/SelvageLabs/CheckID'
+            LicenseUri   = 'https://github.com/Galvnyz/CheckID/blob/main/LICENSE'
+            ProjectUri   = 'https://github.com/Galvnyz/CheckID'
             ReleaseNotes = 'v1.2.0: Add Get-CheckAutomationGaps and Export-ComplianceMatrix cmdlets, 17 new M365-Remediate checks, impactRating schema field (schemaVersion 1.1.0), complete framework definitions (14 files).'
         }
     }

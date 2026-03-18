@@ -2,7 +2,7 @@
 
 ## Upstream: SecFrame
 
-[SecFrame](https://github.com/SelvageLabs/SecFrame) is the authoritative source
+[SecFrame](https://github.com/Galvnyz/SecFrame) is the authoritative source
 for security framework reference data. CheckID's framework mappings are derived from:
 
 | SecFrame File | What It Provides |
@@ -29,10 +29,10 @@ PSGallery module is in progress.
 
 | Project | Repository | Current Method | Target Method |
 |---------|-----------|---------------|--------------|
-| **M365-Assess** | [SelvageLabs/M365-Assess](https://github.com/SelvageLabs/M365-Assess) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+| **M365-Assess** | [Galvnyz/M365-Assess](https://github.com/Galvnyz/M365-Assess) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
 | **Stitch-M365** | Private | Submodule (`Engine/lib/CheckID/`) | `Install-Module CheckID` |
-| **Darn** | [SelvageLabs/Darn](https://github.com/SelvageLabs/Darn) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
-| **M365-Remediate** | [SelvageLabs/M365-Remediate](https://github.com/SelvageLabs/M365-Remediate) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+| **Darn** | [Galvnyz/Darn](https://github.com/Galvnyz/Darn) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+| **M365-Remediate** | [Galvnyz/M365-Remediate](https://github.com/Galvnyz/M365-Remediate) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
 
 ### Migration: Submodule to PSGallery Module
 

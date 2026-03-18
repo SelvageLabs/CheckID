@@ -41,7 +41,7 @@ Search-Check -ControlId 'AC-6'
 > The submodule approach still works and will continue to be supported during the transition period. New projects should prefer `Install-Module`.
 
 ```bash
-git submodule add https://github.com/SelvageLabs/CheckID.git lib/CheckID
+git submodule add https://github.com/Galvnyz/CheckID.git lib/CheckID
 ```
 
 ```powershell
