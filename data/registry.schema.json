@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/SelvageLabs/CheckID/data/registry.schema.json",
+  "$id": "https://github.com/Galvnyz/CheckID/data/registry.schema.json",
   "title": "CheckID Registry",
   "description": "Schema for CheckID registry.json — a universal identifier registry mapping M365 security checks across compliance frameworks.",
   "type": "object",
