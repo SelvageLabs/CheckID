@@ -7,7 +7,6 @@
       - UTF-8 encoding (detects garbled HIPAA section symbols)
       - Duplicate CheckIds
       - Empty required fields
-      - Orphaned supersededBy targets
       - CSV-to-JSON consistency (check counts match)
 
     Returns exit code 0 if all checks pass, 1 if any fail. Suitable for CI and
@@ -175,38 +174,17 @@ Test-Check "framework-mappings.csv HIPAA values have correct encoding" {
 }
 
 # ------------------------------------------------------------------
-# 6. SupersededBy integrity
-# ------------------------------------------------------------------
-Write-Host "`nSupersededBy checks:" -ForegroundColor Yellow
-Test-Check "All supersededBy targets exist as CheckIds" {
-    $allIds = [System.Collections.Generic.HashSet[string]]::new(
-        [string[]]($reg.checks | ForEach-Object { $_.checkId }),
-        [System.StringComparer]::Ordinal
-    )
-    $orphaned = @()
-    foreach ($c in $reg.checks) {
-        if ($c.PSObject.Properties.Name -contains 'supersededBy') {
-            if (-not $allIds.Contains($c.supersededBy)) {
-                $orphaned += "$($c.checkId) -> $($c.supersededBy)"
-            }
-        }
-    }
-    if ($orphaned.Count -gt 0) { return "Orphaned supersededBy: $($orphaned -join ', ')" }
-}
-
-# ------------------------------------------------------------------
-# 7. CSV-to-JSON consistency
+# 6. CSV-to-JSON consistency
 # ------------------------------------------------------------------
 Write-Host "`nConsistency checks:" -ForegroundColor Yellow
 Test-Check "Registry check count matches CSV derivation" {
     $fm = Import-Csv $frameworkCsv
     $cid = Import-Csv $checkIdCsv
     $sa = if (Test-Path $standalonePath) { @(Get-Content $standalonePath -Raw | ConvertFrom-Json) } else { @() }
-    $supersededCount = @($cid | Where-Object { -not [string]::IsNullOrWhiteSpace($_.SupersededBy) }).Count
-    $expected = $fm.Count + $supersededCount + $sa.Count
+    $expected = $fm.Count + $sa.Count
     $actual = $reg.checks.Count
     if ($actual -ne $expected) {
-        return "Expected $expected checks ($($fm.Count) CIS + $supersededCount superseded + $($sa.Count) standalone), got $actual"
+        return "Expected $expected checks ($($fm.Count) CIS + $($sa.Count) standalone), got $actual"
     }
 }
 
@@ -214,7 +192,7 @@ Test-Check "CSV column schemas are valid" {
     $fm = Import-Csv $frameworkCsv
     $cid = Import-Csv $checkIdCsv
     $fmExpected = @('CisControl','CisTitle','CisE3L1','CisE3L2','CisE5L1','CisE5L2','NistCsf','Nist80053','Iso27001','Stig','PciDss','Cmmc','Hipaa','CisaScuba')
-    $cidExpected = @('CisControl','CheckId','Collector','Area','Name','SupersededBy')
+    $cidExpected = @('CisControl','CheckId','Collector','Area','Name','ImpactSeverity')
     $fmMissing = $fmExpected | Where-Object { $_ -notin $fm[0].PSObject.Properties.Name }
     $cidMissing = $cidExpected | Where-Object { $_ -notin $cid[0].PSObject.Properties.Name }
     $issues = @()

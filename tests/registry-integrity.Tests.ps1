@@ -59,15 +59,10 @@ Describe 'Control Registry Integrity' {
 
     # --- Naming conventions ---
 
-    It 'Tracks MANUAL-CIS migration progress' {
-        $manualIds = $checks | Where-Object { $_.checkId -like 'MANUAL-*' }
-        Write-Host "  MANUAL-CIS entries remaining: $($manualIds.Count) of $($checks.Count) total"
-        $manualIds.Count | Should -BeLessOrEqual 94 `
-            -Because "MANUAL-CIS count should decrease over time, not increase (was 94 at baseline)"
-    }
+    
 
     It 'All automated CheckIds follow the {SERVICE}-{AREA}-{NNN} naming convention' {
-        $automated = $checks | Where-Object { $_.checkId -notlike 'MANUAL-*' }
+        $automated = $checks
         foreach ($check in $automated) {
             $check.checkId | Should -Match '^[A-Z]+-[A-Z0-9-]+-\d{3}$' `
                 -Because "$($check.checkId) must follow {SERVICE}-{AREA}-{NNN} naming convention"
@@ -189,23 +184,7 @@ Describe 'Control Registry Integrity' {
 
     # --- Cross-references ---
 
-    It 'supersededBy references valid CheckIds when present' {
-        $superseded = $checks | Where-Object { $_.PSObject.Properties.Name -contains 'supersededBy' }
-        $allIds = $checks | ForEach-Object { $_.checkId }
-        foreach ($check in $superseded) {
-            $check.supersededBy | Should -BeIn $allIds `
-                -Because "$($check.checkId) supersededBy '$($check.supersededBy)' must reference an existing CheckId"
-        }
-    }
-
-    It 'Every superseded check has a matching automated check' {
-        $superseded = $checks | Where-Object { $_.PSObject.Properties.Name -contains 'supersededBy' }
-        foreach ($check in $superseded) {
-            $target = $checks | Where-Object { $_.checkId -eq $check.supersededBy }
-            $target.hasAutomatedCheck | Should -Be $true `
-                -Because "$($check.checkId) supersededBy '$($check.supersededBy)' — the target must be automated"
-        }
-    }
+    
 
     It 'impactRating severity values are from the valid enum when present' {
         $validSeverities = @('Critical', 'High', 'Medium', 'Low', 'Informational')
@@ -247,8 +226,8 @@ Describe 'Control Registry Integrity' {
         $sa = if (Test-Path $saPath) { (Get-Content $saPath -Raw | ConvertFrom-Json) } else { @() }
 
         # Each framework-mapping row produces 1 check, plus 1 more if it has supersededBy
-        $supersededCount = @($cid | Where-Object { -not [string]::IsNullOrWhiteSpace($_.SupersededBy) }).Count
-        $expectedCount = $fm.Count + $supersededCount + $sa.Count
+        # SupersededBy removed — all entries are direct checks
+        $expectedCount = $fm.Count + $sa.Count
 
         $checks.Count | Should -Be $expectedCount `
             -Because "registry should have $($fm.Count) CIS + $supersededCount superseded + $($sa.Count) standalone = $expectedCount checks"

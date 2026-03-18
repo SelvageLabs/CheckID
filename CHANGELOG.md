@@ -5,6 +5,21 @@ All notable changes to the CheckID module will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased] - 2026-03-18
+
+### Removed
+
+- All 94 MANUAL-CIS entries removed from the registry (169 checks remain, down from 250)
+- `supersededBy` field removed from all registry entries (was on 81 checks)
+- `SupersededBy` column removed from CSV data files
+- `tests/search-registry.Tests.ps1` deleted
+
+### Changed
+
+- 14 former MANUAL-CIS checks converted to proper `{SERVICE}-{AREA}-{NNN}` identifiers
+- `Import-ControlRegistry.ps1`, `Search-Registry.ps1`, and `Show-CheckProgress.ps1` deprecated in favor of module cmdlets (`Get-CheckRegistry`, `Search-Check`)
+- Updated documentation to reflect new check counts and removal of supersession tracking
+
 ## [1.2.0] - 2026-03-17
 
 ### Added
