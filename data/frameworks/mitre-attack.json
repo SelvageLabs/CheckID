@@ -1,0 +1,15 @@
+{
+  "frameworkId": "mitre-attack",
+  "label": "MITRE ATT&CK",
+  "version": "v10",
+  "css": "fw-mitre",
+  "totalControls": 201,
+  "registryKey": "mitre-attack",
+  "csvColumn": "MitreAttack",
+  "displayOrder": 14,
+  "scoring": { "method": "coverage" },
+  "colors": {
+    "light": { "background": "#fef2f2", "color": "#991b1b" },
+    "dark": { "background": "#7F1D1D", "color": "#FCA5A5" }
+  }
+}
