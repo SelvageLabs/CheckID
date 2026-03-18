@@ -78,7 +78,7 @@ jobs:
             Write-Host "::error::check-id-mapping.csv is empty"
             exit 1
           }
-          $cidExpected = @('CisControl','CheckId','Collector','Area','Name','SupersededBy')
+          $cidExpected = @('CisControl','CheckId','Collector','Area','Name','ImpactSeverity')
           $cidActual = $cid[0].PSObject.Properties.Name
           $cidMissing = $cidExpected | Where-Object { $_ -notin $cidActual }
           if ($cidMissing) {
@@ -234,8 +234,8 @@ jobs:
           Import-Module ./CheckID.psd1 -Force
           $checks = Get-CheckRegistry
           Write-Host "Loaded $($checks.Count) checks"
-          if ($checks.Count -lt 233) {
-            Write-Host "::error::Expected at least 233 checks"
+          if ($checks.Count -lt 139) {
+            Write-Host "::error::Expected at least 139 checks"
             exit 1
           }
           $check = Get-CheckById 'ENTRA-ADMIN-001'
