@@ -5,6 +5,10 @@
   "publisher": "Australian Signals Directorate (ASD)",
   "url": "https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight",
   "css": "fw-e8",
+  "totalControls": 24,
+  "registryKey": "essential-eight",
+  "csvColumn": "EssentialEight",
+  "displayOrder": 11,
   "scoring": {
     "method": "maturity-level",
     "maturityLevels": {
@@ -61,5 +65,9 @@
     "note": "Essential Eight coverage through M365 configuration assessment focuses on strategies assessable via cloud settings. P8 (Regular Backups) is not mapped because backup validation requires infrastructure-level assessment beyond M365 configuration export.",
     "mappedStrategies": ["P1", "P2", "P3", "P4", "P5", "P6", "P7"],
     "unmappedStrategies": ["P8"]
+  },
+  "colors": {
+    "light": { "background": "#fefce8", "color": "#854d0e" },
+    "dark": { "background": "#713F12", "color": "#FDE047" }
   }
 }
