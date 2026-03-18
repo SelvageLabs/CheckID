@@ -13,10 +13,11 @@
 
     # Exported members
     FunctionsToExport = @(
-        'Get-CheckRegistry'
+        'Get-CheckAutomationGaps'
         'Get-CheckById'
-        'Search-Check'
+        'Get-CheckRegistry'
         'Get-FrameworkCoverage'
+        'Search-Check'
         'Test-CheckRegistryData'
     )
     CmdletsToExport   = @()

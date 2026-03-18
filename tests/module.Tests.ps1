@@ -18,7 +18,7 @@ Describe 'CheckID Module' {
     It 'Exports exactly the expected functions' {
         $mod = Get-Module CheckID
         $exported = $mod.ExportedFunctions.Keys | Sort-Object
-        $expected = @('Get-CheckById', 'Get-CheckRegistry', 'Get-FrameworkCoverage', 'Search-Check', 'Test-CheckRegistryData') | Sort-Object
+        $expected = @('Get-CheckAutomationGaps', 'Get-CheckById', 'Get-CheckRegistry', 'Get-FrameworkCoverage', 'Search-Check', 'Test-CheckRegistryData') | Sort-Object
         $exported | Should -Be $expected
     }
 
@@ -121,6 +121,34 @@ Describe 'Get-FrameworkCoverage' {
         $result = Get-FrameworkCoverage -Framework 'cis-m365-v6'
         $result.TotalControls | Should -Not -BeNullOrEmpty
         $result.CoveragePct | Should -Not -BeNullOrEmpty
+    }
+}
+
+Describe 'Get-CheckAutomationGaps' {
+
+    It 'Returns manual checks from the registry' {
+        $gaps = Get-CheckAutomationGaps
+        $gaps.Count | Should -BeGreaterThan 0
+        foreach ($g in $gaps) {
+            $g.hasAutomatedCheck | Should -Be $false
+        }
+    }
+
+    It 'Filters by framework' {
+        $gaps = Get-CheckAutomationGaps -Framework 'hipaa'
+        $gaps.Count | Should -BeGreaterThan 0
+        foreach ($g in $gaps) {
+            $g.frameworks.PSObject.Properties.Name | Should -Contain 'hipaa'
+        }
+    }
+
+    It 'Excludes superseded entries' {
+        $gaps = Get-CheckAutomationGaps
+        foreach ($g in $gaps) {
+            if ($g.PSObject.Properties.Name -contains 'supersededBy') {
+                $g.supersededBy | Should -BeNullOrEmpty
+            }
+        }
     }
 }
 

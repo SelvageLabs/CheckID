@@ -32,6 +32,7 @@ PSGallery module is in progress.
 | **M365-Assess** | [SelvageLabs/M365-Assess](https://github.com/SelvageLabs/M365-Assess) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
 | **Stitch-M365** | Private | Submodule (`Engine/lib/CheckID/`) | `Install-Module CheckID` |
 | **Darn** | [SelvageLabs/Darn](https://github.com/SelvageLabs/Darn) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+| **M365-Remediate** | [SelvageLabs/M365-Remediate](https://github.com/SelvageLabs/M365-Remediate) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
 
 ### Migration: Submodule to PSGallery Module
 
