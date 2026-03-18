@@ -224,6 +224,53 @@ function Get-FrameworkCoverage {
     }
 }
 
+function Get-CheckAutomationGaps {
+    <#
+    .SYNOPSIS
+        Returns checks that lack automated assessment.
+    .DESCRIPTION
+        Identifies checks where hasAutomatedCheck is false, indicating they
+        require manual review. Optionally filters by framework. Excludes
+        superseded entries by default.
+    .PARAMETER Framework
+        Filter to checks mapped to this framework key (e.g., 'hipaa', 'cmmc').
+    .PARAMETER ManualOnly
+        Only return checks where hasAutomatedCheck is false (default behavior).
+        This switch is accepted for readability but has no additional effect.
+    .OUTPUTS
+        PSCustomObject[] - check objects lacking automated assessment.
+    .EXAMPLE
+        Get-CheckAutomationGaps
+    .EXAMPLE
+        Get-CheckAutomationGaps -Framework 'hipaa'
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Position = 0)]
+        [string]$Framework,
+
+        [switch]$ManualOnly
+    )
+
+    $checks = Get-CheckRegistry
+
+    # Exclude superseded entries
+    $checks = $checks | Where-Object {
+        -not ($_.PSObject.Properties.Name -contains 'supersededBy' -and $_.supersededBy)
+    }
+
+    # Filter to manual-only checks
+    $checks = $checks | Where-Object { $_.hasAutomatedCheck -eq $false }
+
+    if ($Framework) {
+        $checks = $checks | Where-Object {
+            $_.frameworks.PSObject.Properties.Name -contains $Framework
+        }
+    }
+
+    return @($checks)
+}
+
 function Test-CheckRegistryData {
     <#
     .SYNOPSIS
@@ -251,9 +298,10 @@ function Test-CheckRegistryData {
 
 # Export module members
 Export-ModuleMember -Function @(
-    'Get-CheckRegistry'
+    'Get-CheckAutomationGaps'
     'Get-CheckById'
-    'Search-Check'
+    'Get-CheckRegistry'
     'Get-FrameworkCoverage'
+    'Search-Check'
     'Test-CheckRegistryData'
 )
