@@ -340,14 +340,14 @@ foreach ($fwRow in $frameworkRows) {
 
     # hasAutomatedCheck
     $checkId = $cidRow.CheckId
-    $hasAutomated = -not ($checkId -like 'MANUAL-*')
+    $hasAutomated = -not [string]::IsNullOrWhiteSpace($collector)
 
     # Category and collector
     $category  = if ([string]::IsNullOrWhiteSpace($cidRow.Area)) { '' } else { $cidRow.Area }
     $collector = if ([string]::IsNullOrWhiteSpace($cidRow.Collector)) { '' } else { $cidRow.Collector }
 
     # SupersededBy
-    $supersededBy = if ([string]::IsNullOrWhiteSpace($cidRow.SupersededBy)) { $null } else { $cidRow.SupersededBy.Trim() }
+    # SupersededBy removed — all MANUAL-CIS entries have been converted or removed
 
     # Build frameworks object — start with CIS
     $frameworks = [ordered]@{

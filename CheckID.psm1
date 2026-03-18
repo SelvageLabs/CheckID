@@ -146,8 +146,6 @@ function Get-FrameworkCoverage {
         and coverage percentage.
     .PARAMETER Framework
         Filter to a single framework key (e.g., 'nist-800-53', 'soc2').
-    .PARAMETER IncludeSuperseded
-        Include superseded MANUAL-CIS entries in counts.
     .OUTPUTS
         PSCustomObject[] — one object per framework with coverage stats.
     .EXAMPLE
@@ -159,8 +157,6 @@ function Get-FrameworkCoverage {
     param(
         [Parameter(Position = 0)]
         [string]$Framework,
-
-        [switch]$IncludeSuperseded
     )
 
     $checks = Get-CheckRegistry

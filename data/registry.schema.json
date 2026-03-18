@@ -39,8 +39,8 @@
       "properties": {
         "checkId": {
           "type": "string",
-          "pattern": "^[A-Z]+-[A-Z0-9-]+-\\d{3}$|^MANUAL-CIS-\\d+-\\d+(-\\d+)*$",
-          "description": "Unique identifier: {SERVICE}-{AREA}-{NNN} for automated checks, MANUAL-CIS-{n}-{n}[-{n}]* for manual checks."
+          "pattern": "^[A-Z]+-[A-Z0-9-]+-\\d{3}$",
+          "description": "Unique identifier in {SERVICE}-{AREA}-{NNN} format."
         },
         "name": {
           "type": "string",
@@ -49,11 +49,11 @@
         },
         "category": {
           "type": "string",
-          "description": "Functional category (e.g., CLOUDADMIN, MFA). Empty string for manual checks."
+          "description": "Functional category (e.g., CLOUDADMIN, MFA)."
         },
         "collector": {
           "type": "string",
-          "description": "Data collector responsible for this check. Empty string for manual checks."
+          "description": "Data collector responsible for this check."
         },
         "hasAutomatedCheck": {
           "type": "boolean",
@@ -78,10 +78,7 @@
             "$ref": "#/$defs/frameworkMapping"
           },
           "description": "Map of framework identifiers to their mapping details. At least one framework mapping is required."
-        },
-        "supersededBy": {
-          "type": "string",
-          "pattern": "^[A-Z]+-[A-Z0-9-]+-\\d{3}$",
+        }$",
           "description": "CheckId of the automated check that supersedes this manual check."
         },
         "impactRating": {

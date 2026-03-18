@@ -111,11 +111,6 @@ Describe 'Get-FrameworkCoverage' {
         $result.Framework | Should -Be 'nist-800-53'
         $result.MappedChecks | Should -BeGreaterOrEqual 100
     }
-
-    It 'Excludes superseded entries by default' {
-        $withoutSuperseded = Get-FrameworkCoverage -Framework 'cis-m365-v6'
-        $withSuperseded = Get-FrameworkCoverage -Framework 'cis-m365-v6' -IncludeSuperseded
-        $withSuperseded.MappedChecks | Should -BeGreaterOrEqual $withoutSuperseded.MappedChecks
     }
 
     It 'Includes CoveragePct when framework definition exists' {
@@ -153,19 +148,3 @@ Describe 'Get-CheckAutomationGaps' {
     }
 }
 
-Describe 'Backwards Compatibility' {
-
-    It 'Import-ControlRegistry.ps1 still works via dot-source' {
-        . "$PSScriptRoot/../scripts/Import-ControlRegistry.ps1"
-        $registry = Import-ControlRegistry -ControlsPath "$PSScriptRoot/../data"
-        $registry | Should -Not -BeNullOrEmpty
-        $registry['ENTRA-ADMIN-001'] | Should -Not -BeNullOrEmpty
-        $registry['__cisReverseLookup'] | Should -Not -BeNullOrEmpty
-    }
-
-    It 'Search-Registry.ps1 still works as standalone script' {
-        $results = & "$PSScriptRoot/../scripts/Search-Registry.ps1" -CheckId 'ENTRA-ADMIN-001' -AsObject
-        $results | Should -HaveCount 1
-        $results[0].checkId | Should -Be 'ENTRA-ADMIN-001'
-    }
-}

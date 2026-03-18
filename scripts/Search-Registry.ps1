@@ -1,3 +1,8 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  DEPRECATED — This script is retained for backwards         ║
+# ║  compatibility with M365-Assess. Use the CheckID module     ║
+# ║  cmdlets instead. Will be removed in a future major version.║
+# ╚══════════════════════════════════════════════════════════════╝
 <#
 .SYNOPSIS
     Searches the CheckID registry by CheckId, framework, control ID, or keyword.

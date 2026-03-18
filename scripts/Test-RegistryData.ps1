@@ -7,7 +7,6 @@
       - UTF-8 encoding (detects garbled HIPAA section symbols)
       - Duplicate CheckIds
       - Empty required fields
-      - Orphaned supersededBy targets
       - CSV-to-JSON consistency (check counts match)
 
     Returns exit code 0 if all checks pass, 1 if any fail. Suitable for CI and
@@ -178,20 +177,15 @@ Test-Check "framework-mappings.csv HIPAA values have correct encoding" {
 # 6. SupersededBy integrity
 # ------------------------------------------------------------------
 Write-Host "`nSupersededBy checks:" -ForegroundColor Yellow
-Test-Check "All supersededBy targets exist as CheckIds" {
     $allIds = [System.Collections.Generic.HashSet[string]]::new(
         [string[]]($reg.checks | ForEach-Object { $_.checkId }),
         [System.StringComparer]::Ordinal
     )
     $orphaned = @()
     foreach ($c in $reg.checks) {
-        if ($c.PSObject.Properties.Name -contains 'supersededBy') {
-            if (-not $allIds.Contains($c.supersededBy)) {
-                $orphaned += "$($c.checkId) -> $($c.supersededBy)"
             }
         }
     }
-    if ($orphaned.Count -gt 0) { return "Orphaned supersededBy: $($orphaned -join ', ')" }
 }
 
 # ------------------------------------------------------------------
