@@ -83,7 +83,7 @@ Describe 'Control Registry Integrity' {
     }
 
     It 'Collector values are from the known set' {
-        $knownCollectors = @('Entra', 'CAEvaluator', 'ExchangeOnline', 'DNS', 'Defender', 'Compliance', 'Intune', 'SharePoint', 'Teams')
+        $knownCollectors = @('Entra', 'CAEvaluator', 'ExchangeOnline', 'DNS', 'Defender', 'Compliance', 'Intune', 'SharePoint', 'Teams', 'PowerBI')
         $automated = $checks | Where-Object { $_.hasAutomatedCheck -eq $true }
         foreach ($check in $automated) {
             $check.collector | Should -BeIn $knownCollectors `
@@ -204,6 +204,16 @@ Describe 'Control Registry Integrity' {
             $target = $checks | Where-Object { $_.checkId -eq $check.supersededBy }
             $target.hasAutomatedCheck | Should -Be $true `
                 -Because "$($check.checkId) supersededBy '$($check.supersededBy)' — the target must be automated"
+        }
+    }
+
+    It 'impactRating severity values are from the valid enum when present' {
+        $validSeverities = @('Critical', 'High', 'Medium', 'Low', 'Informational')
+        $withRating = @($checks | Where-Object { $_.PSObject.Properties.Name -contains 'impactRating' })
+        $withRating.Count | Should -BeGreaterOrEqual 1 -Because 'at least some checks should have impactRating'
+        foreach ($check in $withRating) {
+            $check.impactRating.severity | Should -BeIn $validSeverities `
+                -Because "$($check.checkId) impactRating.severity must be a valid value"
         }
     }
 
