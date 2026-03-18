@@ -1,7 +1,7 @@
 @{
     # Module metadata
     RootModule        = 'CheckID.psm1'
-    ModuleVersion     = '1.1.0'
+    ModuleVersion     = '1.2.0'
     GUID              = 'a3b7c4d5-1e2f-4a5b-8c9d-0e1f2a3b4c5d'
     Author            = 'SelvageLabs'
     CompanyName       = 'SelvageLabs'
@@ -65,7 +65,7 @@
             Tags         = @('Security', 'Compliance', 'CheckID', 'NIST', 'CIS', 'ISO27001', 'HIPAA', 'SOC2', 'FedRAMP', 'M365')
             LicenseUri   = 'https://github.com/SelvageLabs/CheckID/blob/main/LICENSE'
             ProjectUri   = 'https://github.com/SelvageLabs/CheckID'
-            ReleaseNotes = 'v1.1.0: Add Get-FrameworkCoverage cmdlet, hash-indexed Get-CheckById for O(1) lookups.'
+            ReleaseNotes = 'v1.2.0: Complete framework definitions for all 14 frameworks with unified schema (registryKey, csvColumn, displayOrder, colors). Add Pester validation test suite.'
         }
     }
 }
