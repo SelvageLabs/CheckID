@@ -78,20 +78,22 @@
             "$ref": "#/$defs/frameworkMapping"
           },
           "description": "Map of framework identifiers to their mapping details. At least one framework mapping is required."
-        }$",
-          "description": "CheckId of the automated check that supersedes this manual check."
         },
         "impactRating": {
           "type": "object",
+          "required": ["severity"],
+          "additionalProperties": false,
           "properties": {
             "severity": {
               "type": "string",
-              "enum": ["Critical", "High", "Medium", "Low"],
-              "description": "Impact severity rating for this check."
+              "enum": ["Critical", "High", "Medium", "Low", "Informational"],
+              "description": "Impact severity if this check fails."
+            },
+            "rationale": {
+              "type": "string",
+              "description": "Brief explanation of the severity rating."
             }
-          },
-          "additionalProperties": false,
-          "description": "Impact rating metadata for this check."
+          }
         }
       },
       "if": {
