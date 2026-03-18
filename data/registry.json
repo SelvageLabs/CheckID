@@ -142,6 +142,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "ENTRA-CLOUDADMIN-001"
     },
     {
@@ -265,6 +268,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Critical"
+      },
       "supersededBy": "ENTRA-ADMIN-003"
     },
     {
@@ -334,6 +340,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -460,6 +469,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-CLOUDADMIN-002"
     },
@@ -590,6 +602,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-GROUP-003"
     },
     {
@@ -707,6 +722,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "EXO-SHAREDMBX-001"
     },
     {
@@ -771,6 +789,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -831,6 +852,9 @@
         "mitre-attack": {
           "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -892,6 +916,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -953,6 +980,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-ORGSETTING-001"
     },
@@ -1136,6 +1166,9 @@
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
+      "impactRating": {
+        "severity": "Low"
+      },
       "supersededBy": "ENTRA-ORGSETTING-002"
     },
     {
@@ -1199,6 +1232,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -1322,6 +1358,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-ORGSETTING-003"
     },
     {
@@ -1383,6 +1422,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -1512,6 +1554,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Low"
+      },
       "supersededBy": "ENTRA-ORGSETTING-004"
     },
     {
@@ -1575,6 +1620,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -1639,6 +1687,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -1700,6 +1751,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -1763,6 +1817,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -1866,6 +1923,9 @@
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "DEFENDER-SAFEATTACH-002"
     },
     {
@@ -1927,6 +1987,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -1989,6 +2052,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -2118,6 +2184,9 @@
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "DNS-SPF-001"
     },
     {
@@ -2245,6 +2314,9 @@
           "controlId": "T1020.001;T1040;T1090;T1090.004;T1550.001;T1550.004;T1552.007;T1557;T1557.001;T1557.002"
         }
       },
+      "impactRating": {
+        "severity": "Low"
+      },
       "supersededBy": "DNS-DKIM-001"
     },
     {
@@ -2371,6 +2443,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "DNS-DMARC-001"
     },
@@ -2501,6 +2576,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "DEFENDER-MALWARE-002"
     },
     {
@@ -2621,6 +2699,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "EXO-CONNFILTER-001"
     },
@@ -2743,6 +2824,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "EXO-CONNFILTER-002"
     },
     {
@@ -2864,6 +2948,9 @@
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "DEFENDER-ANTISPAM-002"
     },
     {
@@ -2925,6 +3012,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -3045,6 +3135,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "DEFENDER-PRIORITY-001"
     },
@@ -3167,6 +3260,9 @@
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "DEFENDER-PRIORITY-002"
     },
     {
@@ -3226,6 +3322,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -3347,6 +3446,9 @@
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "DEFENDER-ZAP-001"
     },
     {
@@ -3463,6 +3565,9 @@
         "fedramp": {
           "controlId": "AU-12;AU-7;AU-7(1)"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "COMPLIANCE-AUDIT-001"
     },
@@ -3583,6 +3688,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "COMPLIANCE-DLP-001"
     },
     {
@@ -3693,6 +3801,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "COMPLIANCE-DLP-002"
     },
@@ -3817,6 +3928,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "COMPLIANCE-LABELS-001"
     },
     {
@@ -3881,6 +3995,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "INTUNE-COMPLIANCE-001"
     },
@@ -4110,6 +4227,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "INTUNE-ENROLL-001"
     },
@@ -4365,6 +4485,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-PERUSER-001"
     },
     {
@@ -4500,6 +4623,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-APPS-001"
     },
     {
@@ -4564,6 +4690,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -4693,6 +4822,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Low"
+      },
       "supersededBy": "ENTRA-ADMIN-002"
     },
     {
@@ -4753,6 +4885,9 @@
         "mitre-attack": {
           "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -4875,6 +5010,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       },
       "supersededBy": "ENTRA-LINKEDIN-001"
     },
@@ -5005,6 +5143,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Low"
+      },
       "supersededBy": "ENTRA-GROUP-002"
     },
     {
@@ -5069,6 +5210,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -5191,6 +5335,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-DEVICE-001"
     },
@@ -5321,6 +5468,9 @@
           "controlId": "T1011.001;T1020.001;T1021.001;T1021.003;T1021.004;T1021.005;T1021.006;T1046;T1052;T1052.001"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-DEVICE-002"
     },
     {
@@ -5450,6 +5600,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-DEVICE-003"
     },
     {
@@ -5514,6 +5667,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-DEVICE-004"
     },
@@ -5643,6 +5799,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-DEVICE-005"
     },
@@ -5837,6 +5996,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-DEVICE-006"
     },
     {
@@ -5904,6 +6066,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -5972,6 +6137,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -6095,6 +6263,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-GUEST-004"
     },
     {
@@ -6164,6 +6335,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -6230,6 +6404,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -6352,6 +6529,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "ENTRA-HYBRID-001"
     },
@@ -6536,6 +6716,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "CA-MFA-ADMIN-001"
     },
     {
@@ -6677,6 +6860,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "CA-MFA-ALL-001"
     },
     {
@@ -6744,6 +6930,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "CA-LEGACYAUTH-001"
     },
@@ -6875,6 +7064,9 @@
         "mitre-attack": {
           "controlId": "T1021.001;T1072;T1185;T1563.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "CA-SIGNIN-FREQ-001"
     },
@@ -7080,6 +7272,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "CA-PHISHRES-001"
     },
     {
@@ -7204,6 +7399,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "CA-USERRISK-001"
     },
@@ -7330,6 +7528,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "CA-SIGNINRISK-001"
     },
     {
@@ -7454,6 +7655,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "CA-SIGNINRISK-002"
     },
@@ -7584,6 +7788,9 @@
           "controlId": "T1530;T1537;T1552;T1552.005;T1602;T1602.001;T1602.002"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "CA-DEVICE-001"
     },
     {
@@ -7712,6 +7919,9 @@
         "mitre-attack": {
           "controlId": "T1530;T1537;T1552;T1552.005;T1602;T1602.001;T1602.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "CA-DEVICE-002"
     },
@@ -7848,6 +8058,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "CA-INTUNE-001"
     },
     {
@@ -7971,6 +8184,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "CA-DEVICECODE-001"
     },
     {
@@ -8038,6 +8254,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       },
       "supersededBy": "ENTRA-AUTHMETHOD-003"
     },
@@ -8167,6 +8386,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -8290,6 +8512,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-PASSWORD-005"
     },
     {
@@ -8354,6 +8579,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -8464,6 +8692,9 @@
           "evidenceType": "config-export",
           "title": "Control Activities; Logical Access Security Software, Infrastructure, and Architectures; Changes to Infrastructure, Data, Software, and Procedures"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-AUTHMETHOD-001"
     },
@@ -8594,6 +8825,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-AUTHMETHOD-004"
     },
     {
@@ -8717,6 +8951,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "ENTRA-AUTHMETHOD-002"
     },
     {
@@ -8839,6 +9076,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1021"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-SSPR-001"
     },
@@ -9022,6 +9262,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "ENTRA-PIM-001"
     },
     {
@@ -9152,6 +9395,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "ENTRA-PIM-002"
     },
@@ -9284,6 +9530,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "ENTRA-PIM-003"
     },
     {
@@ -9349,6 +9598,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "ENTRA-PIM-004"
     },
@@ -9480,6 +9732,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "ENTRA-PIM-005"
     },
@@ -9732,6 +9987,9 @@
         "fedramp": {
           "controlId": "AU-12;AU-7;AU-7(1)"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -9849,6 +10107,9 @@
           "controlId": "AU-12;AU-7;AU-7(1)"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "EXO-AUDIT-003"
     },
     {
@@ -9907,6 +10168,9 @@
         "fedramp": {
           "controlId": "AU-12;AU-7;AU-7(1)"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -10054,6 +10318,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -10114,6 +10381,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "EXO-TRANSPORT-001"
     },
@@ -10238,6 +10508,9 @@
         "mitre-attack": {
           "controlId": "T1137;T1137.001;T1137.002;T1137.003;T1137.004;T1137.005;T1137.006;T1204;T1204.001;T1204.002"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -10341,6 +10614,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -10445,6 +10721,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -10487,6 +10766,9 @@
           "controlId": "§164.308(a)(5)(i)",
           "title": "Security Awareness and Training"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       }
     },
     {
@@ -10548,6 +10830,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -10612,6 +10897,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -10660,6 +10948,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -10721,6 +11012,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "SPO-AUTH-001"
     },
@@ -10906,6 +11200,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "SPO-B2B-001"
     },
     {
@@ -10967,6 +11264,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -11090,6 +11390,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "SPO-OD-001"
     },
     {
@@ -11154,6 +11457,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11218,6 +11524,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11281,6 +11590,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11410,6 +11722,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "SPO-SHARING-008"
     },
     {
@@ -11468,6 +11783,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11526,6 +11844,9 @@
         "mitre-attack": {
           "controlId": "T1110;T1110.001;T1110.002;T1110.003;T1110.004"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11589,6 +11910,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11692,6 +12016,9 @@
           "title": "Prevention and Detection of Unauthorized Software; Detection and Monitoring of New Vulnerabilities"
         }
       },
+      "impactRating": {
+        "severity": "High"
+      },
       "supersededBy": "SPO-MALWARE-002"
     },
     {
@@ -11753,6 +12080,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -11811,6 +12141,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "SPO-SCRIPT-001"
     },
@@ -11928,6 +12261,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       },
       "supersededBy": "SPO-SCRIPT-002"
     },
@@ -12133,6 +12469,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "TEAMS-CLIENT-001"
     },
     {
@@ -12254,6 +12593,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.005;T1003.006;T1008;T1020.001"
         }
+      },
+      "impactRating": {
+        "severity": "Low"
       },
       "supersededBy": "TEAMS-CLIENT-002"
     },
@@ -12474,6 +12816,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "TEAMS-EXTACCESS-003"
     },
     {
@@ -12535,6 +12880,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -12596,6 +12944,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -12718,6 +13069,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "TEAMS-EXTACCESS-004"
     },
@@ -12878,6 +13232,9 @@
           "controlId": "T1021.005;T1059;T1059.006;T1176;T1195;T1195.001;T1195.002;T1218;T1218.001;T1218.002"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "TEAMS-APPS-002"
     },
     {
@@ -12936,6 +13293,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "High"
       }
     },
     {
@@ -12988,6 +13348,9 @@
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13046,6 +13409,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13098,6 +13464,9 @@
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13214,6 +13583,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "TEAMS-MEETING-006"
     },
@@ -13332,6 +13704,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "TEAMS-MEETING-007"
     },
     {
@@ -13384,6 +13759,9 @@
           "evidenceType": "config-export",
           "title": "Logical Access Security Software, Infrastructure, and Architectures; Data Transmission and Movement Restriction"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13445,6 +13823,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       },
       "supersededBy": "TEAMS-MEETING-008"
     },
@@ -13630,6 +14011,9 @@
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "TEAMS-MEETING-009"
     },
     {
@@ -13739,6 +14123,9 @@
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
       },
+      "impactRating": {
+        "severity": "Medium"
+      },
       "supersededBy": "TEAMS-REPORTING-001"
     },
     {
@@ -13803,6 +14190,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13867,6 +14257,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13931,6 +14324,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005;T1003.006;T1003.007;T1003.008;T1005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -13992,6 +14388,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14056,6 +14455,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14117,6 +14519,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14177,6 +14582,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1008;T1020.001;T1021.001;T1021.002;T1021.003;T1021.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14238,6 +14646,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.005;T1008;T1011"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14299,6 +14710,9 @@
         "mitre-attack": {
           "controlId": "T1003;T1003.001;T1003.002;T1003.005;T1008;T1011;T1011.001;T1021.001;T1021.002;T1021.003"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14362,6 +14776,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
@@ -14425,6 +14842,9 @@
         "mitre-attack": {
           "controlId": "T1001;T1001.001;T1001.002;T1001.003;T1003;T1003.001;T1003.002;T1003.003;T1003.004;T1003.005"
         }
+      },
+      "impactRating": {
+        "severity": "Medium"
       }
     },
     {
