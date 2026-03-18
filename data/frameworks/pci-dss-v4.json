@@ -7,9 +7,55 @@
   "registryKey": "pci-dss",
   "csvColumn": "PciDss",
   "displayOrder": 6,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "requirement-compliance",
+    "requirements": {
+      "1": {
+        "label": "Network Security Controls"
+      },
+      "2": {
+        "label": "Secure Configurations"
+      },
+      "3": {
+        "label": "Stored Account Data"
+      },
+      "4": {
+        "label": "Strong Cryptography"
+      },
+      "5": {
+        "label": "Malicious Software"
+      },
+      "6": {
+        "label": "Secure Systems"
+      },
+      "7": {
+        "label": "Access Restriction"
+      },
+      "8": {
+        "label": "User Authentication"
+      },
+      "9": {
+        "label": "Physical Access"
+      },
+      "10": {
+        "label": "Logging and Monitoring"
+      },
+      "11": {
+        "label": "Security Testing"
+      },
+      "12": {
+        "label": "Organizational Policies"
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#fef2f2", "color": "#991b1b" },
-    "dark": { "background": "#7F1D1D", "color": "#FCA5A5" }
+    "light": {
+      "background": "#fef2f2",
+      "color": "#991b1b"
+    },
+    "dark": {
+      "background": "#7F1D1D",
+      "color": "#FCA5A5"
+    }
   }
 }

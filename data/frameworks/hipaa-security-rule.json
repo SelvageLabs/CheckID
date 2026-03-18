@@ -7,9 +7,34 @@
   "registryKey": "hipaa",
   "csvColumn": "Hipaa",
   "displayOrder": 8,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "criteria-coverage",
+    "criteria": {
+      "164.308": {
+        "label": "Administrative Safeguards"
+      },
+      "164.310": {
+        "label": "Physical Safeguards"
+      },
+      "164.312": {
+        "label": "Technical Safeguards"
+      },
+      "164.314": {
+        "label": "Organizational Requirements"
+      },
+      "164.316": {
+        "label": "Policies and Procedures"
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#fdf2f8", "color": "#9d174d" },
-    "dark": { "background": "#831843", "color": "#F9A8D4" }
+    "light": {
+      "background": "#fdf2f8",
+      "color": "#9d174d"
+    },
+    "dark": {
+      "background": "#831843",
+      "color": "#F9A8D4"
+    }
   }
 }

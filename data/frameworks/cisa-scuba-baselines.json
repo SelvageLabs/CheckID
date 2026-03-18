@@ -7,9 +7,38 @@
   "registryKey": "cisa-scuba",
   "csvColumn": "CisaScuba",
   "displayOrder": 9,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "policy-compliance",
+    "products": {
+      "AAD": {
+        "label": "Entra ID"
+      },
+      "EXO": {
+        "label": "Exchange Online"
+      },
+      "Defender": {
+        "label": "Microsoft Defender"
+      },
+      "SharePoint": {
+        "label": "SharePoint"
+      },
+      "Teams": {
+        "label": "Teams"
+      },
+      "PowerPlatform": {
+        "label": "Power Platform"
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#fff7ed", "color": "#9a3412" },
-    "dark": { "background": "#7C2D12", "color": "#FDBA74" }
-  }
+    "light": {
+      "background": "#fff7ed",
+      "color": "#9a3412"
+    },
+    "dark": {
+      "background": "#7C2D12",
+      "color": "#FDBA74"
+    }
+  },
+  "controlIdFormat": "MS.{product}.{number}v{version}"
 }

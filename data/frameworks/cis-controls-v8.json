@@ -7,9 +7,31 @@
   "registryKey": "cis-controls-v8",
   "csvColumn": "CisControlsV8",
   "displayOrder": 12,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "profile-compliance",
+    "profiles": {
+      "IG1": {
+        "label": "IG1",
+        "controlCount": 56
+      },
+      "IG2": {
+        "label": "IG2",
+        "controlCount": 130
+      },
+      "IG3": {
+        "label": "IG3",
+        "controlCount": 153
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#dbeafe", "color": "#1e40af" },
-    "dark": { "background": "#1E3A5F", "color": "#60A5FA" }
+    "light": {
+      "background": "#dbeafe",
+      "color": "#1e40af"
+    },
+    "dark": {
+      "background": "#1E3A5F",
+      "color": "#60A5FA"
+    }
   }
 }

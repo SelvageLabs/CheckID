@@ -7,9 +7,31 @@
   "registryKey": "cmmc",
   "csvColumn": "Cmmc",
   "displayOrder": 7,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "maturity-level",
+    "maturityLevels": {
+      "L1": {
+        "label": "Foundational",
+        "practiceCount": 17
+      },
+      "L2": {
+        "label": "Advanced",
+        "practiceCount": 110
+      },
+      "L3": {
+        "label": "Expert",
+        "practiceCount": 134
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#f0fdfa", "color": "#134e4a" },
-    "dark": { "background": "#134E4A", "color": "#5EEAD4" }
+    "light": {
+      "background": "#f0fdfa",
+      "color": "#134e4a"
+    },
+    "dark": {
+      "background": "#134E4A",
+      "color": "#5EEAD4"
+    }
   }
 }

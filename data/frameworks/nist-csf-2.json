@@ -7,9 +7,43 @@
   "registryKey": "nist-csf",
   "csvColumn": "NistCsf",
   "displayOrder": 3,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "function-coverage",
+    "functions": {
+      "GV": {
+        "label": "Govern",
+        "subcategories": 15
+      },
+      "ID": {
+        "label": "Identify",
+        "subcategories": 17
+      },
+      "PR": {
+        "label": "Protect",
+        "subcategories": 27
+      },
+      "DE": {
+        "label": "Detect",
+        "subcategories": 18
+      },
+      "RS": {
+        "label": "Respond",
+        "subcategories": 15
+      },
+      "RC": {
+        "label": "Recover",
+        "subcategories": 14
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#fef3c7", "color": "#92400e" },
-    "dark": { "background": "#78350F", "color": "#FCD34D" }
+    "light": {
+      "background": "#fef3c7",
+      "color": "#92400e"
+    },
+    "dark": {
+      "background": "#78350F",
+      "color": "#FCD34D"
+    }
   }
 }

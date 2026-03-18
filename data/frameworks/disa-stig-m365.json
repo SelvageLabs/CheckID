@@ -7,9 +7,29 @@
   "registryKey": "stig",
   "csvColumn": "Stig",
   "displayOrder": 5,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "severity-coverage",
+    "categories": {
+      "CAT-I": {
+        "label": "High"
+      },
+      "CAT-II": {
+        "label": "Medium"
+      },
+      "CAT-III": {
+        "label": "Low"
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#f3e8ff", "color": "#6b21a8" },
-    "dark": { "background": "#3B0764", "color": "#C4B5FD" }
-  }
+    "light": {
+      "background": "#f3e8ff",
+      "color": "#6b21a8"
+    },
+    "dark": {
+      "background": "#3B0764",
+      "color": "#C4B5FD"
+    }
+  },
+  "controlIdFormat": "V-{number}"
 }

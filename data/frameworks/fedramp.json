@@ -7,9 +7,35 @@
   "registryKey": "fedramp",
   "csvColumn": "Fedramp",
   "displayOrder": 13,
-  "scoring": { "method": "coverage" },
+  "scoring": {
+    "method": "profile-compliance",
+    "profiles": {
+      "LI-SaaS": {
+        "label": "FedRAMP LI-SaaS",
+        "controlCount": 36
+      },
+      "Low": {
+        "label": "FedRAMP Low",
+        "controlCount": 156
+      },
+      "Moderate": {
+        "label": "FedRAMP Moderate",
+        "controlCount": 323
+      },
+      "High": {
+        "label": "FedRAMP High",
+        "controlCount": 370
+      }
+    }
+  },
   "colors": {
-    "light": { "background": "#eff6ff", "color": "#1e40af" },
-    "dark": { "background": "#1E3A5F", "color": "#93C5FD" }
+    "light": {
+      "background": "#eff6ff",
+      "color": "#1e40af"
+    },
+    "dark": {
+      "background": "#1E3A5F",
+      "color": "#93C5FD"
+    }
   }
 }
