@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - 14 former MANUAL-CIS checks converted to proper `{SERVICE}-{AREA}-{NNN}` identifiers
-- `Import-ControlRegistry.ps1`, `Search-Registry.ps1`, and `Show-CheckProgress.ps1` deprecated in favor of module cmdlets (`Get-CheckRegistry`, `Search-Check`)
+- `Import-ControlRegistry.ps1`, `Search-Registry.ps1`, and `Show-CheckProgress.ps1` removed — superseded by module cmdlets (`Get-CheckRegistry`, `Search-Check`, `Get-CheckAutomationGaps`) (#85)
 - Updated documentation to reflect new check counts and removal of supersession tracking
 
 ## [1.2.0] - 2026-03-17

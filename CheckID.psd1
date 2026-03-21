@@ -54,10 +54,7 @@
         'scripts/Build-DerivedMappings.py'
         'scripts/Build-FrameworkTitles.py'
         'scripts/Export-ComplianceMatrix.ps1'
-        'scripts/Import-ControlRegistry.ps1'
         'scripts/Import-NistBaselines.ps1'
-        'scripts/Search-Registry.ps1'
-        'scripts/Show-CheckProgress.ps1'
         'scripts/Test-RegistryData.ps1'
     )
 
