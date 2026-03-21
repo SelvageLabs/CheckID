@@ -5,7 +5,15 @@ All notable changes to the CheckID module will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] - 2026-03-18
+## [Unreleased] - 2026-03-20
+
+### Added
+
+- 8 CA coverage gap analysis checks: CA-COVERAGE-001..008 (#80)
+- 3 API permission severity checks: ENTRA-APPS-002..004 (#81)
+- 5 enhanced PIM checks: ENTRA-PIM-006..010 (#82)
+- 7 Entra security checks: ENTRA-APPS-005..006, ENTRA-APPREG-002..003, ENTRA-ADMIN-004, ENTRA-GROUP-004..005 (#83)
+- Essential Eight framework mappings for all 23 new checks
 
 ### Removed
 

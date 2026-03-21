@@ -817,5 +817,671 @@
         "evidenceType": "config-export"
       }
     }
+  },
+  {
+    "checkId": "CA-COVERAGE-001",
+    "name": "Device Code Flow Blocked by CA Policy",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03"
+      },
+      "nist-800-53": {
+        "controlId": "CM-7;IA-2"
+      },
+      "iso-27001": {
+        "controlId": "A.8.5;A.8.20"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.7",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-002",
+    "name": "Legacy Authentication Blocked by CA Policy",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03"
+      },
+      "nist-800-53": {
+        "controlId": "CM-7;IA-2"
+      },
+      "iso-27001": {
+        "controlId": "A.8.5;A.8.20"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.7",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-003",
+    "name": "MFA Enforced for All Users",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03;PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "IA-2(1);IA-2(2)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5;ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(d)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-004",
+    "name": "Phishing-Resistant MFA for Admins",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03;PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "IA-2(6);AC-6(5)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(d)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-005",
+    "name": "Sign-in Risk-Based CA Policy Exists",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "DE.AE-2;PR.AA-03"
+      },
+      "nist-800-53": {
+        "controlId": "AC-7;SI-4"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.8.16"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC7.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-006",
+    "name": "User Risk-Based CA Policy Exists",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "DE.AE-2;PR.AA-03"
+      },
+      "nist-800-53": {
+        "controlId": "AC-7;SI-4"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.8.16"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC7.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-007",
+    "name": "Security Info Registration Protected by CA",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03;PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "IA-2;IA-5"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "CA-COVERAGE-008",
+    "name": "Device Registration Restricted by CA",
+    "category": "COVERAGE",
+    "collector": "CAEvaluator",
+    "impactRating": {
+      "severity": "Medium"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03"
+      },
+      "nist-800-53": {
+        "controlId": "CM-8;IA-3"
+      },
+      "iso-27001": {
+        "controlId": "A.8.1;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPS-002",
+    "name": "Enterprise Apps with Dangerous-Level Graph Permissions",
+    "category": "APPS",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05;PR.AC-4"
+      },
+      "nist-800-53": {
+        "controlId": "AC-6(5);AC-6(10)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPS-003",
+    "name": "Enterprise Apps with High-Level Permissions and No Recent Activity",
+    "category": "APPS",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05;PR.AC-4"
+      },
+      "nist-800-53": {
+        "controlId": "AC-6(5);AC-2(3)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPS-004",
+    "name": "Managed Identities with Dangerous-Level Permissions",
+    "category": "APPS",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05;PR.AC-4"
+      },
+      "nist-800-53": {
+        "controlId": "AC-6(5);AC-6(10)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-PIM-006",
+    "name": "Tier-0 Role Activation Duration Exceeds 4 Hours",
+    "category": "PIM",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-2(2);AC-6(5)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5;ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-PIM-007",
+    "name": "Tier-0 Role Activation Does Not Require Approval",
+    "category": "PIM",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-2(2);AC-6(5)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5;ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-PIM-008",
+    "name": "Permanent Active Assignments on Tier-0 Roles",
+    "category": "PIM",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-2(2);AC-6(5)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5;ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-PIM-009",
+    "name": "Eligible Assignments Without Expiration",
+    "category": "PIM",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-2(2);AC-6(5)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-PIM-010",
+    "name": "PIM Activation Does Not Require MFA",
+    "category": "PIM",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-03;PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "IA-2(1);AC-6(5)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5;ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(d);§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPS-005",
+    "name": "Enterprise Apps with No Sign-in Activity in 180+ Days",
+    "category": "APPS",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Medium"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-2(3);CM-8"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18"
+      },
+      "essential-eight": {
+        "controlId": "ML1-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPS-006",
+    "name": "Enterprise Apps Owned by External Tenant Principals",
+    "category": "APPS",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05;PR.AC-4"
+      },
+      "nist-800-53": {
+        "controlId": "AC-6(5);SA-9"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.19;A.5.20"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1);§164.308(b)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3;CC9.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPREG-002",
+    "name": "App Registrations with Credentials Expiring Within 30 Days",
+    "category": "APPREG",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Medium"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-01"
+      },
+      "nist-800-53": {
+        "controlId": "IA-5;IA-5(1)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.17;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML1-P5"
+      },
+      "soc2": {
+        "controlId": "CC6.1",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-APPREG-003",
+    "name": "App Registrations with Credential Lifetime Exceeding 2 Years",
+    "category": "APPREG",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-01"
+      },
+      "nist-800-53": {
+        "controlId": "IA-5;IA-5(1)"
+      },
+      "iso-27001": {
+        "controlId": "A.5.17;A.8.5"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(d)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-ADMIN-004",
+    "name": "On-Premises Synced Accounts Holding Tier-0 Roles",
+    "category": "ADMIN",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Critical"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-6(5);AC-2"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5;ML3-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1);§164.308(a)(4)(i)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.2;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-GROUP-004",
+    "name": "Dynamic Groups with User-Modifiable Attribute Rules Granting Privileged Access",
+    "category": "GROUP",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "High"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05;PR.AC-4"
+      },
+      "nist-800-53": {
+        "controlId": "AC-6(5);AC-3"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18;A.8.2"
+      },
+      "essential-eight": {
+        "controlId": "ML2-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
+  },
+  {
+    "checkId": "ENTRA-GROUP-005",
+    "name": "Self-Service Group Management Enabled Without Restrictions",
+    "category": "GROUP",
+    "collector": "Entra",
+    "impactRating": {
+      "severity": "Medium"
+    },
+    "frameworks": {
+      "nist-csf": {
+        "controlId": "PR.AA-05"
+      },
+      "nist-800-53": {
+        "controlId": "AC-3;CM-7"
+      },
+      "iso-27001": {
+        "controlId": "A.5.15;A.5.18"
+      },
+      "essential-eight": {
+        "controlId": "ML1-P5"
+      },
+      "hipaa": {
+        "controlId": "§164.312(a)(1)"
+      },
+      "soc2": {
+        "controlId": "CC6.1;CC6.3",
+        "evidenceType": "config-export"
+      }
+    }
   }
 ]
