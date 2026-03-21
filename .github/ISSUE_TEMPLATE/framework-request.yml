@@ -1,0 +1,44 @@
+name: Framework Request
+description: Request a new compliance framework mapping
+labels: ["framework"]
+body:
+  - type: input
+    id: framework-name
+    attributes:
+      label: Framework Name
+      placeholder: "GDPR, SOX, APRA CPS 234"
+    validations:
+      required: true
+
+  - type: input
+    id: framework-version
+    attributes:
+      label: Version
+      placeholder: "v2.0, Rev 5, 2024 Edition"
+    validations:
+      required: true
+
+  - type: textarea
+    id: control-format
+    attributes:
+      label: Control ID Format
+      description: How are controls identified in this framework?
+      placeholder: "Art. 32(1)(a), AC-1, CC6.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample-controls
+    attributes:
+      label: Sample Controls
+      description: Provide 3–5 example controls that are relevant to M365 configuration.
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative Source URL
+      description: Link to the official framework document or standard body page.
+    validations:
+      required: false

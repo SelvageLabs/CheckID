@@ -1,0 +1,39 @@
+name: Enhancement
+description: Propose new check IDs or improvements to existing checks
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What enhancement are you proposing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-checks
+    attributes:
+      label: Proposed Check IDs
+      description: |
+        If proposing new checks, provide a table with these columns.
+        Leave blank if not adding checks.
+      placeholder: |
+        | CheckId | Name | Category | Collector | hasAutomatedCheck | licensing | impactRating |
+        |---------|------|----------|-----------|-------------------|-----------|--------------|
+        | ENTRA-EXAMPLE-001 | Example check description | EXAMPLE | Entra | true | E3 | High |
+
+  - type: textarea
+    id: framework-mappings
+    attributes:
+      label: Framework Mappings Needed
+      description: Which compliance frameworks should these checks map to?
+      placeholder: "CIS M365 v6, NIST 800-53, Essential Eight, …"
+
+  - type: textarea
+    id: consumer-context
+    attributes:
+      label: Downstream Consumer Context
+      description: |
+        Which consumers need this? Include the project name and a link to any
+        related issue or PR in the consumer repo.
+      placeholder: "M365-Remediate — see Galvnyz/M365-Remediate#42"
