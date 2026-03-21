@@ -146,11 +146,8 @@ CheckID/
 ├── scripts/                       PowerShell 7.x scripts
 │   ├── Build-Registry.ps1         Generates registry.json from CSVs
 │   ├── Import-NistBaselines.ps1   Reads OSCAL baseline profiles from SecFrame
-│   ├── Import-ControlRegistry.ps1 [deprecated] Loads registry into memory
 │   ├── Export-ComplianceMatrix.ps1 XLSX multi-framework compliance report
-│   ├── Search-Registry.ps1        [deprecated] Search registry by CheckId, framework, or keyword
-│   ├── Test-RegistryData.ps1      Data quality validation (14 checks)
-│   └── Show-CheckProgress.ps1     [deprecated] Real-time progress display
+│   └── Test-RegistryData.ps1      Data quality validation (14 checks)
 ├── tests/                         Pester 5.x tests
 │   ├── registry-integrity.Tests.ps1
 │   └── nist-baselines.Tests.ps1

@@ -39,9 +39,9 @@ PSGallery module is in progress.
 **For consumers migrating from git submodule to `Install-Module`:**
 
 1. Install the module: `Install-Module -Name CheckID -Scope CurrentUser`
-2. Replace dot-source imports:
+2. Replace dot-source imports with module cmdlets:
    ```powershell
-   # Before (submodule)
+   # Before (submodule — these scripts have been removed)
    . ./lib/CheckID/scripts/Import-ControlRegistry.ps1
    $registry = Import-ControlRegistry -ControlsPath ./lib/CheckID/data
    $check = $registry['ENTRA-ADMIN-001']
@@ -53,10 +53,8 @@ PSGallery module is in progress.
    $checks = Get-CheckRegistry
    ```
 3. Replace script calls with module cmdlets:
-   - `Import-ControlRegistry.ps1` → `Get-CheckRegistry` / `Get-CheckById` (script deprecated)
-   - `Search-Registry.ps1` → `Search-Check` (script deprecated)
-   - `Show-CheckProgress.ps1` → no replacement needed (script deprecated)
+   - `Import-ControlRegistry.ps1` → `Get-CheckRegistry` / `Get-CheckById` (removed)
+   - `Search-Registry.ps1` → `Search-Check` (removed)
+   - `Show-CheckProgress.ps1` → `Get-CheckAutomationGaps` (removed)
    - `Test-RegistryData.ps1` → `Test-CheckRegistryData`
 4. Remove the submodule: `git submodule deinit lib/CheckID && git rm lib/CheckID`
-
-The deprecated scripts (`Import-ControlRegistry.ps1`, `Search-Registry.ps1`, `Show-CheckProgress.ps1`) remain in the repository but are no longer maintained. Use the module cmdlets instead.
