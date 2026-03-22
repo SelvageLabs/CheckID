@@ -11117,7 +11117,9 @@
         "nist-800-53": {
           "controlId": "AC-3(2);CM-5(1)",
           "title": "Dual Authorization; Automated Access Enforcement",
-          "profiles": "High"
+          "profiles": [
+            "High"
+          ]
         },
         "nist-csf": {
           "controlId": "PR.AA-05;PR.PS-01",
