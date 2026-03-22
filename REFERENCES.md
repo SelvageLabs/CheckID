@@ -14,47 +14,56 @@ for security framework reference data. CheckID's framework mappings are derived 
 | `SCF/checkid-framework-export.csv` | CheckID-compatible flat export from SCF database |
 | `NIST/csf-pf-to-sp800-53r5-mappings.xlsx` | NIST CSF 2.0 to NIST 800-53 R5 |
 
-### Update Workflow
+### Update Workflow (Automated)
 
-1. Update relevant source files in SecFrame
-2. Update `data/framework-mappings.csv` and/or `data/check-id-mapping.csv` in this repo
-3. Run `scripts/Build-Registry.ps1` to regenerate `data/registry.json`
-4. Commit and push
-5. Consumers bump their CheckID submodule pointer
+When SecFrame merges changes to framework data directories, the CI cascade triggers:
+
+1. **SecFrame** `notify-checkid.yml` dispatches `secframe-updated` to CheckID
+2. **CheckID** `rebuild-from-secframe.yml` fetches latest data, rebuilds registry, opens PR
+3. After PR merge and tag, `notify-downstream.yml` dispatches `checkid-released` to consumers
+4. Consumers receive dispatch and auto-create sync PRs
+
+Manual workflow: edit CSVs → `Build-Registry.ps1` → `Test-RegistryData.ps1` → commit → tag
 
 ## Downstream Consumers
 
-These projects consume CheckID. All currently use git submodules; migration to the
-PSGallery module is in progress.
+| Project | Repository | Integration | Sync Method |
+|---------|-----------|-------------|-------------|
+| **M365-Assess** | [Galvnyz/M365-Assess](https://github.com/Galvnyz/M365-Assess) | CI cache (`controls/registry.json`) | `sync-checkid.yml` auto-PR on dispatch |
+| **M365-Remediate** | [Galvnyz/M365-Remediate](https://github.com/Galvnyz/M365-Remediate) | Submodule (`lib/CheckID/`) | `sync-checkid.yml` auto-PR on dispatch |
+| **StrykerScan** | [Galvnyz/StrykerScan](https://github.com/Galvnyz/StrykerScan) | Mapping file (`checks/checkid-mapping.json`) | Metadata only, not runtime |
+| **Stitch-M365** | Private | Submodule (`Engine/lib/CheckID/`) | Manual submodule update |
+| **Darn** | [Galvnyz/Darn](https://github.com/Galvnyz/Darn) | Planned | — |
 
-| Project | Repository | Current Method | Target Method |
-|---------|-----------|---------------|--------------|
-| **M365-Assess** | [Galvnyz/M365-Assess](https://github.com/Galvnyz/M365-Assess) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
-| **Stitch-M365** | Private | Submodule (`Engine/lib/CheckID/`) | `Install-Module CheckID` |
-| **Darn** | [Galvnyz/Darn](https://github.com/Galvnyz/Darn) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
-| **M365-Remediate** | [Galvnyz/M365-Remediate](https://github.com/Galvnyz/M365-Remediate) | Submodule (`lib/CheckID/`) | `Install-Module CheckID` |
+### CI Cascade Flow
 
-### Migration: Submodule to PSGallery Module
+```
+SecFrame merge → notify-checkid.yml → repository_dispatch
+    ↓
+CheckID rebuild-from-secframe.yml → PR → merge → tag
+    ↓
+CheckID notify-downstream.yml → repository_dispatch to:
+    ├── M365-Assess sync-checkid.yml → fetch registry + frameworks → PR
+    ├── M365-Remediate sync-checkid.yml → update submodule → PR
+    └── StrykerScan (receives dispatch, validates mapping)
+```
 
-**For consumers migrating from git submodule to `Install-Module`:**
+### Consumer Integration Guide
 
-1. Install the module: `Install-Module -Name CheckID -Scope CurrentUser`
-2. Replace dot-source imports with module cmdlets:
-   ```powershell
-   # Before (submodule — these scripts have been removed)
-   . ./lib/CheckID/scripts/Import-ControlRegistry.ps1
-   $registry = Import-ControlRegistry -ControlsPath ./lib/CheckID/data
-   $check = $registry['ENTRA-ADMIN-001']
+**CI cache sync** (recommended for PowerShell tools like M365-Assess):
+- Add `sync-checkid.yml` workflow that receives `checkid-released` dispatch
+- Fetch `data/registry.json` and `data/frameworks/*.json` from the tagged version
+- Store in a local `controls/` directory
 
-   # After (module)
-   Import-Module CheckID
-   $check = Get-CheckById 'ENTRA-ADMIN-001'
-   # Or load all checks:
-   $checks = Get-CheckRegistry
-   ```
-3. Replace script calls with module cmdlets:
-   - `Import-ControlRegistry.ps1` → `Get-CheckRegistry` / `Get-CheckById` (removed)
-   - `Search-Registry.ps1` → `Search-Check` (removed)
-   - `Show-CheckProgress.ps1` → `Get-CheckAutomationGaps` (removed)
-   - `Test-RegistryData.ps1` → `Test-CheckRegistryData`
-4. Remove the submodule: `git submodule deinit lib/CheckID && git rm lib/CheckID`
+**Git submodule** (recommended for .NET apps like M365-Remediate):
+```bash
+git submodule add https://github.com/Galvnyz/CheckID.git lib/CheckID
+```
+
+**Mapping file** (recommended for standalone scanners like StrykerScan):
+- Create `checkid-mapping.json` mapping local check IDs to CheckID universal IDs
+- Metadata only — no runtime dependency on CheckID
+
+### Secrets Required
+
+Cross-repo dispatch requires a `CROSS_REPO_TOKEN` secret (classic GitHub PAT with `repo` + `workflow` scopes) configured in CheckID, SecFrame, and each consumer repo.
