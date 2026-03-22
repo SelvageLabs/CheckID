@@ -60,7 +60,6 @@
 
     PrivateData = @{
         PSData = @{
-            Tags         = @('Security', 'Compliance', 'CheckID', 'NIST', 'CIS', 'ISO27001', 'HIPAA', 'SOC2', 'FedRAMP', 'M365')
             LicenseUri   = 'https://github.com/Galvnyz/CheckID/blob/main/LICENSE'
             ProjectUri   = 'https://github.com/Galvnyz/CheckID'
             ReleaseNotes = 'v1.2.0: Add Get-CheckAutomationGaps and Export-ComplianceMatrix cmdlets, 17 new M365-Remediate checks, impactRating schema field (schemaVersion 1.1.0), complete framework definitions (14 files).'

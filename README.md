@@ -16,13 +16,16 @@ CheckID starts with M365 but is designed to expand. The identifier format, regis
 
 ## Quick Start
 
-### Install from PSGallery (recommended)
+### Add as a git submodule (recommended)
 
-```powershell
-Install-Module -Name CheckID -Scope CurrentUser
+```bash
+git submodule add https://github.com/Galvnyz/CheckID.git lib/CheckID
 ```
 
 ```powershell
+# Import the module from the submodule path
+Import-Module ./lib/CheckID/CheckID.psd1
+
 # Load all checks
 $checks = Get-CheckRegistry
 
@@ -36,23 +39,19 @@ Search-Check -Framework 'hipaa' -Keyword 'password'
 Search-Check -ControlId 'AC-6'
 ```
 
-### Add as a git submodule (legacy)
-
-> The submodule approach still works and will continue to be supported during the transition period. New projects should prefer `Install-Module`.
+### Clone the repo
 
 ```bash
-git submodule add https://github.com/Galvnyz/CheckID.git lib/CheckID
+git clone https://github.com/Galvnyz/CheckID.git
 ```
 
 ```powershell
-# Import the module from the submodule path
-Import-Module ./lib/CheckID/CheckID.psd1
-
-# Look up a specific check
-$check = Get-CheckById 'ENTRA-ADMIN-001'
-$check.name          # "Ensure that between two and four global admins are designated"
-$check.frameworks    # All framework mappings
+Import-Module ./CheckID/CheckID.psd1
 ```
+
+### CI cache sync
+
+Consumer repos can sync `data/registry.json` and `data/frameworks/*.json` via CI rather than using a submodule. See [REFERENCES.md](REFERENCES.md) for the recommended CI workflow.
 
 ### Use the registry data directly
 
