@@ -1,0 +1,4242 @@
+{
+  "version": "1.0.0",
+  "description": "Maps CheckID checks to SCF controls. Source of truth for Build-Registry.ps1.",
+  "generatedBy": "Build-ScfMigration.py (one-time migration from registry.json v1.1.0)",
+  "scfVersion": "2025.4",
+  "checks": [
+    {
+      "checkId": "ENTRA-CLOUDADMIN-001",
+      "name": "Ensure Administrative accounts are cloud-only",
+      "category": "CLOUDADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": false,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "1.1.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.4v1",
+      "stigControlId": "V-260333"
+    },
+    {
+      "checkId": "ENTRA-SYNCADMIN-001",
+      "name": "On-premises synced admin accounts (compromise path)",
+      "category": "SYNCADMIN",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "1.1.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.4v1"
+    },
+    {
+      "checkId": "ENTRA-ADMIN-003",
+      "name": "Ensure two emergency access accounts have been defined",
+      "category": "ADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15.2",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Critical",
+      "impactRationale": "",
+      "cisM365ControlId": "1.1.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "stigControlId": "V-260334"
+    },
+    {
+      "checkId": "ENTRA-ADMIN-001",
+      "name": "Ensure that between two and four global admins are designated",
+      "category": "ADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.1.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.1v1",
+      "stigControlId": "V-260335"
+    },
+    {
+      "checkId": "ENTRA-BREAKGLASS-001",
+      "name": "No break-glass emergency access account detected",
+      "category": "BREAKGLASS",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15.2",
+      "scfAdditional": [
+        "BCD-06",
+        "BCD-01"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "1.1.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.1.1v1"
+    },
+    {
+      "checkId": "ENTRA-CLOUDADMIN-002",
+      "name": "Ensure administrative accounts use licenses with a reduced application footprint",
+      "category": "CLOUDADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.1.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-GROUP-003",
+      "name": "Ensure that only organizationally managed/approved public groups exist",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-03.2",
+      "scfAdditional": [
+        "IAC-21.5",
+        "CHG-04"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.2.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "EXO-SHAREDMBX-001",
+      "name": "Ensure sign-in to shared mailboxes is blocked",
+      "category": "SHAREDMBX",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15",
+      "scfAdditional": [
+        "IAC-07.2",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.2.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-PASSWORD-001",
+      "name": "Ensure the 'Password expiration policy' is set to 'Set passwords to never expire'",
+      "category": "PASSWORD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-10.1",
+      "scfAdditional": [
+        "IAC-10.4",
+        "IAC-10"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.6.1v1"
+    },
+    {
+      "checkId": "SPO-SESSION-001",
+      "name": "Ensure 'Idle session timeout' is set to '3 hours (or less)' for unmanaged devices",
+      "category": "SESSION",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-25",
+      "scfAdditional": [
+        "IAC-24"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.2",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "EXO-SHARING-001",
+      "name": "Ensure 'External sharing' of calendars is not available",
+      "category": "SHARING",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.3",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-001",
+      "name": "Ensure 'User owned apps and services' is restricted",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "CFG-05",
+        "END-03"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-002",
+      "name": "Ensure internal phishing protection for Forms is enabled",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-08",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.5",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "EXO-LOCKBOX-001",
+      "name": "Ensure the customer lockbox feature is enabled",
+      "category": "LOCKBOX",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.6",
+      "cisM365Profiles": [
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-003",
+      "name": "Ensure 'third-party storage services' are restricted in 'Microsoft 365 on the web'",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.7",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SWAY-001",
+      "name": "Ensure that Sways cannot be shared with people outside of your organization",
+      "category": "SWAY",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.8",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-ORGSETTING-004",
+      "name": "Ensure shared bookings pages are restricted to select users",
+      "category": "ORGSETTING",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "1.3.9",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-SAFELINKS-001",
+      "name": "Ensure Safe Links for Office Applications is Enabled",
+      "category": "SAFELINKS",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-08",
+        "END-04.1",
+        "VPM-01"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.1",
+      "cisM365Profiles": [
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.EXO.15.1v1;MS.EXO.15.2v1;MS.EXO.15.3v1"
+    },
+    {
+      "checkId": "DEFENDER-ANTIMALWARE-001",
+      "name": "Ensure the Common Attachment Types Filter is enabled",
+      "category": "ANTIMALWARE",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-08",
+        "END-04.1",
+        "VPM-01"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.9.1v2;MS.EXO.9.2v1"
+    },
+    {
+      "checkId": "DEFENDER-ANTIMALWARE-002",
+      "name": "Ensure notifications for internal users sending malware is Enabled",
+      "category": "ANTIMALWARE",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-01.4",
+      "scfAdditional": [
+        "END-04",
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-SAFEATTACH-001",
+      "name": "Ensure Safe Attachments policy is enabled",
+      "category": "SAFEATTACH",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-08",
+        "END-04.1",
+        "VPM-01"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.4",
+      "cisM365Profiles": [
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.EXO.14.1v2"
+    },
+    {
+      "checkId": "DEFENDER-SAFEATTACH-002",
+      "name": "Ensure Safe Attachments for SharePoint OneDrive and Microsoft Teams is Enabled",
+      "category": "SAFEATTACH",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.5",
+      "cisM365Profiles": [
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-ANTISPAM-001",
+      "name": "Ensure Exchange Online Spam Policies are set to notify administrators",
+      "category": "ANTISPAM",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-08",
+        "END-04.1",
+        "VPM-01"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.6",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-ANTIPHISH-001",
+      "name": "Ensure that an anti-phishing policy has been created",
+      "category": "ANTIPHISH",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-08",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.7",
+      "cisM365Profiles": [
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.EXO.11.1v1"
+    },
+    {
+      "checkId": "DNS-SPF-001",
+      "name": "Ensure that SPF records are published for all Exchange Domains",
+      "category": "SPF",
+      "collector": "DNS",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15",
+      "scfAdditional": [
+        "IAC-07.2",
+        "END-08",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.8",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.3.1v1"
+    },
+    {
+      "checkId": "DNS-DKIM-001",
+      "name": "Ensure that DKIM is enabled for all Exchange Online Domains",
+      "category": "DKIM",
+      "collector": "DNS",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CRY-03",
+      "scfAdditional": [
+        "CRY-04"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.9",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.4.1v1"
+    },
+    {
+      "checkId": "DNS-DMARC-001",
+      "name": "Ensure DMARC Records for all Exchange Online domains are published",
+      "category": "DMARC",
+      "collector": "DNS",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-01.4",
+      "scfAdditional": [
+        "END-08"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.10",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.2.1v2;MS.EXO.2.2v1"
+    },
+    {
+      "checkId": "DEFENDER-MALWARE-002",
+      "name": "Ensure comprehensive attachment filtering is applied",
+      "category": "MALWARE",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.11",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "EXO-CONNFILTER-001",
+      "name": "Ensure the connection filter IP allow list is not used",
+      "category": "CONNFILTER",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [
+        "END-08"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.12",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "EXO-CONNFILTER-002",
+      "name": "Ensure the connection filter safe list is off",
+      "category": "CONNFILTER",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [
+        "END-08"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.13",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-ANTISPAM-002",
+      "name": "Ensure inbound anti-spam policies do not contain allowed domains",
+      "category": "ANTISPAM",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-08",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.14",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-OUTBOUND-001",
+      "name": "Ensure outbound anti-spam message limits are in place",
+      "category": "OUTBOUND",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-02.7",
+      "scfAdditional": [
+        "END-08",
+        "CFG-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.1.15",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-PRIORITY-001",
+      "name": "Ensure Priority account protection is enabled and configured",
+      "category": "PRIORITY",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-08",
+        "END-04.1",
+        "VPM-01"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.4.1",
+      "cisM365Profiles": [
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-PRIORITY-002",
+      "name": "Ensure Priority accounts have 'Strict protection' presets applied",
+      "category": "PRIORITY",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "CFG-02.7",
+        "END-08",
+        "END-04.1",
+        "VPM-01"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.4.2",
+      "cisM365Profiles": [
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-CLOUDAPPS-001",
+      "name": "Ensure Microsoft Defender for Cloud Apps is enabled and configured",
+      "category": "CLOUDAPPS",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "MON-01.4",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.4.3",
+      "cisM365Profiles": [
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "DEFENDER-ZAP-001",
+      "name": "Ensure Zero-hour auto purge for Microsoft Teams is on",
+      "category": "ZAP",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-08",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "2.4.4",
+      "cisM365Profiles": [
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "COMPLIANCE-AUDIT-001",
+      "name": "Ensure Microsoft 365 audit log search is Enabled",
+      "category": "AUDIT",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-06",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "3.1.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.16.1v1"
+    },
+    {
+      "checkId": "COMPLIANCE-DLP-001",
+      "name": "Ensure DLP policies are enabled",
+      "category": "DLP",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "3.2.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.8.1v1"
+    },
+    {
+      "checkId": "COMPLIANCE-DLP-002",
+      "name": "Ensure DLP policies are enabled for Microsoft Teams",
+      "category": "DLP",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "3.2.2",
+      "cisM365Profiles": [
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "COMPLIANCE-LABELS-001",
+      "name": "Ensure Information Protection sensitivity label policies are published",
+      "category": "LABELS",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "3.3.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "FORMS-CONFIG-002",
+      "name": "Ensure external users cannot collaborate on Microsoft Forms",
+      "category": "CONFIG",
+      "collector": "Forms",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-15",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "3.6.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "FORMS-CONFIG-001",
+      "name": "Ensure external users cannot respond to Microsoft Forms",
+      "category": "CONFIG",
+      "collector": "Forms",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-15",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "3.6.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "FORMS-CONFIG-004",
+      "name": "Ensure Microsoft Forms phishing protection is enabled",
+      "category": "CONFIG",
+      "collector": "Forms",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-08",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "3.6.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "INTUNE-COMPLIANCE-001",
+      "name": "Ensure devices without a compliance policy are marked 'not compliant'",
+      "category": "COMPLIANCE",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "AST-02.3",
+      "scfAdditional": [
+        "CFG-02.7",
+        "AST-02",
+        "CFG-02"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "4.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "EXO-ANTIPHISH-001",
+      "name": "Anti-Phishing Policy Configuration",
+      "category": "ANTIPHISH",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-08",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "4.2",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "INTUNE-ENROLL-001",
+      "name": "Ensure device enrollment for personally owned devices is blocked by default",
+      "category": "ENROLL",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "MDM-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "4.2",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "EXO-ANTISPAM-001",
+      "name": "Anti-Spam Policy Configuration",
+      "category": "ANTISPAM",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-08",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "4.3",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "EXO-DKIM-001",
+      "name": "DKIM Signing Configuration",
+      "category": "DKIM",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "CRY-03",
+        "VPM-05"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "4.4",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "EXO-MALWARE-001",
+      "name": "Malware Filter Policy Configuration",
+      "category": "MALWARE",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "4.5",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "ENTRA-PERUSER-001",
+      "name": "Ensure 'Per-user MFA' is disabled",
+      "category": "PERUSER",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-02.7",
+      "scfAdditional": [
+        "IAC-06.3",
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "CA-EXCLUSION-001",
+      "name": "Privileged admins excluded from Conditional Access policies",
+      "category": "CAEXCLUSION",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.1v1;MS.AAD.3.2v1"
+    },
+    {
+      "checkId": "ENTRA-APPS-001",
+      "name": "Ensure third party integrated applications are not allowed",
+      "category": "APPS",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-03.2",
+      "scfAdditional": [
+        "IAC-21.5",
+        "CHG-04"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.2",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.5.4v1"
+    },
+    {
+      "checkId": "ENTRA-TENANT-001",
+      "name": "Ensure 'Restrict non-admin users from creating tenants' is set to 'Yes'",
+      "category": "TENANT",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-03.2",
+      "scfAdditional": [
+        "IAC-21.5",
+        "CHG-04"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-ADMIN-002",
+      "name": "Ensure access to the Entra admin center is restricted",
+      "category": "ADMIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-SESSION-001",
+      "name": "Ensure the option to remain signed in is hidden",
+      "category": "SESSION",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-25",
+      "scfAdditional": [
+        "IAC-24"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.5",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-LINKEDIN-001",
+      "name": "Ensure 'LinkedIn account connections' is disabled",
+      "category": "LINKEDIN",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.2.6",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-GROUP-002",
+      "name": "Ensure a dynamic group for guest users is created",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15",
+      "scfAdditional": [
+        "IAC-07.2",
+        "IAC-21",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.3.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-GROUP-001",
+      "name": "Ensure users cannot create security groups",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-03.2",
+      "scfAdditional": [
+        "IAC-21.5",
+        "CHG-04"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.3.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-DEVICE-001",
+      "name": "Ensure the ability to join devices to Entra is restricted",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.4.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-DEVICE-002",
+      "name": "Ensure the maximum number of devices per user is limited",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MDM-02",
+      "scfAdditional": [
+        "AST-02.3",
+        "AST-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.4.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-DEVICE-003",
+      "name": "Ensure the GA role is not added as a local administrator during Entra join",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "CFG-02.7",
+        "CFG-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.4.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-DEVICE-004",
+      "name": "Ensure local administrator assignment is limited during Entra join",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "CFG-02.7",
+        "CFG-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.4.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-DEVICE-005",
+      "name": "Ensure Local Administrator Password Solution is enabled",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-02.7",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10",
+        "CFG-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.4.5",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-DEVICE-006",
+      "name": "Ensure users are restricted from recovering BitLocker keys",
+      "category": "DEVICE",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.4.6",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-CONSENT-001",
+      "name": "Ensure user consent to apps accessing company data on their behalf is not allowed",
+      "category": "CONSENT",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-03.2",
+      "scfAdditional": [
+        "IAC-21.5",
+        "CHG-04"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.5.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.5.1v1"
+    },
+    {
+      "checkId": "ENTRA-CONSENT-002",
+      "name": "Ensure the admin consent workflow is enabled",
+      "category": "CONSENT",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CHG-03",
+      "scfAdditional": [
+        "IAC-21.5"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.5.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.5.2v1"
+    },
+    {
+      "checkId": "ENTRA-GUEST-004",
+      "name": "Ensure that collaboration invitations are sent to allowed domains only",
+      "category": "GUEST",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.6.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.8.2v1"
+    },
+    {
+      "checkId": "ENTRA-GUEST-001",
+      "name": "Ensure that guest user access is restricted",
+      "category": "GUEST",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.6.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.8.1v1",
+      "stigControlId": "V-260342"
+    },
+    {
+      "checkId": "ENTRA-GUEST-002",
+      "name": "Ensure guest user invitations are limited to the Guest Inviter role",
+      "category": "GUEST",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.5",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.6.3",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.8.3v1"
+    },
+    {
+      "checkId": "ENTRA-HYBRID-001",
+      "name": "Ensure that password hash sync is enabled for hybrid deployments",
+      "category": "HYBRID",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-10.8",
+      "scfAdditional": [
+        "IAC-10"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.1.8.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "EXO-TRANSPORT-002",
+      "name": "Transport Rule Configuration for External Forwarding",
+      "category": "TRANSPORT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [
+        "NET-03"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "CA-MFA-ADMIN-001",
+      "name": "Ensure multifactor authentication is enabled for all users in administrative roles",
+      "category": "MFA-ADMIN",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-06.3",
+      "scfAdditional": [
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1",
+        "IAC-06.4"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.1v1",
+      "stigControlId": "V-260337"
+    },
+    {
+      "checkId": "CA-MFA-ALL-001",
+      "name": "Ensure multifactor authentication is enabled for all users",
+      "category": "MFA-ALL",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-06.3",
+      "scfAdditional": [
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1",
+        "IAC-06.4"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.2v1;MS.AAD.3.3v1",
+      "stigControlId": "V-260337"
+    },
+    {
+      "checkId": "ENTRA-CA-001",
+      "name": "Enable Conditional Access policies to block legacy authentication",
+      "category": "CA",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.1.1v1",
+      "stigControlId": "V-260338"
+    },
+    {
+      "checkId": "CA-LEGACYAUTH-001",
+      "name": "Enable Conditional Access policies to block legacy authentication",
+      "category": "LEGACYAUTH",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.1.1v1",
+      "stigControlId": "V-260338"
+    },
+    {
+      "checkId": "CA-SIGNIN-FREQ-001",
+      "name": "Ensure Sign-in frequency is enabled and browser sessions are not persistent for Administrative users",
+      "category": "SIGNIN-FREQ",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-25",
+      "scfAdditional": [
+        "IAC-24"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.6v1"
+    },
+    {
+      "checkId": "CA-PHISHRES-001",
+      "name": "Ensure 'Phishing-resistant MFA strength' is required for Administrators",
+      "category": "PHISHRES",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-02.2",
+      "scfAdditional": [
+        "IAC-06.3",
+        "IAC-10.7",
+        "IAC-10",
+        "IAC-06.2",
+        "IAC-06"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.5",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.1v1",
+      "stigControlId": "V-260339"
+    },
+    {
+      "checkId": "CA-USERRISK-001",
+      "name": "Enable Identity Protection user risk policies",
+      "category": "USERRISK",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "HRS-09.2",
+      "scfAdditional": [
+        "IAC-15.6",
+        "MON-16"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.6",
+      "cisM365Profiles": [
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.2.1v1",
+      "stigControlId": "V-260341"
+    },
+    {
+      "checkId": "CA-SIGNINRISK-001",
+      "name": "Enable Identity Protection sign-in risk policies",
+      "category": "SIGNINRISK",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "HRS-09.2",
+      "scfAdditional": [
+        "IAC-15.6",
+        "MON-16"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.7",
+      "cisM365Profiles": [
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.2.3v1",
+      "stigControlId": "V-260340"
+    },
+    {
+      "checkId": "CA-SIGNINRISK-002",
+      "name": "Ensure 'sign-in risk' is blocked for medium and high risk",
+      "category": "SIGNINRISK",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "HRS-09.2",
+      "scfAdditional": [
+        "IAC-15.6",
+        "MON-16"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.8",
+      "cisM365Profiles": [
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.2.3v1",
+      "stigControlId": "V-260340"
+    },
+    {
+      "checkId": "CA-DEVICE-001",
+      "name": "Ensure a managed device is required for authentication",
+      "category": "DEVICE",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-13",
+      "scfAdditional": [
+        "IAC-04"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.9",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.6v1"
+    },
+    {
+      "checkId": "CA-DEVICE-002",
+      "name": "Ensure a managed device is required to register security information",
+      "category": "DEVICE",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-13",
+      "scfAdditional": [
+        "IAC-04"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.10",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.7v1"
+    },
+    {
+      "checkId": "CA-INTUNE-001",
+      "name": "Ensure sign-in frequency for Intune Enrollment is set to 'Every time'",
+      "category": "INTUNE",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-06.3",
+      "scfAdditional": [
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-24",
+        "IAC-06",
+        "IAC-06.1"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.11",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.8v1"
+    },
+    {
+      "checkId": "CA-DEVICECODE-001",
+      "name": "Ensure the device code sign-in flow is blocked",
+      "category": "DEVICECODE",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.2.12",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-AUTHMETHOD-003",
+      "name": "Ensure Microsoft Authenticator is configured to protect against MFA fatigue",
+      "category": "AUTHMETHOD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-02.4",
+      "scfAdditional": [
+        "IAC-02.2",
+        "IAC-06.3",
+        "IAC-10.7",
+        "IAC-10",
+        "IAC-06.2"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.5v1"
+    },
+    {
+      "checkId": "ENTRA-PASSWORD-002",
+      "name": "Ensure custom banned passwords lists are used",
+      "category": "PASSWORD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-10.1",
+      "scfAdditional": [
+        "IAC-10.4",
+        "IAC-10"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-PASSWORD-005",
+      "name": "Ensure password protection is enabled for on-prem Active Directory",
+      "category": "PASSWORD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-10.1",
+      "scfAdditional": [
+        "IAC-10.4",
+        "IAC-10"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-MFA-001",
+      "name": "Ensure all member users are 'MFA capable'",
+      "category": "MFA",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-06.3",
+      "scfAdditional": [
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1",
+        "IAC-06.4"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-AUTHMETHOD-001",
+      "name": "Ensure weak authentication methods are disabled",
+      "category": "AUTHMETHOD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.5",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.3.4v1"
+    },
+    {
+      "checkId": "ENTRA-AUTHMETHOD-004",
+      "name": "Ensure system-preferred multifactor authentication is enabled",
+      "category": "AUTHMETHOD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-06.3",
+      "scfAdditional": [
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1",
+        "IAC-06.4"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.6",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-AUTHMETHOD-002",
+      "name": "Ensure the email OTP authentication method is disabled",
+      "category": "AUTHMETHOD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.3.7",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "ENTRA-SSPR-001",
+      "name": "Ensure 'Self service password reset enabled' is set to 'All'",
+      "category": "SSPR",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-10.1",
+      "scfAdditional": [
+        "IAC-10.4",
+        "IAC-10"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.2.4.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PURVIEW-AUDIT-001",
+      "name": "Unified Audit Logging Enabled",
+      "category": "AUDIT",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-02.6",
+      "scfAdditional": [
+        "MON-01.8",
+        "MON-03",
+        "CFG-02.1",
+        "MON-02",
+        "CFG-02"
+      ],
+      "impactSeverity": "Critical",
+      "impactRationale": "",
+      "cisM365ControlId": "5.3",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "ENTRA-PIM-001",
+      "name": "Ensure 'Privileged Identity Management' is used to manage roles",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-15",
+      "scfAdditional": [
+        "IAC-07.2",
+        "IAC-21.1",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.3.1",
+      "cisM365Profiles": [
+        "E5-L2"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.5v1;MS.AAD.7.7v1",
+      "stigControlId": "V-260336"
+    },
+    {
+      "checkId": "ENTRA-PIM-002",
+      "name": "Ensure 'Access reviews' for Guest Users are configured",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-15.1",
+      "scfAdditional": [
+        "IAC-15.3"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.3.2",
+      "cisM365Profiles": [
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.3v1"
+    },
+    {
+      "checkId": "ENTRA-PIM-003",
+      "name": "Ensure 'Access reviews' for privileged roles are configured",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-15.1",
+      "scfAdditional": [
+        "IAC-15.3"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.3.3",
+      "cisM365Profiles": [
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.3v1"
+    },
+    {
+      "checkId": "ENTRA-PIM-004",
+      "name": "Ensure approval is required for Global Administrator role activation",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.3.4",
+      "cisM365Profiles": [
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.8v1"
+    },
+    {
+      "checkId": "ENTRA-PIM-005",
+      "name": "Ensure approval is required for Privileged Role Administrator activation",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "5.3.5",
+      "cisM365Profiles": [
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.AAD.7.9v1"
+    },
+    {
+      "checkId": "PURVIEW-RETENTION-001",
+      "name": "Data Retention Policies",
+      "category": "RETENTION",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-10",
+      "scfAdditional": [
+        "DCH-18",
+        "PRI-05"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "5.4",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "INTUNE-SECURITY-001",
+      "name": "Device Compliance Policy Baseline",
+      "category": "SECURITY",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-02.7",
+      "scfAdditional": [
+        "CFG-03",
+        "CFG-02"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "6.1",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "COMPLIANCE-ALERTPOLICY-001",
+      "name": "Security Alert Policies Configuration",
+      "category": "ALERTPOLICY",
+      "collector": "Compliance",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-02.6",
+      "scfAdditional": [
+        "IRO-14",
+        "IRO-02",
+        "GOV-06",
+        "IRO-10",
+        "MON-02"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "6.1",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "EXO-AUDIT-001",
+      "name": "Ensure 'AuditDisabled' organizationally is set to 'False'",
+      "category": "AUDIT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-06",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "6.1.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.16.1v1"
+    },
+    {
+      "checkId": "EXO-AUDIT-003",
+      "name": "Ensure mailbox audit actions are configured",
+      "category": "AUDIT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-06",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.1.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.17.1v1;MS.EXO.17.2v1"
+    },
+    {
+      "checkId": "EXO-AUDIT-002",
+      "name": "Ensure 'AuditBypassEnabled' is not enabled on mailboxes",
+      "category": "AUDIT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-06",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "6.1.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.17.3v1"
+    },
+    {
+      "checkId": "INTUNE-ENCRYPTION-001",
+      "name": "Device Encryption Policy",
+      "category": "ENCRYPTION",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-02",
+      "scfAdditional": [
+        "CRY-05"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "6.2",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "DEFENDER-SECURESCORE-001",
+      "name": "Microsoft Secure Score Posture",
+      "category": "SECURESCORE",
+      "collector": "Defender",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CPL-03",
+      "scfAdditional": [
+        "PRM-04",
+        "IAO-02",
+        "RSK-04",
+        "CPL-03.2",
+        "IAO-06"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.2",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "EXO-FORWARD-001",
+      "name": "Ensure all forms of mail forwarding are blocked and/or disabled",
+      "category": "FORWARD",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "6.2.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.1.1v1"
+    },
+    {
+      "checkId": "EXO-TRANSPORT-001",
+      "name": "Ensure mail transport rules do not whitelist specific domains",
+      "category": "TRANSPORT",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-08",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.2.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "EXO-EXTTAG-001",
+      "name": "Ensure email from external senders is identified",
+      "category": "EXTTAG",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-08",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "6.2.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.7.1v1"
+    },
+    {
+      "checkId": "INTUNE-ENROLLMENT-001",
+      "name": "Device Enrollment Restrictions",
+      "category": "ENROLLMENT",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "AST-02.3",
+      "scfAdditional": [
+        "AST-02",
+        "IAC-04"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.3",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "EXO-ADDINS-001",
+      "name": "Ensure users installing Outlook add-ins is not allowed",
+      "category": "ADDINS",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "CFG-05",
+        "END-03"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.3.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "INTUNE-UPDATE-001",
+      "name": "Windows Update Ring Configuration",
+      "category": "UPDATE",
+      "collector": "Intune",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-04.1",
+      "scfAdditional": [
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.4",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "EXO-AUTH-001",
+      "name": "Ensure modern authentication for Exchange Online is enabled",
+      "category": "AUTH",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.5.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "EXO-MAILTIPS-001",
+      "name": "Ensure MailTips are enabled for end users",
+      "category": "MAILTIPS",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "SAT-02",
+      "scfAdditional": [],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "6.5.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "EXO-OWA-001",
+      "name": "Ensure additional storage providers are restricted in Outlook on the web",
+      "category": "OWA",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "6.5.3",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "EXO-AUTH-002",
+      "name": "Ensure SMTP AUTH is disabled",
+      "category": "AUTH",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "6.5.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ],
+      "cisaScubaControlId": "MS.EXO.5.1v1"
+    },
+    {
+      "checkId": "EXO-DIRECTSEND-001",
+      "name": "Ensure Direct Send is not allowed for unauthorized relay",
+      "category": "DIRECTSEND",
+      "collector": "ExchangeOnline",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "NET-14",
+      "scfAdditional": [
+        "NET-03"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "6.5.5",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "SPO-AUTH-001",
+      "name": "Ensure modern authentication for SharePoint applications is required",
+      "category": "AUTH",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-03"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-B2B-001",
+      "name": "Ensure SharePoint and OneDrive integration with Azure AD B2B is enabled",
+      "category": "B2B",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-03",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-001",
+      "name": "Ensure external content sharing is restricted",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-03",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-OD-001",
+      "name": "Ensure OneDrive content sharing is restricted",
+      "category": "OD",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-03",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.4",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-002",
+      "name": "Ensure that SharePoint guest users cannot share items they don't own",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.5",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.5",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-003",
+      "name": "Ensure SharePoint external sharing is managed through domain whitelist/blacklists",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.5",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.6",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-004",
+      "name": "Ensure link sharing is restricted in SharePoint and OneDrive",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.7",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-008",
+      "name": "Ensure external sharing is restricted by security group",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.5",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.8",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-005",
+      "name": "Ensure guest access to a site or OneDrive will expire automatically",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-14",
+      "scfAdditional": [
+        "PRI-07",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.9",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-006",
+      "name": "Ensure reauthentication with verification code is restricted",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-14",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.10",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-SHARING-007",
+      "name": "Ensure the SharePoint default sharing link permission is set",
+      "category": "SHARING",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21",
+      "scfAdditional": [
+        "IAC-20"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.2.11",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "SPO-MALWARE-002",
+      "name": "Ensure Office 365 SharePoint infected files are disallowed for download",
+      "category": "MALWARE",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "END-04",
+      "scfAdditional": [
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05",
+        "TDA-18"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.3.1",
+      "cisM365Profiles": [
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SYNC-001",
+      "name": "Ensure OneDrive sync is restricted for unmanaged devices",
+      "category": "SYNC",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "MDM-02"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "7.3.2",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "SPO-SCRIPT-001",
+      "name": "Ensure custom script execution is restricted on personal sites",
+      "category": "SCRIPT",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "CFG-05",
+        "END-03"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.3.3",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "SPO-SCRIPT-002",
+      "name": "Ensure custom script execution is restricted on site collections",
+      "category": "SCRIPT",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "CFG-05",
+        "END-03"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.3.4",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "TEAMS-GUEST-001",
+      "name": "Guest Access to Teams",
+      "category": "GUEST",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "NET-14",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "7.4",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "PBI-TENANT-001",
+      "name": "Power BI External Sharing Configuration",
+      "category": "TENANT",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.1",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "TEAMS-CLIENT-001",
+      "name": "Ensure external file sharing in Teams is enabled for only approved cloud storage services",
+      "category": "CLIENT",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.1.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-CLIENT-002",
+      "name": "Ensure users can't send emails to a channel email address",
+      "category": "CLIENT",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-04",
+        "END-08",
+        "NET-17"
+      ],
+      "impactSeverity": "Low",
+      "impactRationale": "",
+      "cisM365ControlId": "8.1.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-TENANT-002",
+      "name": "Power BI Publish to Web Configuration",
+      "category": "TENANT",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "8.2",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "TEAMS-EXTACCESS-003",
+      "name": "Ensure external domains are restricted in the Teams admin center",
+      "category": "EXTACCESS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.2.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-EXTACCESS-001",
+      "name": "Ensure communication with unmanaged Teams users is disabled",
+      "category": "EXTACCESS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.2.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-EXTACCESS-002",
+      "name": "Ensure external Teams users cannot initiate conversations",
+      "category": "EXTACCESS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "END-08"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.2.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-EXTACCESS-004",
+      "name": "Ensure communication with Skype users is disabled",
+      "category": "EXTACCESS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.2.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-TENANT-003",
+      "name": "Power BI Guest Access Configuration",
+      "category": "TENANT",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E5",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "NET-14",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.3",
+      "cisM365Profiles": []
+    },
+    {
+      "checkId": "TEAMS-APPS-002",
+      "name": "Ensure app permission policies are configured",
+      "category": "APPS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-05",
+      "scfAdditional": [
+        "END-03"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.4.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-001",
+      "name": "Ensure anonymous users can't join a meeting",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-14",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "High",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.1",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-002",
+      "name": "Ensure anonymous users and dial-in callers can't start a meeting",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-14",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-003",
+      "name": "Ensure only people in my org can bypass the lobby",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-004",
+      "name": "Ensure users dialing in can't bypass the lobby",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-14",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-006",
+      "name": "Ensure meeting chat does not allow anonymous users",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "END-14",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.5",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-007",
+      "name": "Ensure only organizers and co-organizers can present",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-14",
+      "scfAdditional": [
+        "PRI-07",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.6",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-005",
+      "name": "Ensure external participants can't give or request control",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-14",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.7",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-008",
+      "name": "Ensure external meeting chat is off",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.8",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-MEETING-009",
+      "name": "Ensure meeting recording is off by default",
+      "category": "MEETING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.5.9",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "TEAMS-REPORTING-001",
+      "name": "Ensure users can report security concerns in Teams",
+      "category": "REPORTING",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-01.4",
+      "scfAdditional": [
+        "MON-01.12",
+        "MON-05.1"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "8.6.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-GUEST-001",
+      "name": "Ensure guest user access is restricted in Power BI",
+      "category": "Guest Access",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-GUEST-001",
+      "name": "Ensure guest user access is restricted in Power BI",
+      "category": "GUEST",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.1",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-GUEST-002",
+      "name": "Ensure external user invitations are restricted in Power BI",
+      "category": "Guest Access",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-INVITE-001",
+      "name": "Ensure external user invitations are restricted in Power BI",
+      "category": "INVITE",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.2",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-CONTENT-001",
+      "name": "Ensure guest access to content is restricted in Power BI",
+      "category": "CONTENT",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-GUEST-003",
+      "name": "Ensure guest access to content is restricted in Power BI",
+      "category": "Guest Access",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.3",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-SHARING-001",
+      "name": "Ensure 'Publish to web' is restricted in Power BI",
+      "category": "Sharing",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-PUBLISH-001",
+      "name": "Ensure 'Publish to web' is restricted in Power BI",
+      "category": "PUBLISH",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.4",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-SCRIPT-001",
+      "name": "Ensure 'Interact with and share R and Python' visuals is 'Disabled' in Power BI",
+      "category": "SCRIPT",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "END-04",
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.5",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "POWERBI-SHARING-002",
+      "name": "Ensure 'Interact with and share R and Python' visuals is 'Disabled' in Power BI",
+      "category": "Sharing",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "END-04",
+        "END-04.4",
+        "END-04.1",
+        "VPM-01",
+        "VPM-05"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.5",
+      "cisM365Profiles": [
+        "E3-L2",
+        "E5-L2"
+      ]
+    },
+    {
+      "checkId": "POWERBI-INFOPROT-001",
+      "name": "Ensure 'Allow users to apply sensitivity labels for content' is 'Enabled' in Power BI",
+      "category": "Information Protection",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.6",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-LABELS-001",
+      "name": "Ensure 'Allow users to apply sensitivity labels for content' is 'Enabled' in Power BI",
+      "category": "LABELS",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "NET-17",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.6",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-SHARING-003",
+      "name": "Ensure shareable links are restricted in Power BI",
+      "category": "Sharing",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "DCH-14",
+        "PRI-07",
+        "NET-17"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.7",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-LINK-001",
+      "name": "Ensure shareable links are restricted in Power BI",
+      "category": "LINK",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-03.5",
+      "scfAdditional": [
+        "DCH-14",
+        "PRI-07",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.7",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-SHARING-004",
+      "name": "Ensure enabling of external data sharing is restricted in Power BI",
+      "category": "Sharing",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.8",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-SHARING-001",
+      "name": "Ensure enabling of external data sharing is restricted in Power BI",
+      "category": "SHARING",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "NET-03.5",
+        "NET-17"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.8",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-AUTH-001",
+      "name": "Ensure 'Block ResourceKey Authentication' is 'Enabled' in Power BI",
+      "category": "AUTH",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.9",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-AUTH-001",
+      "name": "Ensure 'Block ResourceKey Authentication' is 'Enabled' in Power BI",
+      "category": "Authentication",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.9",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-API-001",
+      "name": "Ensure access to APIs by Service Principals is restricted in Power BI",
+      "category": "API",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "NET-04"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.10",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-AUTH-002",
+      "name": "Ensure access to APIs by Service Principals is restricted in Power BI",
+      "category": "Authentication",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "NET-04"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.10",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "POWERBI-AUTH-003",
+      "name": "Ensure Service Principals cannot create and use profiles in Power BI",
+      "category": "Authentication",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "NET-04"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.11",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "PBI-PROFILE-001",
+      "name": "Ensure Service Principals cannot create and use profiles in Power BI",
+      "category": "PROFILE",
+      "collector": "PowerBI",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "NET-04"
+      ],
+      "impactSeverity": "Medium",
+      "impactRationale": "",
+      "cisM365ControlId": "9.1.11",
+      "cisM365Profiles": [
+        "E3-L1",
+        "E5-L1"
+      ]
+    },
+    {
+      "checkId": "ENTRA-SSPR-002",
+      "name": "SSPR enabled for admin accounts",
+      "category": "SSPR",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ROLEGROUP-001",
+      "name": "Unprotected groups in privileged role assignments",
+      "category": "ROLEGROUP",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-08",
+      "scfAdditional": [
+        "IAC-17"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.AAD.7.2v1"
+    },
+    {
+      "checkId": "ENTRA-PIM-010",
+      "name": "No admin notification on Tier-0 role activation",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-02.6",
+      "scfAdditional": [
+        "IRO-09",
+        "MON-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-STALEADMIN-001",
+      "name": "Admin accounts inactive for more than 90 days",
+      "category": "STALEADMIN",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15",
+      "scfAdditional": [
+        "IAC-07.2",
+        "IAC-15.3",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.AAD.7.4v1"
+    },
+    {
+      "checkId": "FORMS-CONFIG-003",
+      "name": "Ensure external users cannot view form results",
+      "category": "CONFIG",
+      "collector": "Forms",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-15",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "INTUNE-RBAC-001",
+      "name": "RBAC role assignments without scope tags",
+      "category": "RBAC",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [
+        "IAC-21.2"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.INTUNE.1.2v1"
+    },
+    {
+      "checkId": "FORMS-CONFIG-005",
+      "name": "Ensure respondent identity recording is enabled by default",
+      "category": "CONFIG",
+      "collector": "Forms",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-01.8",
+      "scfAdditional": [
+        "MON-03",
+        "CFG-02.1",
+        "MON-02",
+        "CFG-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "FORMS-CONFIG-006",
+      "name": "Ensure Bing image and video search is disabled in Forms",
+      "category": "CONFIG",
+      "collector": "Forms",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "DCH-15",
+      "scfAdditional": [
+        "NET-03"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "INTUNE-MAA-001",
+      "name": "Multi-Admin Approval not enabled for destructive operations",
+      "category": "MAA",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CHG-04.1",
+      "scfAdditional": [
+        "IAC-20.5",
+        "HRS-12.1"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.INTUNE.1.1v1"
+    },
+    {
+      "checkId": "INTUNE-WIPEAUDIT-001",
+      "name": "Mass device wipe activity detected (attack indicator)",
+      "category": "WIPEAUDIT",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-02.6",
+      "scfAdditional": [
+        "IRO-02",
+        "MON-01",
+        "MON-02",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.INTUNE.1.3v1"
+    },
+    {
+      "checkId": "PURVIEW-RETENTION-003",
+      "name": "Ensure Teams is covered by a retention policy",
+      "category": "CONFIG",
+      "collector": "PurviewRetention",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-10",
+      "scfAdditional": [
+        "DCH-18",
+        "PRI-05"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "PURVIEW-RETENTION-002",
+      "name": "Ensure Exchange is covered by a retention policy",
+      "category": "CONFIG",
+      "collector": "PurviewRetention",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-10",
+      "scfAdditional": [
+        "DCH-18",
+        "PRI-05"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-PIM-009",
+      "name": "Permanent eligible assignments allowed for Tier-0 roles",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15.2",
+      "scfAdditional": [
+        "IAC-15.3"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "PURVIEW-RETENTION-004",
+      "name": "Ensure SharePoint/OneDrive is covered by a retention policy",
+      "category": "CONFIG",
+      "collector": "PurviewRetention",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "MON-10",
+      "scfAdditional": [
+        "DCH-18",
+        "PRI-05"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-PIM-008",
+      "name": "MFA not required on Tier-0 role activation",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-06.3",
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-002",
+      "name": "Inactive apps with credentials (no sign-in > 90 days)",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15.3",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-PIM-006",
+      "name": "Tier-0 role activation duration exceeds 4 hours",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15.2",
+      "scfAdditional": [
+        "IAC-21.1"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-SECDEFAULT-001",
+      "name": "Security Defaults Enabled",
+      "category": "SECDEFAULT",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-02",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.AAD.1.1v1"
+    },
+    {
+      "checkId": "ENTRA-APPREG-001",
+      "name": "Users Can Register Applications",
+      "category": "APPREG",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.AAD.5.3v1"
+    },
+    {
+      "checkId": "ENTRA-GUEST-003",
+      "name": "Guest User Count",
+      "category": "GUEST",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-07.2",
+      "scfAdditional": [
+        "IAC-15",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-CA-002",
+      "name": "Conditional Access Policy Count",
+      "category": "CA",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-CA-003",
+      "name": "Enabled Conditional Access Policies",
+      "category": "CA",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-20",
+      "scfAdditional": [
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-PASSWORD-003",
+      "name": "Smart Lockout Threshold",
+      "category": "PASSWORD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-22",
+      "scfAdditional": [],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-PASSWORD-004",
+      "name": "Custom Banned Password Count",
+      "category": "PASSWORD",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-10.8",
+      "scfAdditional": [
+        "IAC-10"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "SPO-SYNC-002",
+      "name": "Mac Sync App Enabled",
+      "category": "SYNC",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "AST-02.3",
+      "scfAdditional": [
+        "AST-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "SPO-LOOP-001",
+      "name": "Loop Components Enabled",
+      "category": "LOOP",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "AST-02.3",
+      "scfAdditional": [
+        "AST-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "SPO-LOOP-002",
+      "name": "OneDrive Loop Sharing",
+      "category": "LOOP",
+      "collector": "SharePoint",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "AST-02.3",
+      "scfAdditional": [
+        "AST-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "TEAMS-APPS-001",
+      "name": "Chat Resource-Specific Consent Enabled",
+      "category": "APPS",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-03",
+      "scfAdditional": [],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "TEAMS-INFO-001",
+      "name": "Teams Workload Active",
+      "category": "INFO",
+      "collector": "Teams",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "AST-02.3",
+      "scfAdditional": [
+        "AST-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "CA-RISKPOLICY-001",
+      "name": "CA policy combines sign-in risk and user risk (anti-pattern)",
+      "category": "RISKPOLICY",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-22",
+      "scfAdditional": [
+        "MON-01",
+        "MON-02",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-PIM-007",
+      "name": "Justification not required on Tier-0 role activation",
+      "category": "PIM",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15.4",
+      "scfAdditional": [
+        "MON-01.8",
+        "MON-03",
+        "CFG-02.1",
+        "MON-02",
+        "CFG-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "CA-ROLECOVERAGE-001",
+      "name": "CA policies targeting directory roles miss active Tier-0 roles",
+      "category": "ROLECOVERAGE",
+      "collector": "CAEvaluator",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-001",
+      "name": "Enabled apps with client credentials (secrets or certificates)",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-02.7",
+      "scfAdditional": [
+        "IAC-10.8",
+        "IAC-10",
+        "CFG-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-003",
+      "name": "Foreign apps with dangerous application permissions",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [
+        "IAC-21.3",
+        "TPM-04"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-004",
+      "name": "Foreign apps with dangerous delegated permissions",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [
+        "TPM-04"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-005",
+      "name": "Foreign apps with Entra directory roles",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "TPM-04",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-006",
+      "name": "Apps with excessive permission count (>10 application permissions)",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-007",
+      "name": "App instance property lock not enabled",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CFG-02.7",
+      "scfAdditional": [
+        "CFG-03",
+        "CFG-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-008",
+      "name": "Managed identities with dangerous application permissions",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.1",
+      "scfAdditional": [
+        "IAC-21",
+        "IAC-20"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-ENTAPP-009",
+      "name": "Managed identities with Entra directory roles",
+      "category": "ENTAPP",
+      "collector": "EntApp",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-GROUP-004",
+      "name": "Dynamic groups with user-controllable membership rules in privileged contexts",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-15",
+      "scfAdditional": [
+        "IAC-07.2",
+        "IAC-21",
+        "IAC-20",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-GROUP-005",
+      "name": "Sensitive groups not protected with role-assignable flag",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-GROUP-006",
+      "name": "Public M365 groups count",
+      "category": "GROUP",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "NET-04",
+      "scfAdditional": [
+        "IAC-20",
+        "TDA-18",
+        "NET-12"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-HYBRID-002",
+      "name": "On-premises synced users holding Tier-0/1 Entra roles",
+      "category": "HYBRID",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.3",
+      "scfAdditional": [
+        "IAC-15",
+        "IAC-07.2",
+        "NET-12",
+        "TDA-18"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-MFA-002",
+      "name": "Percentage of users without MFA method registered",
+      "category": "MFA",
+      "collector": "Entra",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-06.3",
+      "scfAdditional": [
+        "IAC-10.7",
+        "IAC-06.2",
+        "IAC-06",
+        "IAC-06.1",
+        "IAC-06.4"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    },
+    {
+      "checkId": "ENTRA-APPS-002",
+      "name": "App registrations with dangerous Intune write permissions",
+      "category": "APPS",
+      "collector": "StrykerReadiness",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "IAC-21.5",
+      "scfAdditional": [
+        "CFG-03.3"
+      ],
+      "impactSeverity": "",
+      "impactRationale": "",
+      "cisaScubaControlId": "MS.AAD.6.1v1"
+    },
+    {
+      "checkId": "PURVIEW-RETENTION-005",
+      "name": "Ensure all retention policies are in Enforce mode",
+      "category": "CONFIG",
+      "collector": "PurviewRetention",
+      "hasAutomatedCheck": true,
+      "licensing": "E3",
+      "scfPrimary": "CHG-01",
+      "scfAdditional": [
+        "MON-10",
+        "CHG-02"
+      ],
+      "impactSeverity": "",
+      "impactRationale": ""
+    }
+  ]
+}
