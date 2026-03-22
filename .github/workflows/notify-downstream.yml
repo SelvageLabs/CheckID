@@ -1,0 +1,54 @@
+name: Notify Downstream
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  notify:
+    name: Notify consumer repos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get release info
+        id: info
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch to M365-Assess
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CROSS_REPO_TOKEN }}
+          repository: Galvnyz/M365-Assess
+          event-type: checkid-released
+          client-payload: '{"version": "${{ steps.info.outputs.version }}", "tag": "${{ steps.info.outputs.tag }}"}'
+
+      - name: Dispatch to M365-Remediate
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CROSS_REPO_TOKEN }}
+          repository: Galvnyz/M365-Remediate
+          event-type: checkid-released
+          client-payload: '{"version": "${{ steps.info.outputs.version }}", "tag": "${{ steps.info.outputs.tag }}"}'
+
+      - name: Dispatch to StrykerScan
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CROSS_REPO_TOKEN }}
+          repository: Galvnyz/StrykerScan
+          event-type: checkid-released
+          client-payload: '{"version": "${{ steps.info.outputs.version }}", "tag": "${{ steps.info.outputs.tag }}"}'
+
+      - name: Summary
+        run: |
+          echo "### Downstream notifications sent" >> "$GITHUB_STEP_SUMMARY"
+          echo "- M365-Assess" >> "$GITHUB_STEP_SUMMARY"
+          echo "- M365-Remediate" >> "$GITHUB_STEP_SUMMARY"
+          echo "- StrykerScan" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "CheckID **${{ steps.info.outputs.tag }}** released." >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,59 @@
+name: Rebuild from SecFrame
+
+on:
+  repository_dispatch:
+    types: [secframe-updated]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  rebuild:
+    name: Rebuild registry from SecFrame
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest SecFrame data
+        env:
+          GH_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
+        run: |
+          echo "SecFrame update triggered: ${{ github.event.client_payload.frameworks }}"
+          # Fetch the CIS crosswalk CSV (primary mapping source)
+          gh api repos/Galvnyz/SecFrame/contents/CIS/CIS_M365_to_NIST_to_FedRAMP_Crosswalk.csv \
+            --jq '.content' | base64 -d > data/framework-mappings.csv || true
+
+      - name: Rebuild registry
+        shell: pwsh
+        run: |
+          ./scripts/Build-Registry.ps1
+          ./scripts/Test-RegistryData.ps1
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/ && echo "changed=false" >> "$GITHUB_OUTPUT" \
+            || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create PR if changed
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
+        run: |
+          BRANCH="chore/secframe-sync-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH"
+          git add data/
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: sync registry from SecFrame update"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: sync registry from SecFrame update" \
+            --body "Automated PR triggered by SecFrame framework data update.
+
+Frameworks changed: ${{ github.event.client_payload.frameworks }}
+
+Review the registry diff and merge when ready." \
+            --base main \
+            --head "$BRANCH"
