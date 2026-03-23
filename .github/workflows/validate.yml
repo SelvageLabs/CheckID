@@ -72,7 +72,7 @@ jobs:
         shell: pwsh
         run: |
           $fwMap = Get-Content data/scf-framework-map.json -Raw | ConvertFrom-Json
-          $fwCount = $fwMap.frameworks.PSObject.Properties.Count
+          $fwCount = @($fwMap.frameworks.PSObject.Properties).Count
           if ($fwCount -lt 10) {
             Write-Host "::error::scf-framework-map.json has only $fwCount frameworks (expected 12+)"
             exit 1
